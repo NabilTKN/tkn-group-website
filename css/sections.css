@@ -1,0 +1,94 @@
+/* ============================================================
+   TKN — Section Couverture (texte + carte enrichie) — thème clair
+   ============================================================ */
+
+/* ---------- Bande d'intro ---------- */
+.intro-band__grid { display: grid; grid-template-columns: 0.24fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: start; }
+.intro-band__label { padding-top: 10px; }
+.intro-band__lead { font-family: var(--title); font-weight: 600; font-size: clamp(21px, 2.5vw, 33px); line-height: 1.24; letter-spacing: -0.02em; color: var(--ink); max-width: 24ch; text-wrap: pretty; }
+.intro-band__lead strong { color: var(--accent-strong); font-weight: 700; }
+.intro-band__txt { margin-top: 24px; font-size: 16px; line-height: 1.62; color: var(--gray); max-width: 56ch; }
+@media (max-width: 760px) { .intro-band__grid { grid-template-columns: 1fr; gap: 18px; } }
+
+.coverage { position: relative; }
+.coverage__grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 0.9fr;
+  gap: clamp(48px, 7vw, 104px); align-items: center;
+}
+.coverage__left { max-width: 52ch; }
+.coverage__lead { margin-top: 4px; max-width: 52ch; font-size: 17px; line-height: 1.68; color: var(--offwhite); }
+.coverage__txt { margin-top: 22px; max-width: 52ch; font-size: 15.5px; line-height: 1.72; }
+
+.coverage__subs { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 32px; }
+.cov-sub { display: flex; gap: 15px; align-items: flex-start; }
+.cov-sub__bar { width: 2px; flex: none; align-self: stretch; background: var(--accent); border-radius: 2px; }
+.cov-sub__t { display: block; font-family: var(--title); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; color: var(--white); margin-bottom: 6px; line-height: 1.2; }
+.cov-sub__d { font-size: 13.5px; color: var(--gray); line-height: 1.5; max-width: 36ch; }
+@media (max-width: 560px) { .coverage__subs { grid-template-columns: 1fr; gap: 20px; } }
+
+/* ---------- Carte ---------- */
+.coverage__map { width: 100%; align-self: center; }
+.be-map {
+  position: relative; padding: clamp(24px, 3.4vw, 44px) clamp(20px, 2.8vw, 38px) clamp(20px, 2.6vw, 30px);
+  background: #FFFFFF; border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-md);
+}
+.be-svg { position: relative; width: 100%; height: auto; display: block; overflow: visible; }
+
+/* Belgique — remplissage crème / beige clair, contour doré fin */
+.be-bleed { fill: rgba(184,138,30,0.10); opacity: 0; transition: opacity 1s var(--ease) .15s; }
+.be-map.is-in .be-bleed { opacity: 1; }
+.be-fill { fill: #F4ECD9; stroke: none; opacity: 0; transition: opacity .9s var(--ease) .1s; }
+.be-map.is-in .be-fill { opacity: 1; }
+.be-outline { stroke: #B88A1E; stroke-width: 0.38; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.5s var(--ease) .15s; }
+.be-map.is-in .be-outline { stroke-dashoffset: 0; }
+
+/* Pays voisins — libellés hors silhouette + traits pointillés discrets */
+.be-nb { opacity: 0; transition: opacity .7s var(--ease); }
+.be-map.is-in .be-nb { opacity: 1; }
+.be-country {
+  font-size: 3.05px; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase; fill: #ADA697;
+}
+.be-leader { stroke: #CBC4B5; stroke-width: 0.3; stroke-linecap: round; stroke-dasharray: 0.2 1.5; }
+
+/* Siège — Bruxelles : anneaux dorés concentriques, révélé après le tracé */
+.be-hub { opacity: 0; transform: scale(0.4); transform-box: fill-box; transform-origin: center; transition: opacity .5s var(--ease), transform .55s var(--ease); }
+.be-map.is-in .be-hub { opacity: 1; transform: none; }
+
+.be-ring { fill: none; stroke: var(--accent); }
+.be-ring--1 { stroke-width: 0.5; opacity: 0.95; }
+.be-ring--2 { stroke-width: 0.42; opacity: 0.5; }
+.be-ring--3 { stroke-width: 0.34; opacity: 0.26; }
+.be-pt { fill: var(--accent-strong); }
+
+.be-lbl {
+  font-size: 3.1px; font-weight: 800;
+  fill: var(--ink); letter-spacing: -0.01em;
+}
+.be-lbl-sub { font-size: 2.05px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--accent-strong); }
+
+/* légende — 2 lignes sobres */
+.be-legend {
+  position: relative; z-index: 1;
+  display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px;
+  padding-top: 16px; border-top: 1px solid var(--line);
+}
+.be-leg { display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--gray); }
+.be-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.be-leg-dot--hub { background: var(--ink); box-shadow: 0 0 0 2px var(--accent); }
+.be-leg-sw { width: 15px; height: 11px; border-radius: 2px; flex: none; background: #F4ECD9; border: 1px solid #B88A1E; }
+
+@media (prefers-reduced-motion: reduce) {
+  .be-bleed, .be-fill, .be-hub, .be-nb { opacity: 1 !important; transform: none !important; }
+  .be-outline { stroke-dashoffset: 0 !important; }
+}
+
+@media (max-width: 920px) {
+  .coverage__grid { grid-template-columns: 1fr; }
+  .coverage__map { max-width: 560px; }
+}
+@media (max-width: 600px) {
+  .be-lbl { font-size: 3.4px; }
+  .be-country { font-size: 3.6px; }
+}

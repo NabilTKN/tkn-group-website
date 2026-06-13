@@ -1,0 +1,306 @@
+/* ============================================================
+   TKN TECHNICS — Design System (thème CLAIR)
+   Blanc, lumineux, industriel. Accent jaune + noir.
+   ============================================================ */
+
+:root {
+  /* Surfaces — « paper » (noms hist. conservés pour limiter la churn) */
+  --black:        #FFFFFF;   /* fond principal des sections      */
+  --anthracite:   #FAFAF7;   /* bande alternée, légèrement chaude */
+  --surface:      #FFFFFF;   /* surface carte                    */
+  --surface-2:    #F3F1EB;
+  --paper:        #FFFFFF;
+  --paper-2:      #FAFAF7;
+
+  /* Texte */
+  --white:        #14140F;   /* encre — titres / texte fort      */
+  --offwhite:     #2A2A24;   /* corps                            */
+  --gray:         #6B6B63;   /* secondaire / légendes            */
+  --gray-dim:     #9A9A90;
+  --ink:          #14140F;   /* texte sur accent                 */
+
+  /* Accent amber du logo TKN — couleur forte unique */
+  --accent:       #F0A800;
+  --accent-strong:#BC7E08;
+  --signal:       #F0A800;   /* marqueurs carte (amber) */
+
+  /* Alias hérités « yellow » → accent amber (compat composants) */
+  --yellow:       #F0A800;
+  --yellow-light: #FFBE33;
+  --yellow-dark:  #BC7E08;
+  --yellow-glow:  rgba(240,168,0,0.20);
+
+  /* Bordures / filets */
+  --line:         #E6E4DD;
+  --line-strong:  #D8D5CC;
+  --line-faint:   rgba(0,0,0,0.045);
+
+  /* Ombres */
+  --shadow-sm:    0 1px 2px rgba(20,20,15,0.04), 0 2px 8px rgba(20,20,15,0.05);
+  --shadow-md:    0 4px 14px rgba(20,20,15,0.07), 0 10px 30px rgba(20,20,15,0.06);
+  --shadow-lg:    0 10px 30px rgba(20,20,15,0.10), 0 24px 60px rgba(20,20,15,0.10);
+
+  /* Type */
+  --title: "Archivo", "Arial Narrow", sans-serif;
+  --body:  "Inter", system-ui, sans-serif;
+  /* No third typeface. Eyebrows / small labels are Inter — token kept to limit churn. */
+  --mono:  "Inter", system-ui, sans-serif;
+
+  /* Rythme */
+  --maxw: 1240px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --section-y: clamp(72px, 10vw, 156px);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--body);
+  background: var(--black);
+  color: var(--offwhite);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--yellow); color: var(--ink); }
+
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+
+/* ---------- Typographie ---------- */
+.eyebrow {
+  display: none !important;
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background: var(--accent);
+  flex: none;
+}
+.eyebrow--center::before { display: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--title);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-wrap: balance;
+}
+
+.display {
+  font-family: var(--title);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.h-section {
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+.h-card { font-size: clamp(19px, 1.7vw, 24px); letter-spacing: -0.015em; }
+
+.lead { font-size: clamp(15px, 1vw, 17px); color: var(--offwhite); line-height: 1.6; max-width: 62ch; }
+.muted { color: var(--gray); }
+.txt { color: var(--offwhite); }
+.txt-sm { font-size: 15px; }
+
+.slogan { font-style: italic; }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gutter); width: 100%; }
+.section { padding-block: var(--section-y); position: relative; }
+.bg-anthracite { background: var(--anthracite); }
+.bg-black { background: var(--black); }
+
+/* ---------- Dark zones: re-scope tokens so component CSS works on dark bg ---------- */
+.hero, .footer, .svc-hero {
+  --black:        #141414;
+  --anthracite:   #1B1B1E;
+  --surface:      #202024;
+  --surface-2:    #26262B;
+  --white:        #FFFFFF;
+  --offwhite:     #ECECEE;
+  --gray:         #B4B4BA;
+  --gray-dim:     #84848B;
+  --ink:          #141414;
+  --line:         rgba(255,255,255,0.12);
+  --line-strong:  rgba(255,255,255,0.20);
+  --line-faint:   rgba(255,255,255,0.06);
+}
+
+.section-head { display: flex; flex-direction: column; gap: 22px; max-width: 760px; }
+
+/* ---------- Titres de section — traitement unifié (filet doré) ---------- */
+.section-head .h-section {
+  position: relative;
+  margin-top: 4px;
+  padding-bottom: 24px;
+}
+.section-head .h-section::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 46px; height: 3px; border-radius: 2px;
+  background: var(--accent);
+}
+
+/* hairline grid texture */
+.tech-lines {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  font-family: var(--body); font-weight: 600; font-size: 14px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 16px 26px; border-radius: 2px; position: relative;
+  transition: all .35s var(--ease); white-space: nowrap;
+}
+.btn .arr { transition: transform .35s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+.btn--primary { background: var(--yellow); color: var(--ink); }
+.btn--primary:hover { background: var(--yellow-light); box-shadow: 0 0 0 1px var(--yellow-light), 0 10px 34px -10px var(--yellow-glow); }
+.btn--primary:active { background: var(--yellow-dark); }
+
+.btn--ghost { color: var(--white); box-shadow: inset 0 0 0 1px var(--line-strong); }
+.btn--ghost:hover { box-shadow: inset 0 0 0 1px var(--ink); background: rgba(0,0,0,0.035); }
+
+.btn--lg { padding: 19px 32px; font-size: 15px; }
+.btn--block { width: 100%; }
+
+/* text link with underline draw */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--yellow); position: relative; padding-bottom: 4px;
+}
+.link-arrow::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+  background: var(--yellow); transform: scaleX(0); transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.link-arrow:hover::after { transform: scaleX(1); }
+.link-arrow .arr { transition: transform .35s var(--ease); }
+.link-arrow:hover .arr { transform: translateX(4px); }
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: var(--offwhite);
+  padding: 9px 15px; border: 1px solid var(--line); border-radius: 2px;
+  background: rgba(0,0,0,0.015);
+}
+.badge svg { color: var(--yellow); flex: none; }
+.badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); }
+
+/* ---------- Image placeholder (clair) ---------- */
+.ph {
+  position: relative; overflow: hidden; background: var(--surface-2);
+  border: 1px solid var(--line);
+  background-image:
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.025) 0 2px, transparent 2px 11px);
+  display: flex; align-items: center; justify-content: center;
+}
+.ph::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 100% at 50% 0%, transparent 55%, rgba(0,0,0,0.06) 100%);
+}
+.ph__tag {
+  position: relative; z-index: 1;
+  font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gray-dim);
+  border: 1px dashed var(--line-strong); padding: 7px 12px; border-radius: 2px;
+  background: rgba(255,255,255,0.7); display: inline-flex; align-items: center; gap: 8px;
+}
+.ph__tag svg { color: var(--gray-dim); }
+
+/* photo mode — bright, clean, daylight */
+.ph--photo { background: var(--surface-2); }
+.ph__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02) brightness(1.02) contrast(1.0); }
+.ph__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.05)); z-index: 1; }
+.ph--photo::after { display: none; }
+.ph__tag--corner {
+  position: absolute; left: 12px; bottom: 12px; z-index: 2;
+  border: 1px solid var(--line-strong); border-style: solid; color: var(--gray);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(6px);
+  font-size: 10px; letter-spacing: 0.12em; align-items: center;
+}
+.ph__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--yellow); flex: none; }
+.acc__img .ph__tag--corner, .hero__ph .ph__tag--corner { opacity: 0.85; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+.reveal.d4 { transition-delay: .32s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* yellow line that draws in */
+.rule-draw { height: 1px; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease-out); }
+.rule-draw.in { transform: scaleX(1); }
+
+/* ---------- Utility ---------- */
+.divider { height: 1px; background: var(--line); border: 0; }
+.stack { display: flex; flex-direction: column; }
+.row { display: flex; }
+.center { align-items: center; }
+.between { justify-content: space-between; }
+.wrap-gap { flex-wrap: wrap; }
+.grow { flex: 1; }
+.num { font-family: var(--title); font-weight: 800; font-variant-numeric: tabular-nums; }
+.no-scroll { overflow: hidden; }
+
+/* ---------- Mono utilities & « fiche technique » devices ---------- */
+.mono { font-family: var(--mono); }
+.code-tag {
+  font-family: var(--mono); font-weight: 600; font-size: 13px;
+  letter-spacing: 0.04em; color: var(--accent);
+}
+.spec-label {
+  font-family: var(--mono); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+}
+
+/* hairline-rule avec un court segment amber (sobre) */
+.tech-rule { position: relative; height: 1px; background: var(--line); width: 100%; }
+.tech-rule::before {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px;
+  background: var(--accent);
+}
+.tech-rule--dark { background: var(--dark-line, rgba(255,255,255,0.14)); }
