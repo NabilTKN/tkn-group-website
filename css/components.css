@@ -59,7 +59,9 @@
   opacity: 0; visibility: hidden; transform: translateY(8px);
   transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
 }
-.dropdown.is-open { opacity: 1; visibility: visible; transform: none; }
+.dropdown.is-open,
+.navitem:hover .dropdown,
+.navitem:focus-within .dropdown { opacity: 1; visibility: visible; transform: none; }
 .dropdown__inner {
   --white: #141414; --offwhite: #2A2A2A; --gray: #6B6B66; --gray-dim: #9A9A93;
   background: #FFFFFF;
@@ -106,6 +108,8 @@
 .drawer__sub { display: block; text-align: left; width: 100%; font-size: 18px; color: var(--offwhite); padding: 11px 0; }
 .drawer__foot { margin-top: 28px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
 .drawer__foot .btn { width: 100%; }
+/* The header language switch is hidden on mobile; keep it usable in the drawer. */
+.drawer__foot .langsw { display: inline-flex; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 88svh; display: flex; flex-direction: column; justify-content: center; padding-top: 120px; padding-bottom: 40px; overflow: hidden; }

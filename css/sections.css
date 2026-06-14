@@ -52,35 +52,40 @@
 }
 .be-leader { stroke: #CBC4B5; stroke-width: 0.3; stroke-linecap: round; stroke-dasharray: 0.2 1.5; }
 
-/* Siège — Bruxelles : anneaux dorés concentriques, révélé après le tracé */
-.be-hub { opacity: 0; transform: scale(0.4); transform-box: fill-box; transform-origin: center; transition: opacity .5s var(--ease), transform .55s var(--ease); }
-.be-map.is-in .be-hub { opacity: 1; transform: none; }
+/* Repères — fondu enchaîné en cascade quand la carte entre dans le viewport */
+.be-mk { opacity: 0; transition: opacity .55s var(--ease); }
+.be-map.is-in .be-mk { opacity: 1; }
 
-.be-ring { fill: none; stroke: var(--accent); }
-.be-ring--1 { stroke-width: 0.5; opacity: 0.95; }
-.be-ring--2 { stroke-width: 0.42; opacity: 0.5; }
-.be-ring--3 { stroke-width: 0.34; opacity: 0.26; }
-.be-pt { fill: var(--accent-strong); }
+/* Hubs portuaires — gros points accent (Zelzate, Brugge, Antwerpen) */
+.be-port-dot { fill: var(--accent); stroke: var(--accent-strong); stroke-width: 0.3; }
 
-.be-lbl {
-  font-size: 3.1px; font-weight: 800;
-  fill: var(--ink); letter-spacing: -0.01em;
+/* Points de couverture — petits points sobres, ton minéral discret */
+.be-pt-dot { fill: #A8946A; }
+
+/* Transfrontaliers — petits points en marge, légèrement plus clairs */
+.be-cross-dot { fill: #C3B48C; }
+
+/* Siège — Bruxelles : point noir + étiquette */
+.be-hub-dot { fill: var(--ink); stroke: #FFFFFF; stroke-width: 0.45; }
+.be-hub-lbl {
+  font-size: 2.85px; font-weight: 800; fill: var(--ink); letter-spacing: -0.01em;
+  paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.9px; stroke-linejoin: round;
 }
-.be-lbl-sub { font-size: 2.05px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--accent-strong); }
 
-/* légende — 2 lignes sobres */
+/* légende — 3 repères sobres */
 .be-legend {
   position: relative; z-index: 1;
   display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px;
   padding-top: 16px; border-top: 1px solid var(--line);
 }
 .be-leg { display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--gray); }
-.be-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
-.be-leg-dot--hub { background: var(--ink); box-shadow: 0 0 0 2px var(--accent); }
-.be-leg-sw { width: 15px; height: 11px; border-radius: 2px; flex: none; background: #F4ECD9; border: 1px solid #B88A1E; }
+.be-leg-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.be-leg-dot--hub { width: 10px; height: 10px; background: var(--ink); box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 3px var(--line-strong); }
+.be-leg-dot--port { background: var(--accent); box-shadow: 0 0 0 1px var(--accent-strong); }
+.be-leg-dot--pt { width: 8px; height: 8px; background: #A8946A; }
 
 @media (prefers-reduced-motion: reduce) {
-  .be-bleed, .be-fill, .be-hub, .be-nb { opacity: 1 !important; transform: none !important; }
+  .be-bleed, .be-fill, .be-mk, .be-nb { opacity: 1 !important; transform: none !important; }
   .be-outline { stroke-dashoffset: 0 !important; }
 }
 
@@ -89,6 +94,6 @@
   .coverage__map { max-width: 560px; }
 }
 @media (max-width: 600px) {
-  .be-lbl { font-size: 3.4px; }
+  .be-hub-lbl { font-size: 3.2px; }
   .be-country { font-size: 3.6px; }
 }

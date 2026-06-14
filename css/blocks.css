@@ -14,9 +14,12 @@
 .field__input:focus { outline: none; }
 .field__area { resize: vertical; min-height: 52px; line-height: 1.5; }
 .field__line { position: absolute; left: 0; bottom: 0; height: 1.5px; width: 100%; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
-.field.is-focus .field__line { transform: scaleX(1); }
+.field.is-focus .field__line,
+.field:focus-within .field__line { transform: scaleX(1); }
 .field.is-err .field__input { border-bottom-color: #d9534f; }
-.field__msg { font-size: 11.5px; color: #e07a76; margin-top: 6px; letter-spacing: 0.02em; }
+/* Validation message is in the markup but only shown when the field is in error. */
+.field__msg { display: none; font-size: 11.5px; color: #e07a76; margin-top: 6px; letter-spacing: 0.02em; }
+.field.is-err .field__msg { display: block; }
 
 .field__selwrap { position: relative; }
 .field__select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 28px; }
@@ -191,10 +194,8 @@ a.coord__v:hover { color: var(--yellow); }
 .team__hab-label { display: inline-flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 14px; }
 .team__hab-txt { font-size: 13.5px; color: var(--gray); line-height: 1.58; }
 .team__hab-txt + .team__hab-txt { margin-top: 11px; }
-.team__img { width: 100%; aspect-ratio: 16/10; border-radius: 10px; }
 @media (max-width: 860px) {
   .team__grid { grid-template-columns: 1fr; gap: 30px; }
-  .team__img { aspect-ratio: 16/9; }
 }
 
 /* ---------- Footer ---------- */

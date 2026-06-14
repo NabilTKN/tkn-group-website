@@ -57,7 +57,9 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* Smooth in-page navigation. `scroll-padding-top` keeps anchored sections
+   clear of the fixed header (solid header ≈ 74px) instead of hidden under it. */
+html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: var(--body);
