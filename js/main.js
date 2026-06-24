@@ -120,5 +120,47 @@
         });
       }
     });
+
+    /* ---------- Modales (devis en pop-up + détail service) ---------- */
+    var openModalEl = null;
+
+    function openModal(id) {
+      var m = document.getElementById(id);
+      if (!m) return;
+      if (openModalEl && openModalEl !== m) hideModal(openModalEl);
+      m.classList.add("is-open");
+      m.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+      openModalEl = m;
+      var c = m.querySelector(".modal__close");
+      if (c) { try { c.focus(); } catch (e) {} }
+    }
+
+    function hideModal(m) {
+      m = m || openModalEl;
+      if (!m) return;
+      m.classList.remove("is-open");
+      m.setAttribute("aria-hidden", "true");
+      if (openModalEl === m) openModalEl = null;
+      if (!document.querySelector(".modal.is-open")) document.body.classList.remove("no-scroll");
+    }
+
+    // ouverture (boutons « Demander un devis », CTA dans la modale service…)
+    document.querySelectorAll("[data-modal-open]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal(btn.getAttribute("data-modal-open"));
+      });
+    });
+
+    // fermeture (croix + fond assombri)
+    document.querySelectorAll("[data-modal-close]").forEach(function (el) {
+      el.addEventListener("click", function () { hideModal(); });
+    });
+
+    // touche Échap
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
+    });
   });
 })();

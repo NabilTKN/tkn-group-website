@@ -73,7 +73,7 @@
           <button class="langsw__btn" data-lang="en" title="English">EN</button>
         </div>
         <span class="hdr__divider"></span>
-        <a class="btn btn--primary" href="#contact" data-i18n="nav.quote">Demander un devis</a>
+        <a class="btn btn--primary" href="#contact" data-modal-open="quote-modal" data-i18n="nav.quote">Demander un devis</a>
         <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -100,7 +100,7 @@
             <span class="langsw__sep">·</span>
             <button class="langsw__btn" data-lang="en" title="English">EN</button>
           </div>
-          <a class="btn btn--primary btn--block" href="#contact" data-drawer-close data-i18n="nav.quote">Demander un devis</a>
+          <a class="btn btn--primary btn--block" href="#contact" data-drawer-close data-modal-open="quote-modal" data-i18n="nav.quote">Demander un devis</a>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
         <h1 class="hero__title" data-i18n="hero.title">Une structure d'intervention pour environnements industriels et professionnels.</h1>
         <div class="hero__sub"><p class="lead" data-i18n="hero.lead">Nettoyage industriel, maintenance générale, interventions spécialisées et entretien extérieur pour sites industriels, entreprises et interventions privées. Présents partout en Belgique, jusqu'aux zones frontalières.</p></div>
         <div class="hero__cta">
-          <a class="btn btn--primary btn--lg" href="#contact">
+          <a class="btn btn--primary btn--lg" href="#contact" data-modal-open="quote-modal">
             <span data-i18n="hero.ctaQuote">Demander un devis</span>
             <span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span>
           </a>
@@ -141,7 +141,7 @@
         </div>
 
         <div class="svc-panels">
-          <a class="svc-panel" href="#contact">
+          <a class="svc-panel" href="service.html?s=nettoyage">
             <span class="svc-panel__content">
               <span class="svc-panel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18" /><path d="M4 21V10l5 3.5V10l5 3.5V6l6 4v11" /><path d="M8 21v-4" /><path d="M13 21v-4" /></svg></span>
               <h3 class="svc-panel__title h-card" data-i18n="sv.nettoyage">Nettoyage industriel</h3>
@@ -155,7 +155,7 @@
             </span>
           </a>
 
-          <a class="svc-panel" href="#contact">
+          <a class="svc-panel" href="service.html?s=maintenance">
             <span class="svc-panel__content">
               <span class="svc-panel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 00-4.6 4.3L4 16.7 7.3 20l5.9-5.9a3.5 3.5 0 004.3-4.6l-2.2 2.2-2-2 2.2-2.2z" /></svg></span>
               <h3 class="svc-panel__title h-card" data-i18n="sv.maintenance">Maintenance générale</h3>
@@ -170,7 +170,7 @@
             </span>
           </a>
 
-          <a class="svc-panel" href="#contact">
+          <a class="svc-panel" href="service.html?s=interventions">
             <span class="svc-panel__content">
               <span class="svc-panel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3-2 4-2 7a2 2 0 004 0c0-1.2-.5-1.8-.5-1.8 1.8 1 3 3 3 5.3a4.5 4.5 0 01-9 0C7.5 8 12 7 12 3z" /></svg></span>
               <h3 class="svc-panel__title h-card" data-i18n="sv.interventions">Interventions spécialisées</h3>
@@ -184,7 +184,7 @@
             </span>
           </a>
 
-          <a class="svc-panel" href="#contact">
+          <a class="svc-panel" href="service.html?s=espaces">
             <span class="svc-panel__content">
               <span class="svc-panel__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C4 12 9 5 19 5c0 9-6 13-12 13a5 5 0 01-2-.5z" /><path d="M5 19c2-5 5-8 9-9.5" /></svg></span>
               <h3 class="svc-panel__title h-card" data-i18n="sv.espaces">Espaces verts</h3>
@@ -494,6 +494,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================ MODALE : DEMANDE DE DEVIS ============================ -->
+  <div class="modal" id="quote-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+      <button class="modal__close" type="button" data-modal-close aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
+      </button>
+      <div class="modal__head">
+        <h2 class="modal__title" id="quote-modal-title" data-i18n="contact.tabQuote">Demande de devis</h2>
+        <p class="modal__sub" data-i18n="contact.lead">Pour une intervention ponctuelle, un besoin régulier ou une situation urgente, décrivez simplement l'essentiel.</p>
+      </div>
+      <form class="js-form" data-success="#quote-modal-success" novalidate>
+        <div class="field-grid">
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.societe">Société</span><span class="field__req">*</span></span><input class="field__input" type="text" data-required /><span class="field__line"></span><span class="field__msg" data-i18n="forms.required">Champ requis</span></label>
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.nom">Nom / fonction</span></span><input class="field__input" type="text" /><span class="field__line"></span></label>
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.tel">Téléphone</span></span><input class="field__input" type="tel" /><span class="field__line"></span></label>
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.email">E-mail</span><span class="field__req">*</span></span><input class="field__input" type="email" data-required /><span class="field__line"></span><span class="field__msg" data-i18n="forms.required">Champ requis</span></label>
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.type">Type de prestation</span><span class="field__req">*</span></span><div class="field__selwrap"><select class="field__input field__select" data-required><option value="" disabled selected data-i18n="contact.q.typePh">Choisir une prestation</option><option data-i18n="contact.q.optClean">Nettoyage industriel</option><option data-i18n="contact.q.optMaint">Maintenance générale</option><option data-i18n="contact.q.optInterv">Interventions spécialisées</option><option data-i18n="contact.q.optGreen">Espaces verts</option><option data-i18n="contact.q.optMulti">Plusieurs besoins / à préciser</option></select><span class="field__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></span></div><span class="field__line"></span><span class="field__msg" data-i18n="forms.required">Champ requis</span></label>
+          <label class="field field--half"><span class="field__label"><span data-i18n="contact.q.ville">Ville / site</span></span><input class="field__input" type="text" /><span class="field__line"></span></label>
+          <div class="field field--full"><span class="field__label"><span data-i18n="contact.q.freq">Fréquence</span></span><div class="seg seg--full" data-seg><button type="button" class="seg__btn is-on" data-i18n="contact.q.freqPonc">Ponctuel</button><button type="button" class="seg__btn" data-i18n="contact.q.freqReg">Régulier</button></div></div>
+          <div class="field field--full"><span class="field__label"><span data-i18n="contact.q.urgence">Urgence</span></span><div class="seg seg--full" data-seg><button type="button" class="seg__btn is-on" data-i18n="contact.q.urgStd">Standard</button><button type="button" class="seg__btn" data-i18n="contact.q.urgUrg">Urgent</button></div></div>
+          <label class="field field--full filefield"><span class="field__label"><span data-i18n="contact.q.photos">Photos du site (optionnel)</span></span><div class="filefield__drop"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V5" /><path d="M8 9l4-4 4 4" /><path d="M5 19h14" /></svg><span class="filefield__txt" data-i18n="forms.addFile">Ajouter un fichier (PDF, JPG, PNG)</span><input type="file" class="filefield__input" /></div></label>
+          <label class="field field--full"><span class="field__label"><span data-i18n="contact.q.msg">Message</span></span><textarea class="field__input field__area" rows="3"></textarea><span class="field__line"></span></label>
+        </div>
+        <button class="btn btn--primary" type="submit"><span data-i18n="contact.q.submit">Demander un devis</span><span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></button>
+      </form>
+      <div class="form-success" id="quote-modal-success" hidden>
+        <span class="form-success__ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+        <h4 class="form-success__t" data-i18n="contact.q.successTitle">Demande de devis reçue</h4>
+        <p class="form-success__m" data-i18n="contact.q.successMsg">Un interlocuteur revient vers vous avec une proposition claire.</p>
+        <button class="link-arrow" type="button" data-reset><span data-i18n="forms.newRequest">Nouvelle demande</span> <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
