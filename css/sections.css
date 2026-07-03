@@ -1,99 +1,142 @@
 /* ============================================================
-   TKN — Section Couverture (texte + carte enrichie) — thème clair
+   TKN — Sections d'accueil : bandeau défilant des références,
+   bande de chiffres clés, grille des environnements d'intervention.
    ============================================================ */
 
-/* ---------- Bande d'intro ---------- */
-.intro-band__grid { display: grid; grid-template-columns: 0.24fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: start; }
-.intro-band__label { padding-top: 10px; }
-.intro-band__lead { font-family: var(--title); font-weight: 600; font-size: clamp(21px, 2.5vw, 33px); line-height: 1.24; letter-spacing: -0.02em; color: var(--ink); max-width: 24ch; text-wrap: pretty; }
-.intro-band__lead strong { color: var(--accent-strong); font-weight: 700; }
-.intro-band__txt { margin-top: 24px; font-size: 16px; line-height: 1.62; color: var(--gray); max-width: 56ch; }
-@media (max-width: 760px) { .intro-band__grid { grid-template-columns: 1fr; gap: 18px; } }
-
-.coverage { position: relative; }
-.coverage__grid {
-  position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 0.9fr;
-  gap: clamp(48px, 7vw, 104px); align-items: center;
+/* ---------- Bandeau défilant (références / secteurs) ---------- */
+.ticker {
+  position: relative; overflow: hidden;
+  background: var(--anthracite);
+  border-block: 1px solid var(--line);
+  padding-block: 22px;
 }
-.coverage__left { max-width: 52ch; }
-.coverage__lead { margin-top: 4px; max-width: 52ch; font-size: 17px; line-height: 1.68; color: var(--offwhite); }
-.coverage__txt { margin-top: 22px; max-width: 52ch; font-size: 15.5px; line-height: 1.72; }
-
-.coverage__subs { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 32px; }
-.cov-sub { display: flex; gap: 15px; align-items: flex-start; }
-.cov-sub__bar { width: 2px; flex: none; align-self: stretch; background: var(--accent); border-radius: 2px; }
-.cov-sub__t { display: block; font-family: var(--title); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; color: var(--white); margin-bottom: 6px; line-height: 1.2; }
-.cov-sub__d { font-size: 13.5px; color: var(--gray); line-height: 1.5; max-width: 36ch; }
-@media (max-width: 560px) { .coverage__subs { grid-template-columns: 1fr; gap: 20px; } }
-
-/* ---------- Carte ---------- */
-.coverage__map { width: 100%; align-self: center; }
-.be-map {
-  position: relative; padding: clamp(24px, 3.4vw, 44px) clamp(20px, 2.8vw, 38px) clamp(20px, 2.6vw, 30px);
-  background: #FFFFFF; border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-md);
+.ticker::before, .ticker::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 90px; z-index: 2; pointer-events: none;
 }
-.be-svg { position: relative; width: 100%; height: auto; display: block; overflow: visible; }
+.ticker::before { left: 0; background: linear-gradient(90deg, var(--anthracite), transparent); }
+.ticker::after { right: 0; background: linear-gradient(270deg, var(--anthracite), transparent); }
 
-/* Belgique — remplissage crème / beige clair, contour doré fin */
-.be-bleed { fill: rgba(184,138,30,0.10); opacity: 0; transition: opacity 1s var(--ease) .15s; }
-.be-map.is-in .be-bleed { opacity: 1; }
-.be-fill { fill: #F4ECD9; stroke: none; opacity: 0; transition: opacity .9s var(--ease) .1s; }
-.be-map.is-in .be-fill { opacity: 1; }
-.be-outline { stroke: #B88A1E; stroke-width: 0.38; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.5s var(--ease) .15s; }
-.be-map.is-in .be-outline { stroke-dashoffset: 0; }
-
-/* Pays voisins — libellés hors silhouette + traits pointillés discrets */
-.be-nb { opacity: 0; transition: opacity .7s var(--ease); }
-.be-map.is-in .be-nb { opacity: 1; }
-.be-country {
-  font-size: 3.05px; font-weight: 700;
-  letter-spacing: 0.13em; text-transform: uppercase; fill: #ADA697;
+.ticker__track {
+  display: flex; align-items: center; width: max-content;
+  animation: ticker-scroll 46s linear infinite;
 }
-.be-leader { stroke: #CBC4B5; stroke-width: 0.3; stroke-linecap: round; stroke-dasharray: 0.2 1.5; }
-
-/* Repères — fondu enchaîné en cascade quand la carte entre dans le viewport */
-.be-mk { opacity: 0; transition: opacity .55s var(--ease); }
-.be-map.is-in .be-mk { opacity: 1; }
-
-/* Hubs portuaires — gros points accent (Zelzate, Brugge, Antwerpen) */
-.be-port-dot { fill: var(--accent); stroke: var(--accent-strong); stroke-width: 0.3; }
-
-/* Points de couverture — petits points sobres, ton minéral discret */
-.be-pt-dot { fill: #A8946A; }
-
-/* Transfrontaliers — petits points en marge, légèrement plus clairs */
-.be-cross-dot { fill: #C3B48C; }
-
-/* Siège — Bruxelles : point noir + étiquette */
-.be-hub-dot { fill: var(--ink); stroke: #FFFFFF; stroke-width: 0.45; }
-.be-hub-lbl {
-  font-size: 2.85px; font-weight: 800; fill: var(--ink); letter-spacing: -0.01em;
-  paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.9px; stroke-linejoin: round;
+.ticker:hover .ticker__track { animation-play-state: paused; }
+.ticker__list { display: flex; align-items: center; flex: none; }
+.ticker__item {
+  display: inline-flex; align-items: baseline; gap: 12px;
+  padding-inline: 34px; white-space: nowrap;
 }
-
-/* légende — 3 repères sobres */
-.be-legend {
-  position: relative; z-index: 1;
-  display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px;
-  padding-top: 16px; border-top: 1px solid var(--line);
+.ticker__sector {
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gray-dim);
 }
-.be-leg { display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--gray); }
-.be-leg-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
-.be-leg-dot--hub { width: 10px; height: 10px; background: var(--ink); box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 3px var(--line-strong); }
-.be-leg-dot--port { background: var(--accent); box-shadow: 0 0 0 1px var(--accent-strong); }
-.be-leg-dot--pt { width: 8px; height: 8px; background: #A8946A; }
+.ticker__name {
+  font-family: var(--title); font-weight: 700; font-size: 17px;
+  letter-spacing: 0.01em; color: var(--offwhite);
+}
+.ticker__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; align-self: center; }
 
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
-  .be-bleed, .be-fill, .be-mk, .be-nb { opacity: 1 !important; transform: none !important; }
-  .be-outline { stroke-dashoffset: 0 !important; }
+  .ticker__track { animation: none; flex-wrap: wrap; width: 100%; }
+  .ticker__list { flex-wrap: wrap; }
+  .ticker__list[aria-hidden="true"] { display: none; }
 }
 
-@media (max-width: 920px) {
-  .coverage__grid { grid-template-columns: 1fr; }
-  .coverage__map { max-width: 560px; }
+/* ---------- Bande de chiffres clés (compteurs animés) ---------- */
+.stats { padding-block: clamp(56px, 7vw, 96px); }
+.stats__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(28px, 3.5vw, 48px);
 }
-@media (max-width: 600px) {
-  .be-hub-lbl { font-size: 3.2px; }
-  .be-country { font-size: 3.6px; }
+.stat { position: relative; padding-left: 22px; }
+.stat::before {
+  content: ""; position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 2px; border-radius: 2px; background: var(--accent);
 }
+.stat__value {
+  display: flex; align-items: baseline; gap: 2px;
+  font-family: var(--title); font-weight: 800;
+  font-size: clamp(40px, 4.2vw, 62px); line-height: 1;
+  letter-spacing: -0.02em; color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+.stat__value--txt { font-size: clamp(23px, 2.2vw, 32px); line-height: 1.1; padding-block: 6px; text-wrap: balance; }
+.stat__suffix { color: var(--accent); font-size: 0.72em; font-weight: 800; }
+.stat__label {
+  display: block; margin-top: 12px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--gray);
+  line-height: 1.5; max-width: 24ch;
+}
+@media (max-width: 900px) {
+  .stats__grid { grid-template-columns: 1fr 1fr; gap: 36px 28px; }
+}
+@media (max-width: 480px) {
+  .stats__grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* ---------- Environnements d'intervention / références ---------- */
+.env__head { max-width: 800px; margin-bottom: clamp(38px, 4.5vw, 60px); }
+.env__lead { margin-top: 20px; }
+
+.env-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 1.6vw, 24px);
+}
+.env-card {
+  position: relative; display: flex; flex-direction: column; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: clamp(24px, 2.4vw, 32px);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.env-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+.env-card__sector {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent);
+}
+.env-card__name {
+  font-family: var(--title); font-weight: 800; font-size: clamp(19px, 1.6vw, 23px);
+  letter-spacing: -0.015em; color: var(--white); line-height: 1.12;
+}
+.env-card__desc { font-size: 14px; color: var(--gray); line-height: 1.6; }
+.env-card__tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: auto; padding-top: 14px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gray-dim);
+}
+.env-card__tag svg { color: var(--accent); flex: none; }
+
+/* Carte mise en avant (nucléaire — exigence maximale) */
+.env-card--feat {
+  grid-column: 1 / -1;
+  display: grid; grid-template-columns: 0.8fr 1.2fr;
+  gap: 12px 56px; align-items: center;
+  border-color: rgba(240, 168, 0, 0.35);
+  background: linear-gradient(160deg, rgba(240, 168, 0, 0.06), transparent 55%), var(--surface);
+}
+.env-card--feat:hover { border-color: rgba(240, 168, 0, 0.55); }
+.env-card--feat .env-card__sector { display: block; margin-bottom: 10px; }
+.env-card--feat .env-card__name { font-size: clamp(22px, 2.2vw, 30px); }
+.env-card--feat .env-card__desc { font-size: 15px; }
+.env-card--feat .env-card__tag { margin-top: 14px; }
+@media (max-width: 760px) { .env-card--feat { grid-template-columns: 1fr; align-items: start; } }
+
+/* Bandeau de conclusion */
+.env__closing {
+  margin-top: clamp(36px, 4vw, 56px);
+  padding-top: clamp(28px, 3vw, 40px);
+  border-top: 1px solid var(--line);
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 24px 48px; flex-wrap: wrap;
+}
+.env__closing-txt {
+  font-family: var(--title); font-weight: 700;
+  font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.015em;
+  color: var(--white); max-width: 30ch; text-wrap: balance;
+}
+.env__closing-txt em { font-style: normal; color: var(--accent); }
+
+@media (max-width: 960px) { .env-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .env-grid { grid-template-columns: 1fr; } }
