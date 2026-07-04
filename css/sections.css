@@ -76,67 +76,55 @@
   .stats__grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
-/* ---------- Environnements d'intervention / références ---------- */
-.env__head { max-width: 800px; margin-bottom: clamp(38px, 4.5vw, 60px); }
+/* ---------- Environnements d'intervention (secteurs, sans noms) ---------- */
+.env { padding-block: clamp(64px, 8vw, 116px); }
+.env__head { max-width: 780px; margin-bottom: clamp(30px, 3.5vw, 46px); }
 .env__lead { margin-top: 20px; }
 
 .env-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 1.6vw, 24px);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.4vw, 20px);
 }
 .env-card {
-  position: relative; display: flex; flex-direction: column; gap: 10px;
+  position: relative; display: flex; flex-direction: column; gap: 8px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-  padding: clamp(24px, 2.4vw, 32px);
+  padding: clamp(20px, 2vw, 26px);
+  box-shadow: var(--shadow-sm);
   transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
 }
 .env-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
-.env-card__sector {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--accent);
-}
 .env-card__name {
-  font-family: var(--title); font-weight: 800; font-size: clamp(19px, 1.6vw, 23px);
+  font-family: var(--title); font-weight: 800; font-size: 18px;
   letter-spacing: -0.015em; color: var(--white); line-height: 1.12;
 }
-.env-card__desc { font-size: 14px; color: var(--gray); line-height: 1.6; }
+.env-card__desc { font-size: 13.5px; color: var(--gray); line-height: 1.58; }
 .env-card__tag {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-top: auto; padding-top: 14px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gray-dim);
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: auto; padding-top: 12px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent-strong);
 }
-.env-card__tag svg { color: var(--accent); flex: none; }
+.env-card__tag svg { color: var(--accent-strong); flex: none; }
 
-/* Carte mise en avant (nucléaire — exigence maximale) */
-.env-card--feat {
-  grid-column: 1 / -1;
-  display: grid; grid-template-columns: 0.8fr 1.2fr;
-  gap: 12px 56px; align-items: center;
-  border-color: rgba(240, 168, 0, 0.35);
-  background: linear-gradient(160deg, rgba(240, 168, 0, 0.06), transparent 55%), var(--surface);
-}
-.env-card--feat:hover { border-color: rgba(240, 168, 0, 0.55); }
-.env-card--feat .env-card__sector { display: block; margin-bottom: 10px; }
-.env-card--feat .env-card__name { font-size: clamp(22px, 2.2vw, 30px); }
-.env-card--feat .env-card__desc { font-size: 15px; }
-.env-card--feat .env-card__tag { margin-top: 14px; }
-@media (max-width: 760px) { .env-card--feat { grid-template-columns: 1fr; align-items: start; } }
+/* Carte nucléaire — accent discret (exigence maximale) */
+.env-card--feat { border-color: rgba(240, 168, 0, 0.4); background: linear-gradient(165deg, rgba(240, 168, 0, 0.05), transparent 60%), var(--surface); }
+.env-card--feat:hover { border-color: rgba(240, 168, 0, 0.6); }
 
-/* Bandeau de conclusion */
+/* Ligne de conclusion */
 .env__closing {
-  margin-top: clamp(36px, 4vw, 56px);
-  padding-top: clamp(28px, 3vw, 40px);
+  margin-top: clamp(28px, 3vw, 40px);
+  padding-top: clamp(22px, 2.4vw, 30px);
   border-top: 1px solid var(--line);
   display: flex; align-items: baseline; justify-content: space-between;
-  gap: 24px 48px; flex-wrap: wrap;
+  gap: 20px 48px; flex-wrap: wrap;
 }
 .env__closing-txt {
   font-family: var(--title); font-weight: 700;
-  font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.015em;
-  color: var(--white); max-width: 30ch; text-wrap: balance;
+  font-size: clamp(19px, 1.8vw, 25px); letter-spacing: -0.015em;
+  color: var(--white); max-width: 34ch; text-wrap: balance;
 }
-.env__closing-txt em { font-style: normal; color: var(--accent); }
+.env__closing-txt em { font-style: normal; color: var(--accent-strong); }
 
-@media (max-width: 960px) { .env-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px) { .env-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1020px) { .env-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .env-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .env-grid { grid-template-columns: 1fr; } }

@@ -130,7 +130,7 @@
 .svc-panel {
   position: relative; overflow: hidden; isolation: isolate; cursor: pointer;
   background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-  min-height: 300px; display: flex;
+  box-shadow: var(--shadow-sm); min-height: 300px; display: flex;
   transition: box-shadow .45s var(--ease), transform .45s var(--ease), border-color .45s var(--ease);
 }
 .svc-panel:hover, .svc-panel:focus-visible {
@@ -144,7 +144,7 @@
 .svc-panel__icon {
   width: 52px; height: 52px; flex: none; border-radius: 9px;
   display: inline-flex; align-items: center; justify-content: center;
-  color: var(--accent); background: rgba(240, 168, 0, 0.08);
+  color: var(--accent-strong); background: rgba(240, 168, 0, 0.08);
   border: 1px solid rgba(240, 168, 0, 0.24);
   transition: background .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
 }
@@ -159,7 +159,7 @@
 .svc-panel__link { display: inline-flex; align-items: center; gap: 9px; margin-top: auto; padding-top: 14px; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); }
 .svc-panel__link svg { color: var(--accent); transition: transform .35s var(--ease); }
 .svc-panel:hover .svc-panel__link svg, .svc-panel:focus-visible .svc-panel__link svg { transform: translateX(5px); }
-.svc-panel:hover .svc-panel__icon, .svc-panel:focus-visible .svc-panel__icon { color: var(--accent-strong); background: rgba(240, 168, 0, 0.15); border-color: rgba(240, 168, 0, 0.42); }
+.svc-panel:hover .svc-panel__icon, .svc-panel:focus-visible .svc-panel__icon { background: rgba(240, 168, 0, 0.15); border-color: rgba(240, 168, 0, 0.42); }
 
 @media (max-width: 760px) {
   .svc-panels { grid-template-columns: 1fr; }

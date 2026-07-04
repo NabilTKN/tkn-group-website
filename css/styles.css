@@ -1,45 +1,46 @@
 /* ============================================================
-   TKN TECHNICS — Design System (thème SOMBRE premium)
-   Noir profond #14130E (header = footer = sections), anthracite,
-   gris acier, blanc. Accent unique : orange TKN #F0A800.
+   TKN TECHNICS — Design System (thème CLAIR)
+   Fond blanc, lumineux, industriel. Header, hero, footer et
+   bandes CTA en noir profond #14130E (le même partout).
+   Accent unique : orange TKN #F0A800.
    ============================================================ */
 
 :root {
   /* Surfaces — noms historiques conservés pour limiter la churn */
-  --black:        #14130E;   /* noir profond — header, footer, sections   */
-  --anthracite:   #1B1A14;   /* bande alternée, légèrement plus claire    */
-  --surface:      #201F18;   /* surface carte                             */
-  --surface-2:    #27251C;   /* surface carte niveau 2 / inputs           */
-  --paper:        #1D1C15;   /* fond modale                               */
-  --paper-2:      #23221A;
+  --black:        #FFFFFF;   /* fond principal des sections       */
+  --anthracite:   #F7F6F2;   /* bande alternée, légèrement chaude */
+  --surface:      #FFFFFF;   /* surface carte                     */
+  --surface-2:    #F1EFE9;   /* surface carte niveau 2 / inputs   */
+  --paper:        #FFFFFF;   /* fond modale                       */
+  --paper-2:      #FAF9F5;
 
   /* Texte */
-  --white:        #FFFFFF;   /* titres / texte fort            */
-  --offwhite:     #E8E7E1;   /* corps                          */
-  --gray:         #A6A59B;   /* gris acier — secondaire        */
-  --gray-dim:     #75746A;   /* légendes discrètes             */
-  --ink:          #14130E;   /* texte sur accent orange        */
+  --white:        #14130E;   /* encre — titres / texte fort   */
+  --offwhite:     #2A2A24;   /* corps                         */
+  --gray:         #6B6B63;   /* gris acier — secondaire       */
+  --gray-dim:     #9A9A90;   /* légendes discrètes            */
+  --ink:          #14130E;   /* texte sur accent orange       */
 
   /* Accent orange du logo TKN — couleur forte unique */
   --accent:        #F0A800;
-  --accent-strong: #FFB61E;  /* variante plus lumineuse sur fond sombre */
+  --accent-strong: #B87F06;  /* variante foncée, lisible sur fond clair */
   --signal:        #F0A800;
 
   /* Alias hérités « yellow » → accent (compat composants) */
   --yellow:       #F0A800;
   --yellow-light: #FFBE33;
-  --yellow-dark:  #C98F06;
-  --yellow-glow:  rgba(240, 168, 0, 0.22);
+  --yellow-dark:  #B87F06;
+  --yellow-glow:  rgba(240, 168, 0, 0.20);
 
   /* Bordures / filets */
-  --line:         rgba(255, 255, 255, 0.10);
-  --line-strong:  rgba(255, 255, 255, 0.20);
-  --line-faint:   rgba(255, 255, 255, 0.05);
+  --line:         #E7E5DE;
+  --line-strong:  #D8D5CC;
+  --line-faint:   rgba(0, 0, 0, 0.045);
 
-  /* Ombres — teintées du noir chaud du fond */
-  --shadow-sm:    0 1px 2px rgba(0, 0, 0, 0.25), 0 3px 10px rgba(0, 0, 0, 0.22);
-  --shadow-md:    0 6px 18px rgba(0, 0, 0, 0.32), 0 14px 40px rgba(0, 0, 0, 0.26);
-  --shadow-lg:    0 14px 34px rgba(0, 0, 0, 0.42), 0 30px 70px rgba(0, 0, 0, 0.32);
+  /* Ombres — douces, teintées de l'encre chaude */
+  --shadow-sm:    0 1px 2px rgba(20, 19, 14, 0.04), 0 2px 8px rgba(20, 19, 14, 0.05);
+  --shadow-md:    0 4px 14px rgba(20, 19, 14, 0.07), 0 10px 30px rgba(20, 19, 14, 0.06);
+  --shadow-lg:    0 10px 30px rgba(20, 19, 14, 0.10), 0 24px 60px rgba(20, 19, 14, 0.10);
 
   /* Type */
   --title: "Archivo", "Arial Narrow", sans-serif;
@@ -49,10 +50,32 @@
   /* Rythme */
   --maxw: 1240px;
   --gutter: clamp(20px, 5vw, 72px);
-  --section-y: clamp(76px, 10vw, 160px);
+  --section-y: clamp(72px, 9vw, 140px);
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Zones sombres : header, hero, footer, bandes CTA ----------
+   Le MÊME noir profond partout (#14130E). Les tokens sont re-scopés pour
+   que tous les composants fonctionnent tels quels sur fond sombre. */
+.hdr, .hero, .svc-hero, .footer, .sp-cta {
+  --black:        #14130E;
+  --anthracite:   #1B1A14;
+  --surface:      #201F18;
+  --surface-2:    #27251C;
+  --paper:        #1D1C15;
+  --paper-2:      #23221A;
+  --white:        #FFFFFF;
+  --offwhite:     #ECECE6;
+  --gray:         rgba(255, 255, 255, 0.66);
+  --gray-dim:     rgba(255, 255, 255, 0.44);
+  --ink:          #14130E;
+  --accent-strong:#FFB61E;
+  --yellow-dark:  #C98F06;
+  --line:         rgba(255, 255, 255, 0.10);
+  --line-strong:  rgba(255, 255, 255, 0.20);
+  --line-faint:   rgba(255, 255, 255, 0.05);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -136,7 +159,7 @@ h1, h2, h3, h4 {
 }
 
 .h-section {
-  font-size: clamp(28px, 3.4vw, 48px);
+  font-size: clamp(28px, 3.4vw, 46px);
   line-height: 1.05;
   letter-spacing: -0.025em;
 }
@@ -197,7 +220,7 @@ h1, h2, h3, h4 {
 .btn--primary:active { background: var(--yellow-dark); transform: translateY(1px); }
 
 .btn--ghost { color: var(--white); box-shadow: inset 0 0 0 1px var(--line-strong); }
-.btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55); background: rgba(255,255,255,0.05); transform: translateY(-1px); }
+.btn--ghost:hover { box-shadow: inset 0 0 0 1px var(--gray); background: rgba(127, 127, 127, 0.07); transform: translateY(-1px); }
 
 .btn--lg { padding: 19px 32px; font-size: 15px; }
 .btn--block { width: 100%; }
@@ -216,11 +239,11 @@ h1, h2, h3, h4 {
 .link-arrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--yellow); position: relative; padding-bottom: 4px;
+  color: var(--accent-strong); position: relative; padding-bottom: 4px;
 }
 .link-arrow::after {
   content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
-  background: var(--yellow); transform: scaleX(0); transform-origin: left;
+  background: var(--accent-strong); transform: scaleX(0); transform-origin: left;
   transition: transform .4s var(--ease);
 }
 .link-arrow:hover::after { transform: scaleX(1); }
@@ -232,7 +255,7 @@ h1, h2, h3, h4 {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: var(--offwhite);
   padding: 9px 15px; border: 1px solid var(--line); border-radius: 2px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(0, 0, 0, 0.015);
 }
 .badge svg { color: var(--yellow); flex: none; }
 .badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); }
@@ -245,7 +268,7 @@ h1, h2, h3, h4 {
 }
 .ph--photo { background: var(--surface-2); border: 0; }
 .ph__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02) contrast(1.02); }
-.ph__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,14,0.05), rgba(20,19,14,0.28)); z-index: 1; }
+.ph__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 19, 14, 0.05), rgba(20, 19, 14, 0.28)); z-index: 1; }
 
 /* ---------- Apparition au scroll ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
@@ -270,7 +293,7 @@ h1, h2, h3, h4 {
 
 .spec-label {
   font-family: var(--body); font-weight: 600; font-size: 12px;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-strong);
 }
 
 .tech-rule { position: relative; height: 1px; background: var(--line); width: 100%; }
@@ -284,8 +307,8 @@ h1, h2, h3, h4 {
   position: fixed; right: 22px; bottom: 22px; z-index: 90;
   width: 54px; height: 54px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  background: var(--surface-2); color: var(--offwhite);
-  border: 1px solid var(--line-strong);
+  background: #14130E; color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: var(--shadow-md);
   transition: transform .3s var(--ease), background .3s var(--ease),
               color .3s var(--ease), border-color .3s var(--ease);
