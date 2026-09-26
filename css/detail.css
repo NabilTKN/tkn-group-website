@@ -133,3 +133,45 @@
 .sp-other__arr { position: absolute; top: 28px; right: 26px; color: var(--gray-dim); transition: all .35s var(--ease); }
 .sp-other__card:hover .sp-other__arr { color: var(--accent-strong); transform: translate(2px, -2px); }
 @media (max-width: 820px) { .sp-other { grid-template-columns: 1fr; } .sp-other__card { min-height: 0; } }
+
+/* ---------- Texte + image (sections alternées) ---------- */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.split--rev .split__media { order: -1; }
+.split__txt .section-head { margin-bottom: clamp(20px, 2.4vw, 28px); }
+.split__txt p { font-size: 17px; line-height: 1.75; color: var(--offwhite); max-width: 65ch; text-wrap: pretty; }
+.split__txt p + p { margin-top: 18px; }
+.split__media { aspect-ratio: 4 / 3; border-radius: 10px; }
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .split--rev .split__media { order: 0; }
+}
+
+/* ---------- Cartes matériel : ligne technique sous la phrase ---------- */
+.eq-grid { margin-top: clamp(30px, 3.5vw, 46px); }
+.aud-card__meta { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+/* ---------- Libellés de secteurs ---------- */
+.sector-row { display: flex; flex-wrap: wrap; gap: 8px; margin-block: clamp(24px, 3vw, 34px); }
+
+/* ---------- Frise d'étapes : horizontale sur desktop, verticale sur mobile ---------- */
+@media (max-width: 960px) { .sp-steps--timeline { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 860px) { .sp-steps--timeline { grid-template-columns: 1fr; gap: 26px; } }
+.sp-step__link { margin-top: 4px; align-self: flex-start; font-size: 13px; }
+
+/* ---------- Grilles de cartes ---------- */
+.aud-grid--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) { .aud-grid--3 { grid-template-columns: 1fr; } }
+/* Corps de métier : 7 cartes, 4 + 3 centrées */
+.trade-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+.trade-grid > .aud-card { flex: 0 1 calc((100% - 54px) / 4); }
+@media (max-width: 960px) { .trade-grid > .aud-card { flex-basis: calc((100% - 18px) / 2); } }
+@media (max-width: 560px) { .trade-grid > .aud-card { flex-basis: 100%; } }
+
+/* ---------- Bandes sobres (texte seul ou icône + texte) ---------- */
+.safety__inner--icon { grid-template-columns: auto 1fr; align-items: start; }
+.band__icon { margin-top: 4px; }
+
+/* ---------- « Pour qui » et liens dans le texte ---------- */
+.who { padding-block: clamp(56px, 7vw, 96px); }
+.txt-link { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
+.txt-link:hover { color: var(--white); }
