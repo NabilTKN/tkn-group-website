@@ -15,6 +15,14 @@
   var REDUCED_MOTION = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Libellés générés en JS, selon la langue de la page (<html lang>) */
+  var LABELS = {
+    fr: { file: "Ajouter un fichier (PDF, JPG, PNG)", sending: "Envoi en cours…" },
+    nl: { file: "Bestand toevoegen (PDF, JPG, PNG)", sending: "Bezig met verzenden…" },
+    en: { file: "Add a file (PDF, JPG, PNG)", sending: "Sending…" }
+  };
+  var L = LABELS[(document.documentElement.lang || "fr").slice(0, 2)] || LABELS.fr;
+
   function ready(fn) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
     else fn();
@@ -80,7 +88,7 @@
       sel.addEventListener("change", sync);
       sync();
     });
-    var FILE_PLACEHOLDER = "Ajouter un fichier (PDF, JPG, PNG)";
+    var FILE_PLACEHOLDER = L.file;
     document.querySelectorAll(".filefield__input").forEach(function (inp) {
       inp.addEventListener("change", function () {
         var txt = inp.closest(".filefield").querySelector(".filefield__txt");
@@ -102,7 +110,7 @@
         if (!submitBtn) return;
         submitBtn.disabled = on;
         submitBtn.classList.toggle("is-loading", on);
-        if (btnLabel) btnLabel.textContent = on ? "Envoi en cours…" : defaultLabel;
+        if (btnLabel) btnLabel.textContent = on ? L.sending : defaultLabel;
         var spinner = submitBtn.querySelector(".btn__spinner");
         if (on && !spinner) {
           spinner = document.createElement("span");

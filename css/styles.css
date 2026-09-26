@@ -59,7 +59,7 @@
 /* ---------- Zones sombres : header, hero, footer, bandes CTA ----------
    Le MÊME noir profond partout (#14130E). Les tokens sont re-scopés pour
    que tous les composants fonctionnent tels quels sur fond sombre. */
-.hdr, .hero, .svc-hero, .footer, .sp-cta {
+.hdr, .hero, .svc-hero, .footer, .sp-cta, .band-dark {
   --black:        #14130E;
   --anthracite:   #1B1A14;
   --surface:      #201F18;
@@ -175,6 +175,7 @@ h1, h2, h3, h4 {
 .section { padding-block: var(--section-y); position: relative; }
 .bg-anthracite { background: var(--anthracite); }
 .bg-black { background: var(--black); }
+.band-dark { background: var(--black); }
 
 .section-head { display: flex; flex-direction: column; gap: 20px; max-width: 780px; }
 
