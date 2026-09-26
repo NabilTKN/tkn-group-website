@@ -16,7 +16,7 @@
   <meta property="og:title" content="TKN Technics | Nettoyage industriel et maintenance de bâtiments en Belgique" />
   <meta property="og:description" content="Nettoyage industriel, maintenance générale, interventions spécialisées et espaces verts pour les sites de production, les gestionnaires d'immeubles et les assureurs, partout en Belgique. Entreprise certifiée VCA*." />
   <meta property="og:url" content="https://tkn-technics.be/" />
-  <meta property="og:image" content="https://tkn-technics.be/assets/hero-industrial.jpg" />
+  <meta property="og:image" content="https://tkn-technics.be/assets/hero-accueil.webp" />
   <meta property="og:locale" content="fr_BE" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/hero-industrial.jpg" />
+  <link rel="preload" as="image" href="assets/hero-accueil.webp" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -148,14 +148,9 @@
   <main>
     <!-- ============================ 1. HERO ============================ -->
     <section class="hero" id="top">
-      <div class="hero__bg">
-        <div class="ph hero__ph ph--photo">
-          <img class="ph__img" src="assets/hero-industrial.jpg" alt="Installations industrielles en acier : silos, passerelles et tuyauteries d'un site de production" style="object-position:center" />
-          <span class="ph__scrim"></span>
-        </div>
-        <div class="hero__scrim"></div>
-        <div class="hero__warm"></div>
-        <div class="hero__grid"></div>
+      <div class="hero-media">
+        <img class="hero-media__img" src="assets/hero-accueil.webp" alt="Surface métallique industrielle" onerror="this.remove()" />
+        <span class="hero-media__veil"></span>
       </div>
 
       <div class="hero__content wrap">
@@ -183,36 +178,48 @@
         </div>
 
         <div class="svc-panels">
-          <a class="svc-panel svc-panel--media reveal" href="service-nettoyage-industriel.html">
-            <span class="ph ph--photo svc-panel__media"><img class="ph__img" src="assets/nettoyage-industriel.jpg" alt="Nettoyage d'installations sur un site de production" loading="lazy" /></span>
+          <a class="svc-panel reveal" href="service-nettoyage-industriel.html">
             <span class="svc-panel__content">
+              <span class="svc-panel__top">
+                <span class="svc-panel__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18" /><path d="M4 21V10l5 3.5V10l5 3.5V6l6 4v11" /><path d="M8 21v-4" /><path d="M13 21v-4" /></svg></span>
+                <span class="svc-panel__num">01</span>
+              </span>
               <h3 class="svc-panel__title h-card">Nettoyage industriel</h3>
               <p class="svc-panel__desc">Installations, bâtiments et abords de sites de production, en contrat permanent ou pendant les arrêts techniques.</p>
               <span class="svc-panel__link"><span>Voir le service</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span>
             </span>
           </a>
 
-          <a class="svc-panel svc-panel--media reveal d1" href="service-maintenance-generale.html">
-            <span class="ph ph--photo svc-panel__media"><img class="ph__img" src="assets/maintenance-generale.jpg" alt="Travaux de maintenance dans un bâtiment" loading="lazy" /></span>
+          <a class="svc-panel reveal d1" href="service-maintenance-generale.html">
             <span class="svc-panel__content">
+              <span class="svc-panel__top">
+                <span class="svc-panel__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 00-4.6 4.3L4 16.7 7.3 20l5.9-5.9a3.5 3.5 0 004.3-4.6l-2.2 2.2-2-2 2.2-2.2z" /></svg></span>
+                <span class="svc-panel__num">02</span>
+              </span>
               <h3 class="svc-panel__title h-card">Maintenance générale</h3>
               <p class="svc-panel__desc">Remise en état après sinistre, rénovation et dépannage, tous corps de métier.</p>
               <span class="svc-panel__link"><span>Voir le service</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span>
             </span>
           </a>
 
-          <a class="svc-panel svc-panel--media reveal d2" href="service-interventions-specialisees.html">
-            <span class="ph ph--todo svc-panel__media"><span class="ph__todo">[À COMPLÉTER : photo]</span></span>
+          <a class="svc-panel reveal d2" href="service-interventions-specialisees.html">
             <span class="svc-panel__content">
+              <span class="svc-panel__top">
+                <span class="svc-panel__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3-2 4-2 7a2 2 0 004 0c0-1.2-.5-1.8-.5-1.8 1.8 1 3 3 3 5.3a4.5 4.5 0 01-9 0C7.5 8 12 7 12 3z" /></svg></span>
+                <span class="svc-panel__num">03</span>
+              </span>
               <h3 class="svc-panel__title h-card">Interventions spécialisées</h3>
               <p class="svc-panel__desc">Nettoyage après sinistre, vidage, débarras et évacuation.</p>
               <span class="svc-panel__link"><span>Voir le service</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span>
             </span>
           </a>
 
-          <a class="svc-panel svc-panel--media reveal d3" href="service-espaces-verts.html">
-            <span class="ph ph--todo svc-panel__media"><span class="ph__todo">[À COMPLÉTER : photo]</span></span>
+          <a class="svc-panel reveal d3" href="service-espaces-verts.html">
             <span class="svc-panel__content">
+              <span class="svc-panel__top">
+                <span class="svc-panel__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C4 12 9 5 19 5c0 9-6 13-12 13a5 5 0 01-2-.5z" /><path d="M5 19c2-5 5-8 9-9.5" /></svg></span>
+                <span class="svc-panel__num">04</span>
+              </span>
               <h3 class="svc-panel__title h-card">Espaces verts</h3>
               <p class="svc-panel__desc">Tonte, taille, élagage et débroussaillage.</p>
               <span class="svc-panel__link"><span>Voir le service</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span>
@@ -228,7 +235,7 @@
         <div class="section-head reveal" style="margin-bottom:clamp(34px, 4vw, 54px)">
           <h2 class="h-section">Formules d'intervention</h2>
         </div>
-        <div class="sp-steps sp-steps--3">
+        <div class="sp-steps sp-steps--3 sp-steps--big">
           <div class="sp-step reveal">
             <span class="sp-step__num">01</span>
             <h3 class="sp-step__t">Équipes sur site</h3>
@@ -256,26 +263,23 @@
         </div>
         <div class="proj-grid">
           <article class="proj-card reveal">
-            <div class="ph ph--todo proj-card__media"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
             <div class="proj-card__body">
-              <span class="spec-label">Zone portuaire de Gand</span>
-              <h3 class="proj-card__name">Sidérurgie</h3>
+              <span class="spec-label">Sidérurgie</span>
+              <h3 class="proj-card__name">Site sidérurgique</h3>
               <p class="proj-card__desc">Équipe permanente sur site, entretien des installations et interventions pendant les arrêts.</p>
             </div>
           </article>
           <article class="proj-card reveal d1">
-            <div class="ph ph--todo proj-card__media"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
             <div class="proj-card__body">
-              <span class="spec-label">Belgique</span>
-              <h3 class="proj-card__name">Nucléaire</h3>
+              <span class="spec-label">Nucléaire</span>
+              <h3 class="proj-card__name">Site nucléaire</h3>
               <p class="proj-card__desc">Équipe dédiée affectée au nettoyage de zones à accès contrôlé.</p>
             </div>
           </article>
           <article class="proj-card reveal d2">
-            <div class="ph ph--todo proj-card__media"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
             <div class="proj-card__body">
-              <span class="spec-label">Flandre</span>
-              <h3 class="proj-card__name">Béton</h3>
+              <span class="spec-label">Béton</span>
+              <h3 class="proj-card__name">Producteur de béton</h3>
               <p class="proj-card__desc">Nettoyage quotidien des machines de production sur plusieurs centrales.</p>
             </div>
           </article>
@@ -290,27 +294,51 @@
           <h2 class="safety__title">La sécurité fait partie du travail.</h2>
           <p class="lead safety__txt">Entreprise certifiée VCA*. Nos équipes disposent des habilitations requises sur site : travail en hauteur, espaces confinés, nacelles, risques électriques.</p>
         </div>
-        <div class="ph ph--todo safety__logo reveal d1"><span class="ph__todo">[À COMPLÉTER : logo VCA]</span></div>
+        <div class="vca-mark reveal d1"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9 11.5l2 2 4-4" /></svg><span>Certifiée VCA*</span></div>
       </div>
     </section>
 
-    <!-- ============================ 6. CHIFFRES CLÉS ============================ -->
-    <section class="stats bg-black" id="chiffres" aria-label="Chiffres clés">
-      <div class="wrap">
-        <div class="stats__grid stats__grid--3">
-          <div class="stat reveal">
-            <div class="stat__value"><span class="num">2020</span></div>
-            <span class="stat__label">Création</span>
+    <!-- ============================ 6. ENTREPRISE (chiffres + carte) ============================ -->
+    <section class="section bg-black" id="entreprise" aria-label="Chiffres clés">
+      <div class="wrap ent__grid">
+        <div class="ent__left">
+          <div class="section-head reveal">
+            <span class="eyebrow">Entreprise</span>
+            <h2 class="h-section">Basés à Bruxelles, actifs dans toute la Belgique et dans les pays voisins.</h2>
           </div>
-          <div class="stat reveal d1">
-            <div class="stat__value"><span class="stat__prefix">±</span><span class="num" data-count="60">60</span></div>
-            <span class="stat__label">Collaborateurs</span>
-          </div>
-          <div class="stat reveal d2">
-            <div class="stat__value"><span class="num" data-count="5">5</span></div>
-            <span class="stat__label">Pays d'intervention</span>
+          <div class="stats__grid stats__grid--3 ent__stats">
+            <div class="stat reveal">
+              <div class="stat__value"><span class="num">2020</span></div>
+              <span class="stat__label">Création</span>
+            </div>
+            <div class="stat reveal d1">
+              <div class="stat__value"><span class="stat__prefix">±</span><span class="num" data-count="60">60</span></div>
+              <span class="stat__label">Collaborateurs</span>
+            </div>
+            <div class="stat reveal d2">
+              <div class="stat__value"><span class="num" data-count="5">5</span></div>
+              <span class="stat__label">Pays d'intervention</span>
+            </div>
           </div>
         </div>
+        <div class="be-map is-in reveal d1">
+  <svg viewBox="0 0 100 92" class="be-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Carte : siège à Bruxelles, interventions en Belgique et dans les pays voisins">
+    <defs><filter id="be-soft" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="1.6" /></filter></defs>
+    <path d="M23 31.99 L24.04 31.38 L25.35 30.97 L27.96 29.12 L29.79 27.89 L31.36 26.86 L33.7 26.25 L34.36 28.3 L35.66 28.71 L36.58 27.68 L39.32 29.53 L40.75 29.53 L41.67 26.45 L44.93 26.45 L46.37 24.4 L48.2 23.99 L49.24 25.02 L52.11 23.58 L55.51 23.78 L56.81 27.48 L58.25 28.5 L62.43 29.33 L65.69 30.56 L66.86 32.81 L64.12 34.66 L64.78 35.89 L67.78 38.97 L68.43 40.82 L70.52 41.64 L73 43.08 L72.61 44.92 L70.78 47.59 L69.61 50.67 L67.78 51.7 L66.6 55.6 L65.3 58.67 L66.86 61.34 L65.95 63.6 L60.99 64.42 L59.03 63.4 L55.77 60.73 L53.16 58.67 L51.07 54.57 L52.9 51.49 L50.15 53.34 L46.24 54.98 L43.89 53.54 L42.71 48 L38.54 47.39 L37.62 45.13 L34.1 44.1 L31.75 41.64 L32.53 39.79 L30.44 38.36 L27.31 40 L24.31 37.74 L23.52 34.87 L23 31.99 Z" class="be-bleed" filter="url(#be-soft)" />
+    <path d="M23 31.99 L24.04 31.38 L25.35 30.97 L27.96 29.12 L29.79 27.89 L31.36 26.86 L33.7 26.25 L34.36 28.3 L35.66 28.71 L36.58 27.68 L39.32 29.53 L40.75 29.53 L41.67 26.45 L44.93 26.45 L46.37 24.4 L48.2 23.99 L49.24 25.02 L52.11 23.58 L55.51 23.78 L56.81 27.48 L58.25 28.5 L62.43 29.33 L65.69 30.56 L66.86 32.81 L64.12 34.66 L64.78 35.89 L67.78 38.97 L68.43 40.82 L70.52 41.64 L73 43.08 L72.61 44.92 L70.78 47.59 L69.61 50.67 L67.78 51.7 L66.6 55.6 L65.3 58.67 L66.86 61.34 L65.95 63.6 L60.99 64.42 L59.03 63.4 L55.77 60.73 L53.16 58.67 L51.07 54.57 L52.9 51.49 L50.15 53.34 L46.24 54.98 L43.89 53.54 L42.71 48 L38.54 47.39 L37.62 45.13 L34.1 44.1 L31.75 41.64 L32.53 39.79 L30.44 38.36 L27.31 40 L24.31 37.74 L23.52 34.87 L23 31.99 Z" class="be-fill" />
+    <path d="M23 31.99 L24.04 31.38 L25.35 30.97 L27.96 29.12 L29.79 27.89 L31.36 26.86 L33.7 26.25 L34.36 28.3 L35.66 28.71 L36.58 27.68 L39.32 29.53 L40.75 29.53 L41.67 26.45 L44.93 26.45 L46.37 24.4 L48.2 23.99 L49.24 25.02 L52.11 23.58 L55.51 23.78 L56.81 27.48 L58.25 28.5 L62.43 29.33 L65.69 30.56 L66.86 32.81 L64.12 34.66 L64.78 35.89 L67.78 38.97 L68.43 40.82 L70.52 41.64 L73 43.08 L72.61 44.92 L70.78 47.59 L69.61 50.67 L67.78 51.7 L66.6 55.6 L65.3 58.67 L66.86 61.34 L65.95 63.6 L60.99 64.42 L59.03 63.4 L55.77 60.73 L53.16 58.67 L51.07 54.57 L52.9 51.49 L50.15 53.34 L46.24 54.98 L43.89 53.54 L42.71 48 L38.54 47.39 L37.62 45.13 L34.1 44.1 L31.75 41.64 L32.53 39.79 L30.44 38.36 L27.31 40 L24.31 37.74 L23.52 34.87 L23 31.99 Z" class="be-outline" pathLength="1" fill="none" />
+    <g class="be-neighbors">
+      <g class="be-nb"><line x1="49.5" y1="10.6" x2="49.24" y2="24.6" class="be-leader" /><text x="49.5" y="7.4" text-anchor="middle" class="be-country">Pays-Bas</text></g>
+      <g class="be-nb"><line x1="81" y1="40.5" x2="72.35" y2="43.69" class="be-leader" /><text x="91" y="40.5" text-anchor="middle" class="be-country">Allemagne</text></g>
+      <g class="be-nb"><line x1="75" y1="79.5" x2="65.95" y2="62.57" class="be-leader" /><text x="84" y="84" text-anchor="middle" class="be-country">Luxembourg</text></g>
+      <g class="be-nb"><line x1="25" y1="80" x2="40.75" y2="48.21" class="be-leader" /><text x="16.5" y="84" text-anchor="middle" class="be-country">France</text></g>
+    </g>
+    <g class="be-mk be-hub">
+      <circle cx="46.63" cy="36.92" r="1.6" class="be-hub-dot" />
+      <text x="46.63" y="41.32" text-anchor="middle" class="be-hub-lbl">Bruxelles, siège</text>
+    </g>
+  </svg>
+</div>
       </div>
     </section>
 

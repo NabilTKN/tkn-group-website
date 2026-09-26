@@ -16,7 +16,7 @@
   <meta property="og:title" content="Grounds maintenance | TKN Technics" />
   <meta property="og:description" content="Mowing, pruning, tree surgery, sectional felling, stump removal and brush clearing for businesses, residential buildings, municipalities and private individuals in Belgium." />
   <meta property="og:url" content="https://tkn-technics.be/service-espaces-verts-en.html" />
-  <meta property="og:image" content="https://tkn-technics.be/assets/hero-industrial.jpg" />
+  <meta property="og:image" content="https://tkn-technics.be/assets/hero-espaces-verts.webp" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/hero-industrial.jpg" />
+  <link rel="preload" as="image" href="assets/hero-espaces-verts.webp" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -126,9 +126,11 @@
   <main class="page-detail" id="main">
 
     <!-- ============================ HERO ============================ -->
-    <section class="svc-hero svc-hero--plain">
-      <div class="svc-hero__bg"></div>
-      <div class="svc-hero__scrim"></div>
+    <section class="svc-hero">
+      <div class="hero-media">
+        <img class="hero-media__img" src="assets/hero-espaces-verts.webp" alt="Vegetation" onerror="this.remove()" />
+        <span class="hero-media__veil"></span>
+      </div>
       <div class="wrap svc-hero__content">
         <nav class="crumbs" aria-label="Breadcrumb">
           <a class="crumbs__link" href="index-en.html">Home</a>
@@ -146,55 +148,36 @@
       </div>
     </section>
 
-    <section class="section bg-black" id="tonte">
-      <div class="wrap split">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Mowing and upkeep</h2>
+    <section class="section bg-black editorial">
+      <div class="wrap">
+        <div class="ed-row reveal" id="tonte">
+          <h2 class="ed-row__title">Mowing and upkeep</h2>
+          <div class="ed-row__body">
+            <p>We maintain lawns and grassed areas on business sites, residential properties and public spaces. Green waste is removed at the end of each visit.</p>
           </div>
-          <p>We maintain lawns and grassed areas on business sites, residential properties and public spaces. Green waste is removed at the end of each visit.</p>
         </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
+        <div class="ed-row reveal" id="taille">
+          <h2 class="ed-row__title">Pruning and tree surgery</h2>
+          <div class="ed-row__body">
+            <p>We trim hedges and shrubs and prune trees that obstruct access routes, buildings, roofs or utility lines. Branches are chipped on site or taken away.</p>
+          </div>
+        </div>
+        <div class="ed-row reveal" id="abattage">
+          <h2 class="ed-row__title">Felling and stump removal</h2>
+          <div class="ed-row__body">
+            <p>When a tree has to be felled close to a building or a road, we dismantle it in sections to control the fall of each part. The stump can then be removed to clear the ground completely.</p>
+          </div>
+        </div>
+        <div class="ed-row reveal" id="debroussaillage">
+          <h2 class="ed-row__title">Brush clearing</h2>
+          <div class="ed-row__body">
+            <p>Neglected land, embankments, the surroundings of industrial sites or plots before building work: we clear the brush and make the areas accessible and maintainable again.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section bg-anthracite" id="taille">
-      <div class="wrap split split--rev">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Pruning and tree surgery</h2>
-          </div>
-          <p>We trim hedges and shrubs and prune trees that obstruct access routes, buildings, roofs or utility lines. Branches are chipped on site or taken away.</p>
-        </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
-      </div>
-    </section>
-
-    <section class="section bg-black" id="abattage">
-      <div class="wrap split">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Felling and stump removal</h2>
-          </div>
-          <p>When a tree has to be felled close to a building or a road, we dismantle it in sections to control the fall of each part. The stump can then be removed to clear the ground completely.</p>
-        </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
-      </div>
-    </section>
-
-    <section class="section bg-anthracite" id="debroussaillage">
-      <div class="wrap split split--rev">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Brush clearing</h2>
-          </div>
-          <p>Neglected land, embankments, the surroundings of industrial sites or plots before building work: we clear the brush and make the areas accessible and maintainable again.</p>
-        </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
-      </div>
-    </section>
-
-    <section class="section bg-black" id="prestations">
+    <section class="section bg-anthracite" id="prestations">
       <div class="wrap">
         <div class="section-head reveal">
           <h2 class="h-section">What we do</h2>
@@ -224,7 +207,7 @@
       </div>
     </section>
 
-    <section class="safety bg-anthracite" id="frequence">
+    <section class="safety bg-black" id="frequence">
       <div class="wrap safety__inner">
         <div class="reveal">
           <h2 class="safety__title">One-off or regular</h2>
@@ -233,7 +216,7 @@
       </div>
     </section>
 
-    <section class="section who bg-black" id="pour-qui">
+    <section class="section who bg-anthracite" id="pour-qui">
       <div class="wrap">
         <div class="split__txt reveal">
           <div class="section-head">

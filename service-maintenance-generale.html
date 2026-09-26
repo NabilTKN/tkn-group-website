@@ -16,7 +16,7 @@
   <meta property="og:title" content="Maintenance générale | TKN Technics" />
   <meta property="og:description" content="Remise en état après sinistre, rénovation et dépannage en Belgique : mise en sécurité, assèchement, assainissement et travaux tous corps de métier, avec un seul interlocuteur." />
   <meta property="og:url" content="https://tkn-technics.be/service-maintenance-generale.html" />
-  <meta property="og:image" content="https://tkn-technics.be/assets/maintenance-generale.jpg" />
+  <meta property="og:image" content="https://tkn-technics.be/assets/hero-maintenance.webp" />
   <meta property="og:locale" content="fr_BE" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/maintenance-generale.jpg" />
+  <link rel="preload" as="image" href="assets/hero-maintenance.webp" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -127,12 +127,9 @@
 
     <!-- ============================ HERO ============================ -->
     <section class="svc-hero">
-      <div class="svc-hero__bg">
-        <div class="ph svc-hero__ph ph--photo">
-          <img class="ph__img" src="assets/maintenance-generale.jpg" alt="Intervention de plomberie sur des canalisations" style="object-position:center" />
-          <span class="ph__scrim"></span>
-        </div>
-        <div class="svc-hero__scrim"></div>
+      <div class="hero-media">
+        <img class="hero-media__img" src="assets/hero-maintenance.webp" alt="Mur en cours de rénovation" onerror="this.remove()" />
+        <span class="hero-media__veil"></span>
       </div>
       <div class="wrap svc-hero__content">
         <nav class="crumbs" aria-label="Fil d'Ariane">
@@ -167,7 +164,7 @@
         <div class="section-head reveal" style="margin-bottom:clamp(32px, 4vw, 52px)">
           <h2 class="h-section">Les étapes d'une remise en état</h2>
         </div>
-        <div class="sp-steps sp-steps--timeline">
+        <div class="sp-steps sp-steps--timeline sp-steps--big">
           <div class="sp-step reveal">
             <span class="sp-step__num">01</span>
             <h3 class="sp-step__t">Mise en sécurité</h3>
@@ -203,27 +200,20 @@
       </div>
     </section>
 
-    <section class="section bg-anthracite" id="renovation">
-      <div class="wrap split split--rev">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Rénovation et aménagement</h2>
+    <section class="section bg-black editorial">
+      <div class="wrap">
+        <div class="ed-row reveal" id="renovation">
+          <h2 class="ed-row__title">Rénovation et aménagement</h2>
+          <div class="ed-row__body">
+            <p>Nous rénovons des locaux professionnels, des parties communes et des logements : cloisons et plafonnage, peinture, revêtements de sol. Nous travaillons en locaux vides comme en lieux occupés. Dans un bureau en activité ou un immeuble habité, les zones de travail sont délimitées et les interventions planifiées avec les occupants.</p>
           </div>
-          <p>Nous rénovons des locaux professionnels, des parties communes et des logements : cloisons et plafonnage, peinture, revêtements de sol. Nous travaillons en locaux vides comme en lieux occupés. Dans un bureau en activité ou un immeuble habité, les zones de travail sont délimitées et les interventions planifiées avec les occupants.</p>
         </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
-      </div>
-    </section>
-
-    <section class="section bg-black" id="depannage">
-      <div class="wrap split">
-        <div class="split__txt reveal">
-          <div class="section-head">
-            <h2 class="h-section">Dépannages</h2>
+        <div class="ed-row reveal" id="depannage">
+          <h2 class="ed-row__title">Dépannages</h2>
+          <div class="ed-row__body">
+            <p>Fuite, panne de chauffage, défaut électrique, infiltration par la toiture : nous intervenons pour localiser la cause et réparer, dans les bâtiments professionnels comme chez les particuliers.</p>
           </div>
-          <p>Fuite, panne de chauffage, défaut électrique, infiltration par la toiture : nous intervenons pour localiser la cause et réparer, dans les bâtiments professionnels comme chez les particuliers.</p>
         </div>
-        <div class="ph ph--todo split__media reveal d1"><span class="ph__todo">[À COMPLÉTER : photo]</span></div>
       </div>
     </section>
 
