@@ -2,7 +2,8 @@
    TKN — Composants : header, drawer, hero, cartes services, modale
    ============================================================ */
 
-.logo-btn { transition: opacity .3s, filter .3s; }
+.logo-btn { flex: none; transition: opacity .3s, filter .3s; }
+.logo-btn img { max-width: none; width: auto; height: 46px; }
 .logo-btn:hover { filter: drop-shadow(0 0 14px rgba(240, 168, 0, 0.25)); }
 
 /* ---------- Header — même noir que le footer (var(--black)) ---------- */

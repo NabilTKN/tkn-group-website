@@ -85,26 +85,8 @@
 .recruit--simple .recruit__title { margin-bottom: 0; }
 .recruit__right { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 
-/* ---------- Entreprise : chiffres clés + carte de la Belgique ---------- */
+/* ---------- Entreprise : chiffres clés + fiche ---------- */
 .ent__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
 .ent__stats { margin-top: clamp(32px, 4vw, 48px); }
-@media (max-width: 920px) { .ent__grid { grid-template-columns: 1fr; } .ent__grid .be-map { max-width: 560px; } }
+@media (max-width: 920px) { .ent__grid { grid-template-columns: 1fr; } }
 
-.be-map {
-  position: relative; padding: clamp(24px, 3.4vw, 44px) clamp(20px, 2.8vw, 38px);
-  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-md);
-}
-.be-svg { position: relative; width: 100%; height: auto; display: block; overflow: visible; }
-.be-bleed { fill: rgba(184, 138, 30, 0.10); }
-.be-fill { fill: #F4ECD9; stroke: none; }
-.be-outline { stroke: #B88A1E; stroke-width: 0.38; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.5s var(--ease) .15s; }
-.be-map.in .be-outline { stroke-dashoffset: 0; }
-.be-country { font-size: 3.05px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; fill: #ADA697; }
-.be-leader { stroke: #CBC4B5; stroke-width: 0.3; stroke-linecap: round; stroke-dasharray: 0.2 1.5; }
-.be-hub-dot { fill: var(--ink); stroke: #FFFFFF; stroke-width: 0.45; }
-.be-hub-lbl {
-  font-size: 2.85px; font-weight: 800; fill: var(--ink); letter-spacing: -0.01em;
-  paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.9px; stroke-linejoin: round;
-}
-@media (prefers-reduced-motion: reduce) { .be-outline { stroke-dashoffset: 0 !important; transition: none; } }
-@media (max-width: 600px) { .be-hub-lbl { font-size: 3.2px; } .be-country { font-size: 3.6px; } }
