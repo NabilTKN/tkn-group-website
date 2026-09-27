@@ -1,7 +1,6 @@
 (function() {
   "use strict";
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/info@tkn-technics.be";
-  var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var LABELS = {
     fr: {
       file: "Ajouter un fichier (PDF, JPG, PNG)",
@@ -116,29 +115,31 @@
           spinner.remove();
         }
       }
+      // Un champ data-required forme un groupe à lui seul. Les champs qui partagent
+      // le même data-require-one (téléphone ou e-mail) forment un groupe : un seul suffit.
+      var requiredGroups = [];
+      var namedGroups = {};
+      form.querySelectorAll("[data-required], [data-require-one]").forEach(function(input) {
+        var name = input.getAttribute("data-require-one");
+        if (!name) return requiredGroups.push([ input ]);
+        if (!namedGroups[name]) requiredGroups.push(namedGroups[name] = []);
+        namedGroups[name].push(input);
+      });
+      function setError(group, on) {
+        group.forEach(function(input) {
+          var field = input.closest(".field");
+          if (field) field.classList.toggle("is-err", on);
+        });
+      }
       form.addEventListener("submit", function(e) {
         e.preventDefault();
         if (sending) return;
         var ok = true;
-        form.querySelectorAll("[data-required]").forEach(function(input) {
-          var field = input.closest(".field");
-          var empty = !String(input.value || "").trim();
-          if (field) field.classList.toggle("is-err", empty);
-          if (empty) ok = false;
-        });
-        var groups = {};
-        form.querySelectorAll("[data-require-one]").forEach(function(input) {
-          var g = input.getAttribute("data-require-one");
-          (groups[g] = groups[g] || []).push(input);
-        });
-        Object.keys(groups).forEach(function(g) {
-          var filled = groups[g].some(function(input) {
+        requiredGroups.forEach(function(group) {
+          var filled = group.some(function(input) {
             return !!String(input.value || "").trim();
           });
-          groups[g].forEach(function(input) {
-            var field = input.closest(".field");
-            if (field) field.classList.toggle("is-err", !filled);
-          });
+          setError(group, !filled);
           if (!filled) ok = false;
         });
         if (!ok) return;
@@ -146,7 +147,7 @@
         sending = true;
         setLoading(true);
         var data = new FormData(form);
-        data.append("_subject", form.getAttribute("data-subject") || "Message — site TKN Technics");
+        data.append("_subject", form.getAttribute("data-subject") || "Message, site TKN Technics");
         data.append("_template", "table");
         data.append("_captcha", "false");
         var fileInput = form.querySelector('input[type="file"]');
@@ -180,17 +181,14 @@
           setLoading(false);
         });
       });
-      form.querySelectorAll("[data-required], [data-require-one]").forEach(function(input) {
-        var group = input.getAttribute("data-require-one");
-        var clear = function() {
-          var targets = group ? form.querySelectorAll('[data-require-one="' + group + '"]') : [input];
-          Array.prototype.forEach.call(targets, function(el) {
-            var field = el.closest(".field");
-            if (field) field.classList.remove("is-err");
-          });
-        };
-        input.addEventListener("input", clear);
-        input.addEventListener("change", clear);
+      requiredGroups.forEach(function(group) {
+        group.forEach(function(input) {
+          var clear = function() {
+            setError(group, false);
+          };
+          input.addEventListener("input", clear);
+          input.addEventListener("change", clear);
+        });
       });
       if (success) {
         var reset = success.querySelector("[data-reset]");
@@ -249,70 +247,6 @@
     document.addEventListener("keydown", function(e) {
       if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
     });
-    var revealEls = document.querySelectorAll(".reveal");
-    if (revealEls.length) {
-      if (REDUCED_MOTION || typeof IntersectionObserver === "undefined") {
-        revealEls.forEach(function(el) {
-          el.classList.add("in");
-        });
-      } else {
-        var revealIO = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              revealIO.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: .12,
-          rootMargin: "0px 0px -36px 0px"
-        });
-        revealEls.forEach(function(el) {
-          revealIO.observe(el);
-        });
-      }
-    }
-    function animateCount(el) {
-      var target = parseInt(el.getAttribute("data-count"), 10);
-      if (isNaN(target)) return;
-      if (REDUCED_MOTION) {
-        el.textContent = String(target);
-        return;
-      }
-      var duration = 1400;
-      var start = null;
-      function step(ts) {
-        if (start === null) start = ts;
-        var p = Math.min((ts - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = String(Math.round(eased * target));
-        if (p < 1) requestAnimationFrame(step);
-      }
-      el.textContent = "0";
-      requestAnimationFrame(step);
-    }
-    var countEls = document.querySelectorAll("[data-count]");
-    if (countEls.length) {
-      if (typeof IntersectionObserver === "undefined") {
-        countEls.forEach(function(el) {
-          el.textContent = el.getAttribute("data-count");
-        });
-      } else {
-        var countIO = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              animateCount(entry.target);
-              countIO.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: .5
-        });
-        countEls.forEach(function(el) {
-          countIO.observe(el);
-        });
-      }
-    }
     document.querySelectorAll(".faq__item").forEach(function(item) {
       var q = item.querySelector(".faq__q");
       var a = item.querySelector(".faq__a");

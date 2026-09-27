@@ -72,32 +72,9 @@ a.coord__v:hover { color: var(--yellow); }
 
 @media (max-width: 860px) { .contact__grid { grid-template-columns: 1fr; } }
 
-.team__grid { margin-top: clamp(30px, 3.5vw, 46px); display: grid; grid-template-columns: 1.12fr 0.88fr; gap: clamp(34px, 4.5vw, 64px); align-items: start; }
-.team__p { font-size: 15.5px; line-height: 1.68; color: var(--gray); text-wrap: pretty; }
-.team__p strong { color: var(--offwhite); font-weight: 600; }
-.team__p + .team__p { margin-top: 15px; }
-.team__points { margin-top: clamp(22px, 2.6vw, 30px); display: flex; flex-direction: column; gap: 11px; }
-.team__point { display: flex; gap: 11px; align-items: flex-start; font-size: 14.5px; font-weight: 500; color: var(--offwhite); }
-.team__point svg { color: var(--accent-strong); flex: none; margin-top: 2px; }
-.team__aside { display: flex; flex-direction: column; gap: 20px; }
-.team__hab { padding: clamp(22px, 2.6vw, 30px); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
-.team__hab-label { display: inline-flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 14px; }
-.team__hab-txt { font-size: 13.5px; color: var(--gray); line-height: 1.62; }
-.team__hab-txt + .team__hab-txt { margin-top: 11px; }
-@media (max-width: 860px) {
-  .team__grid { grid-template-columns: 1fr; gap: 30px; }
-}
-
 .recruit { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(36px, 5vw, 72px); padding: clamp(36px, 5vw, 60px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-md); }
 .recruit__title { color: var(--white); margin: 16px 0 14px; }
 .recruit__txt { max-width: 40ch; }
-.recruit__cards { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
-.profile-card { display: flex; gap: 16px; align-items: stretch; padding: 16px 18px; background: var(--anthracite); border: 1px solid var(--line); border-radius: 4px; transition: border-color .3s var(--ease), transform .3s var(--ease); }
-.profile-card:hover { border-color: var(--yellow); transform: translateX(3px); }
-.profile-card__bar { width: 2px; flex: none; background: var(--yellow); border-radius: 2px; }
-.profile-card__body { display: flex; flex-direction: column; gap: 4px; }
-.profile-card__t { font-family: var(--title); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; color: var(--white); }
-.profile-card__d { font-size: 13px; color: var(--gray); line-height: 1.5; }
 
 @media (max-width: 860px) { .recruit { grid-template-columns: 1fr; } }
 
