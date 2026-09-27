@@ -177,3 +177,38 @@ h1, h2, h3, h4, .display, .h-section { font-weight: 700; letter-spacing: -0.012e
 .footer__vca { text-transform: none !important; letter-spacing: 0 !important; font-size: 14px; }
 .recruit { border: 0; background: transparent; padding: 0; }
 .recruit__form { background: var(--surface); border: 1px solid var(--line-strong); padding: clamp(22px, 3vw, 34px); }
+
+/* Refonte des contenus FR : cartes de services, missions, formulaire, appel mobile */
+.hero__title { max-width: 22ch; }
+.metier > a { grid-template-columns: minmax(200px, 0.75fr) minmax(0, 1.6fr); }
+.metier__go { display: inline-block; margin-top: 14px; padding-top: 0; white-space: normal; }
+@media (max-width: 820px) { .metier > a { grid-template-columns: 1fr; } }
+
+.refs { margin-top: clamp(28px, 4vw, 44px); }
+.refs .proj-card__body { flex: 1; }
+.refs .proj-card__desc { font-size: 15.5px; color: var(--offwhite); }
+.proj-card__org { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--gray); }
+.proj-card__org strong { display: block; margin-bottom: 2px; font-weight: 600; color: var(--white); }
+
+.fiche-block { margin-top: clamp(40px, 5vw, 64px); }
+.fiche-block h3 { font-size: 19px; margin-bottom: 14px; }
+
+.section--slim { padding-block: clamp(36px, 4.5vw, 60px); }
+.section--slim .recruit-band h2 { font-size: clamp(20px, 2vw, 24px); }
+
+.part-head { margin-bottom: clamp(8px, 1.5vw, 16px); }
+.catalogue--jump { margin-top: 0; }
+.catalogue--jump .jump { display: inline-block; margin-top: 12px; font-size: 15px; font-weight: 600; color: var(--accent-strong); }
+.catalogue--jump .jump:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.faq { margin-top: clamp(24px, 3vw, 36px); }
+.faq__a-inner a { color: var(--accent-strong); font-weight: 600; }
+
+.form-note { margin: -14px 0 20px; font-size: 14px; color: var(--gray); }
+
+.hdr__call { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--yellow); }
+@media (max-width: 1080px) { .hdr__call { display: inline-flex; } .hdr__right { gap: 6px; } }
+.part-head + .ed-row { padding-top: clamp(20px, 2.5vw, 32px); }
+.part-head ~ .ed-row .ed-row__title { font-size: clamp(20px, 2vw, 26px); }
+.fiche dd a { color: var(--accent-strong); font-weight: 600; }
+.fiche dd a:hover { text-decoration: underline; text-underline-offset: 4px; }

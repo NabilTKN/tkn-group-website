@@ -126,6 +126,21 @@
           if (field) field.classList.toggle("is-err", empty);
           if (empty) ok = false;
         });
+        var groups = {};
+        form.querySelectorAll("[data-require-one]").forEach(function(input) {
+          var g = input.getAttribute("data-require-one");
+          (groups[g] = groups[g] || []).push(input);
+        });
+        Object.keys(groups).forEach(function(g) {
+          var filled = groups[g].some(function(input) {
+            return !!String(input.value || "").trim();
+          });
+          groups[g].forEach(function(input) {
+            var field = input.closest(".field");
+            if (field) field.classList.toggle("is-err", !filled);
+          });
+          if (!filled) ok = false;
+        });
         if (!ok) return;
         if (errorBox) errorBox.hidden = true;
         sending = true;
@@ -165,10 +180,14 @@
           setLoading(false);
         });
       });
-      form.querySelectorAll("[data-required]").forEach(function(input) {
+      form.querySelectorAll("[data-required], [data-require-one]").forEach(function(input) {
+        var group = input.getAttribute("data-require-one");
         var clear = function() {
-          var field = input.closest(".field");
-          if (field) field.classList.remove("is-err");
+          var targets = group ? form.querySelectorAll('[data-require-one="' + group + '"]') : [input];
+          Array.prototype.forEach.call(targets, function(el) {
+            var field = el.closest(".field");
+            if (field) field.classList.remove("is-err");
+          });
         };
         input.addEventListener("input", clear);
         input.addEventListener("change", clear);
