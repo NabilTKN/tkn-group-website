@@ -32,24 +32,37 @@
     }
     var burger = document.getElementById("burger");
     var drawer = document.getElementById("drawer");
-    var closeDrawer = function() {
-      if (!drawer) return;
+    var closeDrawer = function(restoreFocus) {
+      if (!drawer || !drawer.classList.contains("is-open")) return;
       drawer.classList.remove("is-open");
       if (burger) {
         burger.classList.remove("is-open");
         burger.setAttribute("aria-expanded", "false");
+        if (restoreFocus) burger.focus();
       }
       document.body.classList.remove("no-scroll");
     };
     if (burger && drawer) {
+      burger.setAttribute("aria-controls", "drawer");
       burger.addEventListener("click", function() {
         var open = drawer.classList.toggle("is-open");
         burger.classList.toggle("is-open", open);
         burger.setAttribute("aria-expanded", open ? "true" : "false");
         document.body.classList.toggle("no-scroll", open);
+        if (open) {
+          var first = drawer.querySelector("a, button");
+          if (first) setTimeout(function() {
+            first.focus();
+          }, 60);
+        }
+      });
+      document.addEventListener("keydown", function(e) {
+        if ((e.key === "Escape" || e.key === "Esc") && drawer.classList.contains("is-open")) closeDrawer(true);
       });
       drawer.querySelectorAll("[data-drawer-close]").forEach(function(el) {
-        el.addEventListener("click", closeDrawer);
+        el.addEventListener("click", function() {
+          closeDrawer(false);
+        });
       });
     }
     var tabs = document.querySelectorAll(".tabs .tab");
@@ -210,20 +223,25 @@
       }
     });
     var openModalEl = null;
-    function openModal(id) {
+    var modalTrigger = null;
+    var FOCUSABLE = 'a[href], button:not([disabled]), input:not([type="hidden"]):not([tabindex="-1"]), select, textarea, [tabindex]:not([tabindex="-1"])';
+    function openModal(id, trigger) {
       var m = document.getElementById(id);
       if (!m) return;
       if (openModalEl && openModalEl !== m) hideModal(openModalEl);
+      closeDrawer(false);
+      modalTrigger = trigger || document.activeElement;
       m.classList.add("is-open");
       m.setAttribute("aria-hidden", "false");
       document.body.classList.add("no-scroll");
       openModalEl = m;
       var c = m.querySelector(".modal__close");
-      if (c) {
+      // la fenêtre devient visible au cours de sa transition : on attend avant de déplacer le focus
+      if (c) setTimeout(function() {
         try {
           c.focus();
         } catch (e) {}
-      }
+      }, 60);
     }
     function hideModal(m) {
       m = m || openModalEl;
@@ -232,11 +250,33 @@
       m.setAttribute("aria-hidden", "true");
       if (openModalEl === m) openModalEl = null;
       if (!document.querySelector(".modal.is-open")) document.body.classList.remove("no-scroll");
+      if (modalTrigger && document.contains(modalTrigger)) {
+        try {
+          modalTrigger.focus();
+        } catch (e) {}
+      }
+      modalTrigger = null;
     }
+    // Garde le focus clavier dans la fenêtre ouverte
+    document.addEventListener("keydown", function(e) {
+      if (e.key !== "Tab" || !openModalEl) return;
+      var items = Array.prototype.filter.call(openModalEl.querySelectorAll(FOCUSABLE), function(el) {
+        return el.offsetParent !== null;
+      });
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
     document.querySelectorAll("[data-modal-open]").forEach(function(btn) {
       btn.addEventListener("click", function(e) {
         e.preventDefault();
-        openModal(btn.getAttribute("data-modal-open"));
+        openModal(btn.getAttribute("data-modal-open"), btn);
       });
     });
     document.querySelectorAll("[data-modal-close]").forEach(function(el) {
@@ -247,5 +287,29 @@
     document.addEventListener("keydown", function(e) {
       if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
     });
+    // Apparitions : le contenu est visible par défaut ; le script masque puis révèle,
+    // seulement si le navigateur le permet et si les animations ne sont pas réduites.
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var animated = document.querySelectorAll("[data-reveal], .il");
+    if (!reduceMotion && "IntersectionObserver" in window && animated.length) {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.12
+      });
+      animated.forEach(function(el) {
+        if (el.hasAttribute("data-reveal")) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight) return;
+          el.classList.add("reveal");
+        }
+        io.observe(el);
+      });
+    }
   });
 })();

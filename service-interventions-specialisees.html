@@ -16,7 +16,9 @@
   <meta property="og:title" content="Après-sinistre et débarras | TKN Technics" />
   <meta property="og:description" content="Nettoyage, assèchement et remise en état après un dégât des eaux ou un incendie. Vidage de locaux et évacuation d'encombrants." />
   <meta property="og:url" content="https://tkn-technics.be/service-interventions-specialisees.html" />
-  <meta property="og:image" content="https://tkn-technics.be/assets/hero-interventions.webp" />
+  <meta property="og:image" content="https://tkn-technics.be/assets/og-tkn.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="fr_BE" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -25,15 +27,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/hero-interventions.webp" />
-
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/blocks.css" />
-  <link rel="stylesheet" href="css/detail.css" />
-  <link rel="stylesheet" href="css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tkn.css" />
 </head>
 <body>
 
@@ -42,7 +37,7 @@
   <header class="hdr" id="hdr">
     <div class="hdr__bar wrap">
       <a class="logo-btn" href="index.html" aria-label="TKN Technics, accueil">
-        <img src="assets/tkn-logo.png" alt="TKN Technics" style="height:46px;width:auto" />
+        <img src="assets/tkn-logo-128.png" alt="TKN Technics" style="height:46px;width:auto" />
       </a>
 
       <nav class="hdr__nav" aria-label="Navigation principale">
@@ -94,6 +89,7 @@
         <span class="hdr__divider"></span>
         <a class="btn btn--primary" href="index.html#contact" data-modal-open="quote-modal">Demander un devis</a>
         <a class="hdr__call" href="tel:+32499312523" aria-label="Appeler TKN Technics au +32 499 31 25 23"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg></a>
+        <a class="hdr__wa" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg></a>
         <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -125,50 +121,49 @@
 
   <main class="page-detail" id="main">
     <section class="svc-hero">
-      <div class="hero-media">
-        <img class="hero-media__img" src="assets/hero-interventions.webp" alt="Local technique" onerror="this.remove()" />
-        <span class="hero-media__veil"></span>
-      </div>
-      <div class="wrap svc-hero__content">
-        <nav class="crumbs" aria-label="Fil d'Ariane">
-          <a class="crumbs__link" href="index.html">Accueil</a>
-          <span class="crumbs__sep">›</span>
-          <span class="crumbs__cur" aria-current="page">Après-sinistre et débarras</span>
-        </nav>
-        <h1 class="display svc-hero__title">Après-sinistre et débarras</h1>
-        <p class="lead svc-hero__lead">Après un dégât des eaux ou un incendie, nous nettoyons, asséchons et remettons les lieux en état. Nous vidons aussi des logements, des caves et des entrepôts, et évacuons mobilier, matériaux et encombrants. Pour les entreprises, les syndics, les gestionnaires d'immeubles et les particuliers.</p>
-        <div class="svc-hero__cta">
-          <a class="btn btn--primary btn--lg" href="index.html#contact" data-modal-open="quote-modal">Demander un devis</a>
-          <a class="btn btn--ghost btn--lg" href="tel:+32499312523">+32 499 31 25 23</a>
+      <div class="wrap svc-hero__grid">
+        <div class="svc-hero__content">
+          <nav class="crumbs" aria-label="Fil d'Ariane">
+            <a class="crumbs__link" href="index.html">Accueil</a>
+            <span class="crumbs__sep">›</span>
+            <span class="crumbs__cur" aria-current="page">Après-sinistre et débarras</span>
+            </nav>
+          <h1 class="svc-hero__title">Après-sinistre et débarras</h1>
+          <p class="lead svc-hero__lead">Après un dégât des eaux ou un incendie, nous nettoyons, asséchons et remettons les lieux en état. Nous vidons aussi des logements, des caves et des entrepôts, et évacuons mobilier, matériaux et encombrants. Pour les entreprises, les syndics, les gestionnaires d'immeubles et les particuliers.</p>
+          <div class="svc-hero__cta">
+            <a class="btn btn--primary btn--lg" href="index.html#contact" data-modal-open="quote-modal">Demander un devis</a>
+            <a class="btn btn--ghost btn--lg" href="tel:+32499312523">+32 499 31 25 23</a>
+            </div>
         </div>
+        <div class="svc-hero__art"><span class="svc-hero__num" aria-hidden="true">03</span><svg class="il" viewBox="292 78 312 264" width="312" height="264" role="img" aria-label="Illustration : pièce en cours de remise en état, déshumidificateur et ventilateur" focusable="false"><defs><pattern id="h-interventions-8" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><rect class="s p" x="40" y="60" width="560" height="262"/><rect class="s n" x="40" y="60" width="560" height="262" fill="url(#h-interventions-8)" style="fill:url(#h-interventions-8)"/><rect class="s p" x="58" y="78" width="524" height="244"/><rect class="s l" x="110" y="116" width="110" height="96"/><path class="s n" d="M165 116L165 212"/><path class="s n" d="M110 164L220 164"/><rect class="s m" x="104" y="212" width="122" height="6"/><path class="s n" d="M430 78H582V322H470Q440 260 470 210Q500 160 430 120Z" style="fill:url(#h-interventions-8)"/><path class="s n" d="M430 78Q500 160 470 210Q440 260 470 322"/><path class="s n" d="M40 322L600 322"/><path class="s n" d="M90 322L90 340"/><path class="s n" d="M154 322L154 340"/><path class="s n" d="M218 322L218 340"/><path class="s n" d="M282 322L282 340"/><path class="s n" d="M346 322L346 340"/><path class="s n" d="M410 322L410 340"/><path class="s n" d="M474 322L474 340"/><path class="s n" d="M538 322L538 340"/><path class="s n" d="M330 322L352 172"/><path class="s n" d="M374 322L352 172"/><path class="s n" d="M334.4 292L344.4 292"/><path class="s n" d="M338.8 262L348.8 262"/><path class="s n" d="M343.2 232L353.2 232"/><path class="s n" d="M347.6 202L357.6 202"/><rect class="s m" x="344" y="166" width="16" height="6"/><rect class="s m" x="318" y="316" width="30" height="6"/><rect class="s p" x="160" y="240" width="52" height="78"/><path class="s n" d="M170 254L202 254"/><path class="s n" d="M170 260L202 260"/><path class="s n" d="M170 266L202 266"/><path class="s n" d="M170 272L202 272"/><path class="s n" d="M170 278L202 278"/><path class="s n" d="M170 284L202 284"/><rect class="s k" x="170" y="294" width="18" height="8"/><circle class="s d" cx="170" cy="322" r="4"/><circle class="s d" cx="202" cy="322" r="4"/><path class="s d" d="M470 322H528L522 310H476Z"/><g class="fan" style="transform-origin:499px 282px"><circle class="s y" cx="499" cy="282" r="28"/><circle class="s p" cx="499" cy="282" r="18"/><path class="s n" d="M499 282L515 282"/><path class="s n" d="M499 282L499 298"/><path class="s n" d="M499 282L483 282"/><path class="s n" d="M499 282L499 266"/></g><rect class="s l" x="50" y="284" width="56" height="38"/><path class="s n" d="M78 284L78 296"/><rect class="s l" x="58" y="252" width="44" height="32"/><path class="s n" d="M80 252L80 262"/><rect class="s m" x="110" y="292" width="40" height="30"/><path class="s n ground" d="M12 340L628 340"/></svg></div>
       </div>
     </section>
 
-    <section class="section section--slim bg-black">
+    <section class="section section--slim bg-white">
       <div class="wrap">
         <div class="catalogue catalogue--jump">
-          <div><h3>Après un sinistre</h3><p>Dégât des eaux ou incendie : nettoyage, assèchement et remise en état des lieux.</p><a class="jump" href="#sinistre">Voir la prise en charge</a></div>
-          <div><h3>Vidage et débarras</h3><p>Logements, caves, entrepôts : tri, évacuation et remise en propreté.</p><a class="jump" href="#debarras">Voir le vidage et le débarras</a></div>
+          <div><h3>Après un sinistre</h3><p>Dégât des eaux ou incendie : nettoyage, assèchement et remise en état des lieux.</p><a class="jump go" href="#sinistre">Voir la prise en charge <span class="go__arr" aria-hidden="true"></span></a></div>
+          <div><h3>Vidage et débarras</h3><p>Logements, caves, entrepôts : tri, évacuation et remise en propreté.</p><a class="jump go" href="#debarras">Voir le vidage et le débarras <span class="go__arr" aria-hidden="true"></span></a></div>
         </div>
       </div>
     </section>
 
-    <section class="section bg-anthracite" id="sinistre">
+    <section class="section bg-paper" id="sinistre">
       <div class="wrap">
         <div class="sh">
           <h2 class="h-section">Nettoyage et remise en état après sinistre</h2>
-          <p>Après votre appel, nous étudions la situation avec vous : nature des dégâts, pièces touchées, accès, dossier d'assurance. La date d'intervention et les travaux à prévoir sont fixés à l'issue de cet échange.</p>
+          <p>Après votre appel, nous étudions la situation avec vous : nature des dégâts, pièces touchées, accès, dossier d'assurance. La date d'intervention et les travaux à prévoir sont fixés à l'issue de cet échange.</p>
         </div>
-        <div class="catalogue">
+        <div class="catalogue" data-reveal>
           <div><h3>Dégât des eaux</h3><p>Pompage et aspiration de l'eau, dépose des matériaux abîmés, puis assèchement des murs, sols et plafonds, contrôlé par des mesures d'humidité.</p></div>
           <div><h3>Incendie</h3><p>Nettoyage de la suie sur les murs, les plafonds et le mobilier récupérable, traitement des odeurs de fumée, dépose et évacuation des matériaux brûlés.</p></div>
           <div><h3>Nettoyage des lieux</h3><p>Une fois l'eau ou la suie retirée, les locaux et le contenu récupérable sont nettoyés avant la remise en état.</p></div>
-          <div><h3>Remise en état</h3><p>Plafonnage, peinture, sols, électricité, plomberie : les travaux sont réalisés par notre activité <a href="service-maintenance-generale.html">Entretien et rénovation de bâtiments</a>, avec le même interlocuteur.</p></div>
+          <div><h3>Remise en état</h3><p>Plafonnage, peinture, sols, électricité, plomberie : les travaux sont réalisés par notre activité <a href="service-maintenance-generale.html">Entretien et rénovation de bâtiments</a>, avec le même interlocuteur.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section bg-black editorial" id="assurance">
+    <section class="section bg-white editorial" id="assurance">
       <div class="wrap">
         <div class="ed-row">
           <h2 class="ed-row__title">Pour votre dossier d'assurance</h2>
@@ -177,7 +172,7 @@
       </div>
     </section>
 
-    <section class="section bg-anthracite editorial" id="debarras">
+    <section class="section bg-paper editorial" id="debarras">
       <div class="wrap">
         <div class="sh part-head"><h2 class="h-section">Vidage et débarras</h2></div>
         <div class="ed-row">
@@ -186,14 +181,14 @@
         </div>
         <div class="ed-row">
           <h3 class="ed-row__title">Évacuation d'encombrants</h3>
-          <div class="ed-row__body"><p>Mobilier, matériaux, déchets de chantier, encombrants : nous les chargeons et les évacuons, avec nos véhicules ou par bennes selon le volume.</p><p>Le désamiantage et les déchets dangereux relèvent de filières spécialisées. Signalez leur présence dans votre demande.</p></div>
+          <div class="ed-row__body"><p>Mobilier, matériaux, déchets de chantier, encombrants : nous les chargeons et les évacuons, avec nos véhicules ou par bennes selon le volume.</p><p>Le désamiantage et les déchets dangereux relèvent de filières spécialisées. Signalez leur présence dans votre demande.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="sp-cta" id="contact">
+    <section class="sp-cta bg-yellow" id="contact">
       <div class="wrap sp-cta__inner">
-        <h2 class="sp-cta__title">Des locaux sinistrés ou à vider ?</h2>
+        <h2 class="sp-cta__title h-section">Des locaux sinistrés ou à vider ?</h2>
         <div class="sp-cta__right">
           <p class="muted">Décrivez le lieu, la situation et l'échéance souhaitée. Des photos et, pour un sinistre, la référence du dossier d'assurance nous aident à étudier la demande.</p>
           <div class="sp-cta__btns">
@@ -209,7 +204,7 @@
     <div class="wrap">
       <div class="footer__top">
         <div class="footer__brand">
-          <img src="assets/tkn-logo.png" alt="TKN Technics" class="footer__logo" />
+          <img src="assets/tkn-logo-128.png" alt="TKN Technics" class="footer__logo" />
           <p class="footer__slogan">Basés à Bruxelles, actifs dans toute la Belgique et dans les pays voisins.</p>
           <span class="footer__vca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9 11.5l2 2 4-4" /></svg><span>Certification VCA*</span></span>
         </div>
