@@ -1,6 +1,21 @@
 (function() {
   "use strict";
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/info@tkn-technics.be";
+  var LABELS = {
+    fr: {
+      file: "Ajouter un fichier (PDF, JPG, PNG)",
+      sending: "Envoi en cours…"
+    },
+    nl: {
+      file: "Bestand toevoegen (PDF, JPG, PNG)",
+      sending: "Bezig met verzenden…"
+    },
+    en: {
+      file: "Add a file (PDF, JPG, PNG)",
+      sending: "Sending…"
+    }
+  };
+  var L = LABELS[(document.documentElement.lang || "fr").slice(0, 2)] || LABELS.fr;
   function ready(fn) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn); else fn();
   }
@@ -28,6 +43,7 @@
       document.body.classList.remove("no-scroll");
     };
     if (burger && drawer) {
+      burger.setAttribute("aria-controls", "drawer");
       burger.addEventListener("click", function() {
         var open = drawer.classList.toggle("is-open");
         burger.classList.toggle("is-open", open);
@@ -49,6 +65,21 @@
         });
       });
     }
+    var tabs = document.querySelectorAll(".tabs .tab");
+    var ind = document.querySelector(".tabs__ind");
+    var panes = document.querySelectorAll("[data-pane]");
+    tabs.forEach(function(tab) {
+      tab.addEventListener("click", function() {
+        var name = tab.getAttribute("data-tab");
+        tabs.forEach(function(t) {
+          t.classList.toggle("is-on", t === tab);
+        });
+        if (ind) ind.style.transform = name === "rapide" ? "translateX(100%)" : "none";
+        panes.forEach(function(p) {
+          p.hidden = p.getAttribute("data-pane") !== name;
+        });
+      });
+    });
     document.querySelectorAll("[data-seg]").forEach(function(seg) {
       var hidden = seg.querySelector('input[type="hidden"]');
       seg.querySelectorAll(".seg__btn").forEach(function(btn) {
@@ -67,12 +98,11 @@
       sel.addEventListener("change", sync);
       sync();
     });
-    // Le texte d'origine de la zone de fichier (dans la langue de la page) sert de libellé par défaut
+    var FILE_PLACEHOLDER = L.file;
     document.querySelectorAll(".filefield__input").forEach(function(inp) {
-      var txt = inp.closest(".filefield").querySelector(".filefield__txt");
-      if (txt) txt.setAttribute("data-default", txt.textContent);
       inp.addEventListener("change", function() {
-        if (txt) txt.textContent = inp.files && inp.files[0] ? inp.files[0].name : txt.getAttribute("data-default");
+        var txt = inp.closest(".filefield").querySelector(".filefield__txt");
+        if (txt) txt.textContent = inp.files && inp.files[0] ? inp.files[0].name : FILE_PLACEHOLDER;
       });
     });
     document.querySelectorAll("form.js-form").forEach(function(form) {
@@ -82,13 +112,12 @@
       var submitBtn = form.querySelector('button[type="submit"]');
       var btnLabel = submitBtn ? submitBtn.querySelector("[data-label]") : null;
       var defaultLabel = btnLabel ? btnLabel.textContent : "";
-      var sendingLabel = submitBtn ? submitBtn.getAttribute("data-sending") || defaultLabel : "";
       var sending = false;
       function setLoading(on) {
         if (!submitBtn) return;
         submitBtn.disabled = on;
         submitBtn.classList.toggle("is-loading", on);
-        if (btnLabel) btnLabel.textContent = on ? sendingLabel : defaultLabel;
+        if (btnLabel) btnLabel.textContent = on ? L.sending : defaultLabel;
         var spinner = submitBtn.querySelector(".btn__spinner");
         if (on && !spinner) {
           spinner = document.createElement("span");
@@ -113,24 +142,20 @@
         group.forEach(function(input) {
           var field = input.closest(".field");
           if (field) field.classList.toggle("is-err", on);
-          if (on) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
         });
       }
       form.addEventListener("submit", function(e) {
         e.preventDefault();
         if (sending) return;
-        var firstInvalid = null;
+        var ok = true;
         requiredGroups.forEach(function(group) {
           var filled = group.some(function(input) {
             return !!String(input.value || "").trim();
           });
           setError(group, !filled);
-          if (!filled && !firstInvalid) firstInvalid = group[0];
+          if (!filled) ok = false;
         });
-        if (firstInvalid) {
-          firstInvalid.focus();
-          return;
-        }
+        if (!ok) return;
         if (errorBox) errorBox.hidden = true;
         sending = true;
         setLoading(true);
@@ -189,7 +214,7 @@
             f.classList.remove("has-value");
           });
           form.querySelectorAll(".filefield__txt").forEach(function(t) {
-            t.textContent = t.getAttribute("data-default") || t.textContent;
+            t.textContent = FILE_PLACEHOLDER;
           });
           if (errorBox) errorBox.hidden = true;
           success.hidden = true;
@@ -262,5 +287,29 @@
     document.addEventListener("keydown", function(e) {
       if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
     });
+    // Apparitions : le contenu est visible par défaut ; le script masque puis révèle,
+    // seulement si le navigateur le permet et si les animations ne sont pas réduites.
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var animated = document.querySelectorAll("[data-reveal], .il");
+    if (!reduceMotion && "IntersectionObserver" in window && animated.length) {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.12
+      });
+      animated.forEach(function(el) {
+        if (el.hasAttribute("data-reveal")) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight) return;
+          el.classList.add("reveal");
+        }
+        io.observe(el);
+      });
+    }
   });
 })();

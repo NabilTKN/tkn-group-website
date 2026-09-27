@@ -16,7 +16,7 @@
   <meta property="og:title" content="TKN Technics | Nettoyage industriel, bâtiment et espaces verts" />
   <meta property="og:description" content="Nettoyage industriel, entretien et rénovation de bâtiments, après-sinistre et débarras, espaces verts : contrats réguliers et chantiers ponctuels." />
   <meta property="og:url" content="https://tkn-technics.be/" />
-  <meta property="og:image" content="https://tkn-technics.be/assets/og-tkn.png" />
+  <meta property="og:image" content="https://tkn-technics.be/assets/og-tkn.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="fr_BE" />
@@ -27,7 +27,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/hero-accueil.webp" fetchpriority="high" />
   <link rel="stylesheet" href="css/tkn.css" />
 
   <script type="application/ld+json">
@@ -60,12 +61,11 @@
   <header class="hdr" id="hdr">
     <div class="hdr__bar wrap">
       <a class="logo-btn" href="#top" aria-label="TKN Technics, accueil">
-        <img src="assets/tkn-logo-128.png" alt="TKN Technics" style="height:46px;width:auto" />
+        <img src="assets/tkn-logo-128.png" alt="TKN Technics" width="190" height="128" />
       </a>
 
       <nav class="hdr__nav" aria-label="Navigation principale">
         <a class="navlink" href="#top">Accueil</a>
-
         <div class="navitem">
           <a class="navlink navlink--svc" href="#services">
             <span>Services</span>
@@ -73,47 +73,25 @@
           </a>
           <div class="dropdown">
             <div class="dropdown__inner">
-              <a class="dd-item" href="service-nettoyage-industriel.html">
-                <span class="dd-item__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18" /><path d="M4 21V10l5 3.5V10l5 3.5V6l6 4v11" /><path d="M8 21v-4" /><path d="M13 21v-4" /></svg></span>
-                <span class="dd-item__label">Nettoyage industriel</span>
-                <span class="dd-item__arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M8 7h9v9" /></svg></span>
-              </a>
-              <a class="dd-item" href="service-maintenance-generale.html">
-                <span class="dd-item__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 00-4.6 4.3L4 16.7 7.3 20l5.9-5.9a3.5 3.5 0 004.3-4.6l-2.2 2.2-2-2 2.2-2.2z" /></svg></span>
-                <span class="dd-item__label">Entretien et rénovation de bâtiments</span>
-                <span class="dd-item__arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M8 7h9v9" /></svg></span>
-              </a>
-              <a class="dd-item" href="service-interventions-specialisees.html">
-                <span class="dd-item__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3-2 4-2 7a2 2 0 004 0c0-1.2-.5-1.8-.5-1.8 1.8 1 3 3 3 5.3a4.5 4.5 0 01-9 0C7.5 8 12 7 12 3z" /></svg></span>
-                <span class="dd-item__label">Après-sinistre et débarras</span>
-                <span class="dd-item__arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M8 7h9v9" /></svg></span>
-              </a>
-              <a class="dd-item" href="service-espaces-verts.html">
-                <span class="dd-item__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C4 12 9 5 19 5c0 9-6 13-12 13a5 5 0 01-2-.5z" /><path d="M5 19c2-5 5-8 9-9.5" /></svg></span>
-                <span class="dd-item__label">Espaces verts</span>
-                <span class="dd-item__arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M8 7h9v9" /></svg></span>
-              </a>
+              <a class="dd-item" href="service-nettoyage-industriel.html">Nettoyage industriel</a>
+              <a class="dd-item" href="service-maintenance-generale.html">Entretien et rénovation de bâtiments</a>
+              <a class="dd-item" href="service-interventions-specialisees.html">Après-sinistre et débarras</a>
+              <a class="dd-item" href="service-espaces-verts.html">Espaces verts</a>
             </div>
           </div>
         </div>
-
         <a class="navlink" href="#references">Chantiers</a>
         <a class="navlink" href="equipes.html">Équipes</a>
         <a class="navlink" href="#contact">Contact</a>
       </nav>
 
       <div class="hdr__right">
-        <div class="langsw" role="group" aria-label="Langue"><a class="langsw__btn is-active" href="index.html" hreflang="fr" lang="fr" title="Français" aria-current="page">FR</a><span class="langsw__sep">·</span><a class="langsw__btn" href="index-nl.html" hreflang="nl" lang="nl" title="Nederlands">NL</a><span class="langsw__sep">·</span><a class="langsw__btn" href="index-en.html" hreflang="en" lang="en" title="English">EN</a></div>
-        <span class="hdr__divider"></span>
-        <a class="hdr__phone" href="tel:+32499312523">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg>
-          +32 499 31 25 23
-        </a>
-        <span class="hdr__divider"></span>
-        <a class="btn btn--primary" href="#contact" data-modal-open="quote-modal">Demander un devis</a>
-        <a class="hdr__call" href="tel:+32499312523" aria-label="Appeler TKN Technics au +32 499 31 25 23"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg></a>
-        <a class="hdr__wa" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg></a>
-        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="langsw" role="group" aria-label="Langue"><a class="langsw__btn is-active" href="index.html" hreflang="fr" lang="fr" title="Français" aria-current="page">FR</a><a class="langsw__btn" href="index-nl.html" hreflang="nl" lang="nl" title="Nederlands">NL</a><a class="langsw__btn" href="index-en.html" hreflang="en" lang="en" title="English">EN</a></div>
+        <a class="hdr__phone" href="tel:+32499312523"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg>+32 499 31 25 23</a>
+        <a class="btn btn--primary hdr__quote" href="#contact" data-modal-open="quote-modal">Demander un devis</a>
+        <a class="hdr__icon" href="tel:+32499312523" aria-label="Appeler TKN Technics au +32 499 31 25 23"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg></a>
+        <a class="hdr__icon" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg></a>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
       </div>
     </div>
 
@@ -131,11 +109,8 @@
         <a class="drawer__link" href="equipes.html" data-drawer-close>Équipes</a>
         <a class="drawer__link" href="#contact" data-drawer-close>Contact</a>
         <div class="drawer__foot">
-          <div class="langsw" role="group" aria-label="Langue"><a class="langsw__btn is-active" href="index.html" hreflang="fr" lang="fr" title="Français" aria-current="page">FR</a><span class="langsw__sep">·</span><a class="langsw__btn" href="index-nl.html" hreflang="nl" lang="nl" title="Nederlands">NL</a><span class="langsw__sep">·</span><a class="langsw__btn" href="index-en.html" hreflang="en" lang="en" title="English">EN</a></div>
-          <a class="drawer__tel" href="tel:+32499312523">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg>
-            +32 499 31 25 23
-          </a>
+          <div class="langsw" role="group" aria-label="Langue"><a class="langsw__btn is-active" href="index.html" hreflang="fr" lang="fr" title="Français" aria-current="page">FR</a><a class="langsw__btn" href="index-nl.html" hreflang="nl" lang="nl" title="Nederlands">NL</a><a class="langsw__btn" href="index-en.html" hreflang="en" lang="en" title="English">EN</a></div>
+          <a class="drawer__tel" href="tel:+32499312523"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg>+32 499 31 25 23</a>
           <a class="btn btn--primary btn--block" href="#contact" data-drawer-close data-modal-open="quote-modal">Demander un devis</a>
         </div>
       </div>
@@ -144,49 +119,41 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="wrap hero__grid">
-        <p class="kicker hero__kicker">TKN Technics</p>
+      <img class="hero__img" src="assets/hero-accueil.webp" alt="Installations industrielles en acier : silos, passerelles et tuyauteries" width="1275" height="1920" fetchpriority="high" decoding="async" />
+      <div class="wrap hero__inner">
+        <p class="hero__kicker">TKN Technics</p>
         <h1 class="hero__title">Le savoir-faire au service de vos installations et bâtiments.</h1>
-        <div class="hero__side">
-          <p class="lead">Nettoyage industriel, entretien et rénovation de bâtiments, interventions après sinistre et espaces verts : TKN Technics accompagne vos projets avec des équipes qualifiées et un encadrement présent sur le terrain.</p>
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="#services">Découvrir nos métiers</a>
-            <a class="btn btn--ghost btn--lg" href="#contact">Contactez-nous</a>
-          </div>
+        <p class="hero__lead">Nettoyage industriel, entretien et rénovation de bâtiments, interventions après sinistre et espaces verts : TKN Technics accompagne vos projets avec des équipes qualifiées et un encadrement présent sur le terrain.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#services">Découvrir nos métiers</a>
+          <a class="btn btn--ghost btn--lg" href="#contact">Contactez-nous</a>
         </div>
-      </div>
-      <div class="wrap hero__scene">
-        <svg class="il" viewBox="0 60 1040 356" width="1040" height="356" role="img" aria-label="Illustration : installation industrielle, immeuble en rénovation, benne de débarras et espaces verts sur une même ligne de sol" focusable="false"><defs><pattern id="h-accueil-1" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><path class="s l" d="M70 400V194Q122 170 174 194V400Z"/><path class="s n" d="M144.88 400V188Q163.60000000000002 192 174 194V400Z" style="fill:url(#h-accueil-1)"/><path class="s n" d="M70 245.5L174 245.5"/><path class="s n" d="M70 297L174 297"/><path class="s n" d="M70 348.5L174 348.5"/><path class="s n" d="M54 400L54 186"/><path class="s n" d="M64 400L64 186"/><path class="s n" d="M54 386L64 386"/><path class="s n" d="M54 370L64 370"/><path class="s n" d="M54 354L64 354"/><path class="s n" d="M54 338L64 338"/><path class="s n" d="M54 322L64 322"/><path class="s n" d="M54 306L64 306"/><path class="s n" d="M54 290L64 290"/><path class="s n" d="M54 274L64 274"/><path class="s n" d="M54 258L64 258"/><path class="s n" d="M54 242L64 242"/><path class="s n" d="M54 226L64 226"/><path class="s n" d="M54 210L64 210"/><path class="s n" d="M54 194L64 194"/><path class="s n" d="M46 186L116.8 186"/><path class="s n" d="M46 186V168H116.80000000000001V186M46 177H116.80000000000001"/><path class="s n" d="M222 293.8L222 400"/><path class="s n" d="M284 293.8L284 400"/><path class="s n" d="M222 380L284 299.8"/><path class="s n" d="M284 380L222 299.8"/><path class="s l" d="M214 176L253 158L292 176V293.8L263 341H243L214 293.8Z"/><path class="s n" d="M268.6 166L292 176V293.8L263 341H262.36Z" style="fill:url(#h-accueil-1)"/><rect class="s d" x="246" y="341" width="14" height="12"/><path class="s n" d="M214 221.4L292 221.4"/><rect class="s m" x="174" y="233" width="40" height="10"/><rect class="s m" x="292" y="257" width="68" height="10"/><rect class="s l" x="322" y="254" width="5" height="16"/><path class="s y" d="M325 267V284L350.4 316.4L357.4 309.4L335 280V267Z"/><g class="valve" style="transform-origin:196px 238px"><circle class="s p" cx="196" cy="238" r="11"/><path class="s n" d="M185 238L207 238"/><path class="s n" d="M190.5 228.5L201.5 247.5"/><path class="s n" d="M201.5 228.5L190.5 247.5"/><circle class="s k" cx="196" cy="238" r="2.5"/></g><rect class="s m" x="550" y="94" width="20" height="40"/><path class="s m" d="M370 152L505 88L640 152Z"/><path class="s n" d="M397 139.2L613 139.2"/><path class="s n" d="M424 126.4L586 126.4"/><path class="s n" d="M451 113.6L559 113.6"/><path class="s n" d="M478 100.8L532 100.8"/><rect class="s p" x="380" y="152" width="250" height="248"/><rect class="s n" x="612" y="152" width="18" height="248" fill="url(#h-accueil-1)" style="fill:url(#h-accueil-1)"/><rect class="s l" x="403.3" y="168" width="36.7" height="32"/><path class="s n" d="M421.7 168L421.7 200"/><path class="s n" d="M400.3 203L443 203"/><rect class="s l" x="486.7" y="168" width="36.7" height="32"/><path class="s n" d="M505 168L505 200"/><path class="s n" d="M483.7 203L526.3 203"/><rect class="s l" x="570" y="168" width="36.7" height="32"/><path class="s n" d="M588.3 168L588.3 200"/><path class="s n" d="M567 203L609.7 203"/><rect class="s l" x="403.3" y="230" width="36.7" height="32"/><path class="s n" d="M421.7 230L421.7 262"/><path class="s n" d="M400.3 265L443 265"/><rect class="s l" x="486.7" y="230" width="36.7" height="32"/><path class="s n" d="M505 230L505 262"/><path class="s n" d="M483.7 265L526.3 265"/><rect class="s l" x="570" y="230" width="36.7" height="32"/><path class="s n" d="M588.3 230L588.3 262"/><path class="s n" d="M567 265L609.7 265"/><rect class="s l" x="403.3" y="292" width="36.7" height="32"/><path class="s n" d="M421.7 292L421.7 324"/><path class="s n" d="M400.3 327L443 327"/><rect class="s l" x="486.7" y="292" width="36.7" height="32"/><path class="s n" d="M505 292L505 324"/><path class="s n" d="M483.7 327L526.3 327"/><rect class="s l" x="570" y="292" width="36.7" height="32"/><path class="s n" d="M588.3 292L588.3 324"/><path class="s n" d="M567 327L609.7 327"/><rect class="s l" x="403.3" y="354" width="36.7" height="32"/><path class="s n" d="M421.7 354L421.7 386"/><path class="s n" d="M400.3 389L443 389"/><rect class="s d" x="484.7" y="350" width="40.7" height="50"/><rect class="s l" x="570" y="354" width="36.7" height="32"/><path class="s n" d="M588.3 354L588.3 386"/><path class="s n" d="M567 389L609.7 389"/><path class="s n" d="M380 158L630 158"/><path class="s n" d="M540 400L540 180"/><path class="s n" d="M600 400L600 180"/><path class="s n" d="M660 400L660 180"/><rect class="s y" x="536" y="326.7" width="128" height="6"/><path class="s n" d="M540 308.7L660 308.7"/><rect class="s y" x="536" y="253.3" width="128" height="6"/><path class="s n" d="M540 235.3L660 235.3"/><rect class="s y" x="536" y="180" width="128" height="6"/><path class="s n" d="M540 162L660 162"/><path class="s n" d="M540 400L600 332.7"/><path class="s n" d="M600 326.7L660 259.3"/><path class="s y" d="M664 350H768L756 394H676Z"/><path class="s l" d="M670 350l14 -16h22l6 16M714 350l10 -22h18l10 22"/><path class="s n" d="M694 360L738 360"/><path class="s n" d="M690 374L742 374"/><circle class="s d" cx="688" cy="397" r="3"/><circle class="s d" cx="744" cy="397" r="3"/><rect class="s d" x="807" y="334" width="10" height="66"/><circle class="s g" cx="783" cy="313.7" r="36"/><circle class="s g" cx="842.2" cy="316.6" r="34.8"/><circle class="s g" cx="812" cy="284.7" r="41.8"/><path class="s n" d="M812 334L791.7 307.9"/><path class="s n" d="M812 328L829.4 305"/><rect class="s d" x="901" y="384" width="8" height="16"/><path class="s g2" d="M872 384L905 316.8L938 384Z"/><path class="s g2" d="M879.92 342.4L905 270.4L930.08 342.4Z"/><path class="s g2" d="M887.84 300.8L905 224L922.16 300.8Z"/><path class="s g" d="M938 400V360Q938 350 948 350H1020Q1030 350 1030 360V400Z"/><path class="s n" d="M956 362q6 -5 12 0"/><path class="s n" d="M982 362q6 -5 12 0"/><path class="s n" d="M1008 362q6 -5 12 0"/><path class="s n ground" d="M10 400L1030 400"/><g class="callout"><path class="s n" d="M122 112L122 166"/><circle class="s k" cx="122" cy="166" r="3.5"/><path class="s n" d="M650 100L650 176"/><circle class="s k" cx="650" cy="176" r="3.5"/><path class="s n" d="M730 170L730 326"/><circle class="s k" cx="730" cy="326" r="3.5"/><path class="s n" d="M905 190L905 222"/><circle class="s k" cx="905" cy="222" r="3.5"/></g></svg>
-        <ul class="hero__tags">
-          <li class="hero__tag" style="--x:11.7%;--y:14.6%"><a href="service-nettoyage-industriel.html"><b>01</b> Nettoyage industriel</a></li>
-          <li class="hero__tag" style="--x:62.5%;--y:11.2%"><a href="service-maintenance-generale.html"><b>02</b> Entretien et rénovation de bâtiments</a></li>
-          <li class="hero__tag" style="--x:70.2%;--y:30.9%"><a href="service-interventions-specialisees.html"><b>03</b> Après-sinistre et débarras</a></li>
-          <li class="hero__tag" style="--x:87%;--y:36.5%"><a href="service-espaces-verts.html"><b>04</b> Espaces verts</a></li>
-        </ul>
       </div>
     </section>
 
-    <section class="section bg-white" id="services">
+    <section class="section" id="services">
       <div class="wrap">
-        <div class="sh">
-          <h2 class="h-section">Nos métiers</h2>
-        </div>
-        <ul class="trades">
-          <li class="trade" data-reveal><a class="trade__link" href="service-nettoyage-industriel.html">
-            <div class="trade__art"><svg class="il" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Illustration : cuve, silo et tuyauteries d'un site de production" focusable="false"><defs><pattern id="h-nettoyage-2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><path class="s l" d="M90 340V124Q149 100 208 124V340Z"/><path class="s n" d="M174.95999999999998 340V118Q196.2 122 208 124V340Z" style="fill:url(#h-nettoyage-2)"/><path class="s n" d="M90 178L208 178"/><path class="s n" d="M90 232L208 232"/><path class="s n" d="M90 286L208 286"/><path class="s n" d="M74 340L74 116"/><path class="s n" d="M84 340L84 116"/><path class="s n" d="M74 326L84 326"/><path class="s n" d="M74 310L84 310"/><path class="s n" d="M74 294L84 294"/><path class="s n" d="M74 278L84 278"/><path class="s n" d="M74 262L84 262"/><path class="s n" d="M74 246L84 246"/><path class="s n" d="M74 230L84 230"/><path class="s n" d="M74 214L84 214"/><path class="s n" d="M74 198L84 198"/><path class="s n" d="M74 182L84 182"/><path class="s n" d="M74 166L84 166"/><path class="s n" d="M74 150L84 150"/><path class="s n" d="M74 134L84 134"/><path class="s n" d="M66 116L143.1 116"/><path class="s n" d="M66 116V98H143.1V116M66 107H143.1"/><path class="s n" d="M326 227.5L326 340"/><path class="s n" d="M402 227.5L402 340"/><path class="s n" d="M326 320L402 233.5"/><path class="s n" d="M402 320L326 233.5"/><path class="s l" d="M318 102L364 84L410 102V227.5L374 277.5H354L318 227.5Z"/><path class="s n" d="M382.4 92L410 102V227.5L374 277.5H375.04Z" style="fill:url(#h-nettoyage-2)"/><rect class="s d" x="357" y="277.5" width="14" height="12"/><path class="s n" d="M318 150.1L410 150.1"/><rect class="s m" x="208" y="191" width="110" height="10"/><rect class="s l" x="238" y="188" width="5" height="16"/><rect class="s l" x="298" y="188" width="5" height="16"/><rect class="s m" x="410" y="209" width="60" height="10"/><rect class="s l" x="440" y="206" width="5" height="16"/><path class="s y" d="M435 219V236L460.4 268.4L467.4 261.4L445 232V219Z"/><g class="valve" style="transform-origin:262px 196px"><circle class="s p" cx="262" cy="196" r="13"/><path class="s n" d="M249 196L275 196"/><path class="s n" d="M255.5 184.7L268.5 207.3"/><path class="s n" d="M268.5 184.7L255.5 207.3"/><circle class="s k" cx="262" cy="196" r="2.5"/></g><path class="s p" d="M470 208L470 190L520 208L520 190L570 208L570 190L620 208V340H470Z"/><path class="s n" d="M470 190V208"/><path class="s n" d="M520 190V208"/><path class="s n" d="M570 190V208"/><path class="s n" d="M598 208H620V340H598Z" style="fill:url(#h-nettoyage-2)"/><rect class="s l" x="484" y="224" width="100" height="16"/><path class="s n" d="M509 224L509 240"/><path class="s n" d="M534 224L534 240"/><path class="s n" d="M559 224L559 240"/><rect class="s l" x="488" y="276" width="54" height="64"/><path class="s n" d="M488 284L542 284"/><path class="s n" d="M488 292L542 292"/><path class="s n" d="M488 300L542 300"/><path class="s n" d="M488 308L542 308"/><path class="s n" d="M488 316L542 316"/><path class="s n" d="M488 324L542 324"/><path class="s n" d="M488 332L542 332"/><rect class="s m" x="20" y="257" width="70" height="10"/><rect class="s l" x="50" y="254" width="5" height="16"/><rect class="s d" x="232" y="300" width="60" height="40"/><path class="s n" d="M232 312L292 312"/><path class="s n ground" d="M12 340L628 340"/></svg></div>
-            <div class="trade__body"><span class="trade__num">01</span><h3 class="trade__title">Nettoyage industriel</h3><p class="trade__desc">Nettoyage des machines, équipements et installations de production, en contrat régulier ou en intervention ponctuelle, y compris pendant les arrêts techniques. Nos équipes travaillent selon les horaires et les consignes de sécurité de chaque site.</p><span class="go trade__go">Découvrir le nettoyage industriel <span class="go__arr" aria-hidden="true"></span></span></div>
+        <h2 class="h-section sh">Nos métiers</h2>
+        <ul class="metiers">
+          <li><a class="metier" href="service-nettoyage-industriel.html">
+            <h3 class="metier__title">Nettoyage industriel</h3>
+            <p class="metier__desc">Nettoyage des machines, équipements et installations de production, en contrat régulier ou en intervention ponctuelle, y compris pendant les arrêts techniques. Nos équipes travaillent selon les horaires et les consignes de sécurité de chaque site.</p>
+            <span class="go">Découvrir le nettoyage <span class="nowrap">industriel <span class="go__arr" aria-hidden="true"></span></span></span>
           </a></li>
-          <li class="trade" data-reveal><a class="trade__link" href="service-maintenance-generale.html">
-            <div class="trade__art"><svg class="il" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Illustration : façade d'immeuble avec échafaudage" focusable="false"><defs><pattern id="h-maintenance-3" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><rect class="s m" x="334" y="96" width="20" height="40"/><path class="s m" d="M120 154L280 90L440 154Z"/><path class="s n" d="M152 141.2L408 141.2"/><path class="s n" d="M184 128.4L376 128.4"/><path class="s n" d="M216 115.6L344 115.6"/><path class="s n" d="M248 102.8L312 102.8"/><rect class="s p" x="130" y="154" width="300" height="186"/><rect class="s n" x="412" y="154" width="18" height="186" fill="url(#h-maintenance-3)" style="fill:url(#h-maintenance-3)"/><rect class="s l" x="151" y="170" width="33" height="32"/><path class="s n" d="M167.5 170L167.5 202"/><path class="s n" d="M148 205L187 205"/><rect class="s l" x="226" y="170" width="33" height="32"/><path class="s n" d="M242.5 170L242.5 202"/><path class="s n" d="M223 205L262 205"/><rect class="s l" x="301" y="170" width="33" height="32"/><path class="s n" d="M317.5 170L317.5 202"/><path class="s n" d="M298 205L337 205"/><rect class="s l" x="376" y="170" width="33" height="32"/><path class="s n" d="M392.5 170L392.5 202"/><path class="s n" d="M373 205L412 205"/><rect class="s l" x="151" y="232" width="33" height="32"/><path class="s n" d="M167.5 232L167.5 264"/><path class="s n" d="M148 267L187 267"/><rect class="s l" x="226" y="232" width="33" height="32"/><path class="s n" d="M242.5 232L242.5 264"/><path class="s n" d="M223 267L262 267"/><rect class="s l" x="301" y="232" width="33" height="32"/><path class="s n" d="M317.5 232L317.5 264"/><path class="s n" d="M298 267L337 267"/><rect class="s l" x="376" y="232" width="33" height="32"/><path class="s n" d="M392.5 232L392.5 264"/><path class="s n" d="M373 267L412 267"/><rect class="s l" x="151" y="294" width="33" height="32"/><path class="s n" d="M167.5 294L167.5 326"/><path class="s n" d="M148 329L187 329"/><rect class="s l" x="226" y="294" width="33" height="32"/><path class="s n" d="M242.5 294L242.5 326"/><path class="s n" d="M223 329L262 329"/><rect class="s d" x="299" y="290" width="37" height="50"/><rect class="s l" x="376" y="294" width="33" height="32"/><path class="s n" d="M392.5 294L392.5 326"/><path class="s n" d="M373 329L412 329"/><path class="s n" d="M130 160L430 160"/><path class="s n" d="M330 340L330 150"/><path class="s n" d="M380 340L380 150"/><path class="s n" d="M430 340L430 150"/><path class="s n" d="M480 340L480 150"/><rect class="s y" x="326" y="276.7" width="158" height="6"/><path class="s n" d="M330 258.7L480 258.7"/><rect class="s y" x="326" y="213.3" width="158" height="6"/><path class="s n" d="M330 195.3L480 195.3"/><rect class="s y" x="326" y="150" width="158" height="6"/><path class="s n" d="M330 132L480 132"/><path class="s n" d="M330 340L380 282.7"/><path class="s n" d="M380 276.7L430 219.3"/><path class="s n" d="M430 213.3L480 156"/><path class="s n" d="M66 340L88 244"/><path class="s n" d="M110 340L88 244"/><path class="s n" d="M70.4 320.8L80.4 320.8"/><path class="s n" d="M74.8 301.6L84.8 301.6"/><path class="s n" d="M79.2 282.4L89.2 282.4"/><path class="s n" d="M83.6 263.2L93.6 263.2"/><rect class="s m" x="80" y="238" width="16" height="6"/><rect class="s m" x="530" y="318" width="26" height="22"/><path class="s n" d="M530 318q13 -12 26 0"/><rect class="s d" x="570" y="300" width="10" height="40"/><circle class="s g2" cx="559" cy="288.8" r="19.8"/><circle class="s g2" cx="591.6" cy="290.4" r="19.2"/><circle class="s g2" cx="575" cy="272.8" r="23"/><path class="s n" d="M575 300L563.8 285.6"/><path class="s n" d="M575 294L584.6 284"/><path class="s n ground" d="M12 340L628 340"/></svg></div>
-            <div class="trade__body"><span class="trade__num">02</span><h3 class="trade__title">Entretien et rénovation de bâtiments</h3><p class="trade__desc">Toiture, plomberie, chauffage, électricité et finitions : nous entretenons, réparons et rénovons vos bâtiments. Nous coordonnons les corps de métier et suivons les travaux du devis à la réception.</p><span class="go trade__go">Découvrir l'entretien et la rénovation <span class="go__arr" aria-hidden="true"></span></span></div>
+          <li><a class="metier" href="service-maintenance-generale.html">
+            <h3 class="metier__title">Entretien et rénovation de bâtiments</h3>
+            <p class="metier__desc">Toiture, plomberie, chauffage, électricité et finitions : nous entretenons, réparons et rénovons vos bâtiments. Nous coordonnons les corps de métier et suivons les travaux du devis à la réception.</p>
+            <span class="go">Découvrir l'entretien et la <span class="nowrap">rénovation <span class="go__arr" aria-hidden="true"></span></span></span>
           </a></li>
-          <li class="trade" data-reveal><a class="trade__link" href="service-interventions-specialisees.html">
-            <div class="trade__art"><svg class="il" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Illustration : pièce en cours de remise en état, déshumidificateur et ventilateur" focusable="false"><defs><pattern id="h-interventions-4" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><rect class="s p" x="40" y="60" width="560" height="262"/><rect class="s n" x="40" y="60" width="560" height="262" fill="url(#h-interventions-4)" style="fill:url(#h-interventions-4)"/><rect class="s p" x="58" y="78" width="524" height="244"/><rect class="s l" x="110" y="116" width="110" height="96"/><path class="s n" d="M165 116L165 212"/><path class="s n" d="M110 164L220 164"/><rect class="s m" x="104" y="212" width="122" height="6"/><path class="s n" d="M430 78H582V322H470Q440 260 470 210Q500 160 430 120Z" style="fill:url(#h-interventions-4)"/><path class="s n" d="M430 78Q500 160 470 210Q440 260 470 322"/><path class="s n" d="M40 322L600 322"/><path class="s n" d="M90 322L90 340"/><path class="s n" d="M154 322L154 340"/><path class="s n" d="M218 322L218 340"/><path class="s n" d="M282 322L282 340"/><path class="s n" d="M346 322L346 340"/><path class="s n" d="M410 322L410 340"/><path class="s n" d="M474 322L474 340"/><path class="s n" d="M538 322L538 340"/><path class="s n" d="M330 322L352 172"/><path class="s n" d="M374 322L352 172"/><path class="s n" d="M334.4 292L344.4 292"/><path class="s n" d="M338.8 262L348.8 262"/><path class="s n" d="M343.2 232L353.2 232"/><path class="s n" d="M347.6 202L357.6 202"/><rect class="s m" x="344" y="166" width="16" height="6"/><rect class="s m" x="318" y="316" width="30" height="6"/><rect class="s p" x="160" y="240" width="52" height="78"/><path class="s n" d="M170 254L202 254"/><path class="s n" d="M170 260L202 260"/><path class="s n" d="M170 266L202 266"/><path class="s n" d="M170 272L202 272"/><path class="s n" d="M170 278L202 278"/><path class="s n" d="M170 284L202 284"/><rect class="s k" x="170" y="294" width="18" height="8"/><circle class="s d" cx="170" cy="322" r="4"/><circle class="s d" cx="202" cy="322" r="4"/><path class="s d" d="M470 322H528L522 310H476Z"/><g class="fan" style="transform-origin:499px 282px"><circle class="s y" cx="499" cy="282" r="28"/><circle class="s p" cx="499" cy="282" r="18"/><path class="s n" d="M499 282L515 282"/><path class="s n" d="M499 282L499 298"/><path class="s n" d="M499 282L483 282"/><path class="s n" d="M499 282L499 266"/></g><rect class="s l" x="50" y="284" width="56" height="38"/><path class="s n" d="M78 284L78 296"/><rect class="s l" x="58" y="252" width="44" height="32"/><path class="s n" d="M80 252L80 262"/><rect class="s m" x="110" y="292" width="40" height="30"/><path class="s n ground" d="M12 340L628 340"/></svg></div>
-            <div class="trade__body"><span class="trade__num">03</span><h3 class="trade__title">Après-sinistre et débarras</h3><p class="trade__desc">Après un dégât des eaux ou un incendie, nous nettoyons, asséchons et remettons les lieux en état. Nous vidons également des locaux, caves et entrepôts, et évacuons les encombrants.</p><span class="go trade__go">Découvrir l'après-sinistre et le débarras <span class="go__arr" aria-hidden="true"></span></span></div>
+          <li><a class="metier" href="service-interventions-specialisees.html">
+            <h3 class="metier__title">Après-sinistre et débarras</h3>
+            <p class="metier__desc">Après un dégât des eaux ou un incendie, nous nettoyons, asséchons et remettons les lieux en état. Nous vidons également des locaux, caves et entrepôts, et évacuons les encombrants.</p>
+            <span class="go">Découvrir l'après-sinistre et le <span class="nowrap">débarras <span class="go__arr" aria-hidden="true"></span></span></span>
           </a></li>
-          <li class="trade" data-reveal><a class="trade__link" href="service-espaces-verts.html">
-            <div class="trade__art"><svg class="il" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Illustration : arbres, haie taillée et pelouse aux abords d’un bâtiment" focusable="false"><defs><pattern id="h-espaces-5" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="hatch-bg"/><line x1="0" y1="0" x2="0" y2="7" class="hatch-ln"/></pattern></defs><rect class="s p" x="470" y="150" width="158" height="190"/><rect class="s n" x="470" y="150" width="16" height="190" fill="url(#h-espaces-5)" style="fill:url(#h-espaces-5)"/><rect class="s l" x="520" y="196" width="70" height="58"/><path class="s n" d="M555 196L555 254"/><path class="s n" d="M520 225L590 225"/><rect class="s m" x="514" y="254" width="82" height="6"/><rect class="s g" x="12" y="318" width="616" height="22"/><rect class="g2" x="42" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="102" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="162" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="222" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="282" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="342" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="402" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="462" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="522" y="319" width="30" height="21" opacity=".45"/><rect class="g2" x="582" y="319" width="30" height="21" opacity=".45"/><rect class="s d" x="105" y="248" width="10" height="70"/><circle class="s g" cx="76" cy="224.2" r="42.2"/><circle class="s g" cx="145.4" cy="227.6" r="40.8"/><circle class="s g" cx="110" cy="190.2" r="49"/><path class="s n" d="M110 248L86.2 217.4"/><path class="s n" d="M110 242L130.4 214"/><rect class="s d" x="266" y="302" width="8" height="16"/><path class="s g2" d="M232 302L270 230.60000000000002L308 302Z"/><path class="s g2" d="M241.12 257.8L270 181.3L298.88 257.8Z"/><path class="s g2" d="M250.24 213.6L270 132L289.76 213.6Z"/><path class="s g" d="M322 318V270Q322 260 332 260H458Q468 260 468 270V318Z"/><path class="s n" d="M340 272q6 -5 12 0"/><path class="s n" d="M366 272q6 -5 12 0"/><path class="s n" d="M392 272q6 -5 12 0"/><path class="s n" d="M418 272q6 -5 12 0"/><path class="s n" d="M444 272q6 -5 12 0"/><path class="s n" d="M526 296L590 284"/><path class="s n" d="M590 284L606 282"/><path class="s n" d="M568 296L564 318"/><path class="s n" d="M580 292L584 318"/><path class="s y" d="M522 272H586L576 296H532Z"/><path class="s n" d="M534 272l10 -14m8 14l4 -18m10 18l12 -12"/><circle class="s d" cx="530" cy="307" r="11"/><circle class="s p" cx="530" cy="307" r="3"/><path class="s d" d="M188 318V304Q206 296 224 304V318Z"/><path class="s n" d="M194 303Q206 298 218 303"/><path class="s n ground" d="M12 340L628 340"/></svg></div>
-            <div class="trade__body"><span class="trade__num">04</span><h3 class="trade__title">Espaces verts</h3><p class="trade__desc">Tonte, taille, élagage, abattage et débroussaillage : nous entretenons les espaces extérieurs et les abords de vos bâtiments, en passages planifiés ou en interventions ponctuelles.</p><span class="go trade__go">Découvrir les espaces verts <span class="go__arr" aria-hidden="true"></span></span></div>
+          <li><a class="metier" href="service-espaces-verts.html">
+            <h3 class="metier__title">Espaces verts</h3>
+            <p class="metier__desc">Tonte, taille, élagage, abattage et débroussaillage : nous entretenons les espaces extérieurs et les abords de vos bâtiments, en passages planifiés ou en interventions ponctuelles.</p>
+            <span class="go">Découvrir les espaces <span class="nowrap">verts <span class="go__arr" aria-hidden="true"></span></span></span>
           </a></li>
         </ul>
       </div>
@@ -200,23 +167,20 @@
           <p class="experience__note">Par confidentialité, nous ne citons ni nos clients ni leurs sites.</p>
         </div>
         <ul class="missions">
-          <li class="mission" data-reveal>
-            <p class="label mission__sector">Sidérurgie</p>
+          <li class="mission">
+            <p class="mission__sector">Sidérurgie</p>
             <h3 class="mission__title">Entretien continu d'un site</h3>
             <p class="mission__text">Entretien des vestiaires et sanitaires avec une couverture 24 h/24, complété par des interventions de jour et de nuit sur les équipements industriels.</p>
-            <p class="mission__frame"><b>Organisation</b>Présence continue sur le site</p>
           </li>
-          <li class="mission" data-reveal>
-            <p class="label mission__sector">Production de béton</p>
+          <li class="mission">
+            <p class="mission__sector">Production de béton</p>
             <h3 class="mission__title">Nettoyage de nuit des machines</h3>
             <p class="mission__text">Chaque nuit, les machines sont nettoyées pour éliminer les résidus avant leur durcissement et préparer la production suivante.</p>
-            <p class="mission__frame"><b>Organisation</b>Chaque nuit, entre deux cycles de production</p>
           </li>
-          <li class="mission" data-reveal>
-            <p class="label mission__sector">Arrêts techniques</p>
+          <li class="mission">
+            <p class="mission__sector">Arrêts techniques</p>
             <h3 class="mission__title">Nettoyage pendant l'arrêt de production</h3>
             <p class="mission__text">Nettoyage approfondi des installations pendant la période d'arrêt, selon un planning défini avec les équipes du site.</p>
-            <p class="mission__frame"><b>Organisation</b>Planning établi avec le site</p>
           </li>
         </ul>
       </div>
@@ -229,10 +193,10 @@
           <p>Des contrats réguliers aux chantiers ponctuels, nous nous engageons sur la qualité du travail, la ponctualité et le sérieux du suivi.</p>
         </div>
         <ul class="commit">
-          <li data-reveal><h3>Qualité d'exécution</h3><p>Nos équipes travaillent sous la conduite de chefs d'équipe et de responsables qualifiés, présents sur le terrain pour suivre la réalisation des prestations.</p></li>
-          <li data-reveal><h3>Ponctualité</h3><p>Nous intervenons aux horaires convenus, en tenant compte des contraintes de votre activité, de jour comme de nuit lorsque votre site l'exige.</p></li>
-          <li data-reveal><h3>Sécurité</h3><p>Entreprise certifiée VCA*, nous confions chaque mission à des collaborateurs qui disposent des habilitations nécessaires et appliquent les consignes propres à votre site.</p></li>
-          <li data-reveal><h3>Suivi des demandes</h3><p>Votre interlocuteur commercial définit le besoin avec vous, ajuste la prestation lorsque vos contraintes évoluent et reste votre contact pendant toute la durée du contrat.</p></li>
+          <li><h3>Qualité d'exécution</h3><p>Nos équipes travaillent sous la conduite de chefs d'équipe et de responsables qualifiés, présents sur le terrain pour suivre la réalisation des prestations.</p></li>
+          <li><h3>Ponctualité</h3><p>Nous intervenons aux horaires convenus, en tenant compte des contraintes de votre activité, de jour comme de nuit lorsque votre site l'exige.</p></li>
+          <li><h3>Sécurité</h3><p>Entreprise certifiée VCA*, nous confions chaque mission à des collaborateurs qui disposent des habilitations nécessaires et appliquent les consignes propres à votre site.</p></li>
+          <li><h3>Suivi des demandes</h3><p>Votre interlocuteur commercial définit le besoin avec vous, ajuste la prestation lorsque vos contraintes évoluent et reste votre contact pendant toute la durée du contrat.</p></li>
         </ul>
       </div>
     </section>
@@ -242,16 +206,16 @@
         <div class="closing__main">
           <h2 class="h-section">Parlons de votre besoin</h2>
           <p>Contrat régulier ou intervention ponctuelle : décrivez-nous le site, les travaux à réaliser et vos contraintes. Nous revenons vers vous pour étudier la demande et vous proposer une offre.</p>
-          <div class="closing__cta">
+          <div class="btn-row">
             <a class="btn btn--primary btn--lg" href="#contact" data-modal-open="quote-modal">Demander un devis</a>
             <a class="btn btn--ghost btn--lg" href="tel:+32499312523">Nous appeler</a>
           </div>
         </div>
-        <ul class="closing__coords">
-          <li><span>Téléphone</span><a href="tel:+32499312523">+32 499 31 25 23</a></li>
-          <li><span>E-mail</span><a href="mailto:info@tkn-technics.be">info@tkn-technics.be</a></li>
-          <li><span>Adresse</span><p>Avenue Paul de Merten 71, 1090 Jette</p></li>
-        </ul>
+        <dl class="coords">
+          <div><dt>Téléphone</dt><dd><a href="tel:+32499312523">+32 499 31 25 23</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:info@tkn-technics.be">info@tkn-technics.be</a></dd></div>
+          <div><dt>Adresse</dt><dd>Avenue Paul de Merten 71, 1090 Jette</dd></div>
+        </dl>
       </div>
     </section>
   </main>
@@ -260,79 +224,71 @@
     <div class="wrap">
       <div class="footer__top">
         <div class="footer__brand">
-          <img src="assets/tkn-logo-128.png" alt="TKN Technics" class="footer__logo" />
-          <p class="footer__slogan">Basés à Bruxelles, actifs dans toute la Belgique et dans les pays voisins.</p>
-          <span class="footer__vca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9 11.5l2 2 4-4" /></svg><span>Certification VCA*</span></span>
+          <img src="assets/tkn-logo-128.png" alt="TKN Technics" width="190" height="128" class="footer__logo" />
+          <p>Basés à Bruxelles, actifs dans toute la Belgique et dans les pays voisins.</p>
+          <p class="footer__vca">Certification VCA*</p>
         </div>
         <nav class="footer__col" aria-label="Services">
-          <span class="footer__h">Services</span>
-          <a class="footer__link" href="service-nettoyage-industriel.html">Nettoyage industriel</a>
-          <a class="footer__link" href="service-maintenance-generale.html">Entretien et rénovation de bâtiments</a>
-          <a class="footer__link" href="service-interventions-specialisees.html">Après-sinistre et débarras</a>
-          <a class="footer__link" href="service-espaces-verts.html">Espaces verts</a>
+          <p class="footer__h">Services</p>
+          <a href="service-nettoyage-industriel.html">Nettoyage industriel</a>
+          <a href="service-maintenance-generale.html">Entretien et rénovation de bâtiments</a>
+          <a href="service-interventions-specialisees.html">Après-sinistre et débarras</a>
+          <a href="service-espaces-verts.html">Espaces verts</a>
         </nav>
         <nav class="footer__col" aria-label="Entreprise">
-          <span class="footer__h">Entreprise</span>
-          <a class="footer__link" href="#references">Chantiers</a>
-          <a class="footer__link" href="equipes.html">Nos équipes</a>
-          <a class="footer__link" href="equipes.html#recrutement">Recrutement</a>
+          <p class="footer__h">Entreprise</p>
+          <a href="#references">Chantiers</a>
+          <a href="equipes.html">Nos équipes</a>
+          <a href="equipes.html#recrutement">Recrutement</a>
         </nav>
-        <div class="footer__col footer__contact">
-          <span class="footer__h">Contact</span>
-          <a class="footer__link" href="mailto:info@tkn-technics.be"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z" /><path d="M3 7l9 6 9-6" /></svg>info@tkn-technics.be</a>
-          <a class="footer__link" href="tel:+32499312523"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg>+32 499 31 25 23</a>
-          <span class="footer__link footer__link--static"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>Avenue Paul de Merten 71,<br />1090 Jette, Belgique</span></span>
+        <div class="footer__col">
+          <p class="footer__h">Contact</p>
+          <a href="mailto:info@tkn-technics.be">info@tkn-technics.be</a>
+          <a href="tel:+32499312523">+32 499 31 25 23</a>
+          <p>Avenue Paul de Merten 71,<br />1090 Jette, Belgique</p>
         </div>
       </div>
-      <div class="footer__legalrow">
-        <span class="footer__legal">TKN Technics, TKN Group SRL</span>
-        <span class="footer__legal">N° d'entreprise 0746.960.475</span>
-        <span class="footer__legal">TVA BE 0746.960.475</span>
-      </div>
-      <div class="footer__bottom">
-        <span class="footer__legal">Nettoyage industriel · Entretien et rénovation de bâtiments · Après-sinistre et débarras · Espaces verts</span>
+      <div class="footer__legal">
+        <span>TKN Technics, TKN Group SRL</span>
+        <span>N° d'entreprise 0746.960.475</span>
+        <span>TVA BE 0746.960.475</span>
         <span class="footer__copy">© 2026 TKN Technics. Tous droits réservés.</span>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-  </a>
+  <a class="wa-float" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg></a>
 
   <div class="modal" id="quote-modal" aria-hidden="true">
     <div class="modal__backdrop" data-modal-close></div>
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
-      <button class="modal__close" type="button" data-modal-close aria-label="Fermer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
-      </button>
+      <button class="modal__close" type="button" data-modal-close aria-label="Fermer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg></button>
       <div class="modal__head">
         <h2 class="modal__title" id="quote-modal-title">Demande de devis</h2>
-        <p class="modal__sub">Indiquez le lieu, les travaux à réaliser et votre échéance.</p>
+        <p>Indiquez le lieu, les travaux à réaliser et votre échéance.</p>
       </div>
       <form class="js-form" data-success="#quote-modal-success" data-subject="Demande de devis, site TKN Technics" novalidate>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="field-grid">
-          <label class="field field--half"><span class="field__label"><span>Nom</span><span class="field__req">*</span></span><input class="field__input" type="text" name="Nom" data-required autocomplete="name" /><span class="field__line"></span><span class="field__msg">Champ requis</span></label>
-          <label class="field field--half"><span class="field__label"><span>Société (facultatif)</span></span><input class="field__input" type="text" name="Société" autocomplete="organization" /><span class="field__line"></span></label>
-          <label class="field field--half"><span class="field__label"><span>Téléphone</span></span><input class="field__input" type="tel" name="Téléphone" data-require-one="contact" autocomplete="tel" /><span class="field__line"></span><span class="field__msg">Téléphone ou e-mail requis</span></label>
-          <label class="field field--half"><span class="field__label"><span>E-mail</span></span><input class="field__input" type="email" name="E-mail" data-require-one="contact" autocomplete="email" /><span class="field__line"></span><span class="field__msg">Téléphone ou e-mail requis</span></label>
-          <label class="field field--half"><span class="field__label"><span>Prestation</span><span class="field__req">*</span></span><div class="field__selwrap"><select class="field__input field__select" name="Prestation" data-required><option value="" disabled selected>Choisir une prestation</option><option value="Nettoyage industriel">Nettoyage industriel</option><option value="Entretien et rénovation de bâtiments">Entretien et rénovation de bâtiments</option><option value="Après-sinistre et débarras">Après-sinistre et débarras</option><option value="Espaces verts">Espaces verts</option><option value="Plusieurs prestations ou à préciser">Plusieurs prestations ou à préciser</option></select><span class="field__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></span></div><span class="field__line"></span><span class="field__msg">Champ requis</span></label>
-          <label class="field field--half"><span class="field__label"><span>Lieu d'intervention</span></span><input class="field__input" type="text" name="Lieu" placeholder="Ville ou adresse" /><span class="field__line"></span></label>
-          <div class="field field--full"><span class="field__label"><span>Type de besoin</span></span><div class="seg seg--full" data-seg><input type="hidden" name="Type de besoin" value="Ponctuel" /><button type="button" class="seg__btn is-on" data-value="Ponctuel">Ponctuel</button><button type="button" class="seg__btn" data-value="Régulier">Régulier</button><button type="button" class="seg__btn" data-value="Arrêt technique">Arrêt technique</button></div></div>
-          <div class="field field--full"><span class="field__label"><span>Échéance</span></span><div class="seg seg--full" data-seg><input type="hidden" name="Échéance" value="Dès que possible" /><button type="button" class="seg__btn is-on" data-value="Dès que possible">Dès que possible</button><button type="button" class="seg__btn" data-value="Date précise">Date précise</button><button type="button" class="seg__btn" data-value="Pas d'échéance">Pas d'échéance</button></div></div>
-          <label class="field field--full"><span class="field__label"><span>Travaux à réaliser</span><span class="field__req">*</span></span><textarea class="field__input field__area" name="Description" rows="4" data-required placeholder="Nature des travaux, surfaces ou volumes, accès, contraintes"></textarea><span class="field__line"></span><span class="field__msg">Champ requis</span></label>
-          <label class="field field--full filefield"><span class="field__label"><span>Photos (facultatif)</span></span><div class="filefield__drop"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V5" /><path d="M8 9l4-4 4 4" /><path d="M5 19h14" /></svg><span class="filefield__txt">Ajouter un fichier (PDF, JPG, PNG)</span><input type="file" name="attachment" class="filefield__input" accept=".pdf,.jpg,.jpeg,.png" /></div></label>
+          <label class="field field--half"><span class="field__label">Nom<span class="field__req">*</span></span><input class="field__input" type="text" name="Nom" data-required autocomplete="name" /><span class="field__msg">Champ requis</span></label>
+          <label class="field field--half"><span class="field__label">Société (facultatif)</span><input class="field__input" type="text" name="Société" autocomplete="organization" /></label>
+          <label class="field field--half"><span class="field__label">Téléphone</span><input class="field__input" type="tel" name="Téléphone" data-require-one="contact" autocomplete="tel" /><span class="field__msg">Téléphone ou e-mail requis</span></label>
+          <label class="field field--half"><span class="field__label">E-mail</span><input class="field__input" type="email" name="E-mail" data-require-one="contact" autocomplete="email" /><span class="field__msg">Téléphone ou e-mail requis</span></label>
+          <label class="field field--half"><span class="field__label">Prestation<span class="field__req">*</span></span><span class="field__selwrap"><select class="field__input field__select" name="Prestation" data-required><option value="" disabled selected>Choisir une prestation</option><option value="Nettoyage industriel">Nettoyage industriel</option><option value="Entretien et rénovation de bâtiments">Entretien et rénovation de bâtiments</option><option value="Après-sinistre et débarras">Après-sinistre et débarras</option><option value="Espaces verts">Espaces verts</option><option value="Plusieurs prestations ou à préciser">Plusieurs prestations ou à préciser</option></select><span class="field__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></span></span><span class="field__msg">Champ requis</span></label>
+          <label class="field field--half"><span class="field__label">Lieu d'intervention</span><input class="field__input" type="text" name="Lieu" placeholder="Ville ou adresse" /></label>
+          <div class="field field--full"><span class="field__label">Type de besoin</span><div class="seg" data-seg><input type="hidden" name="Type de besoin" value="Ponctuel" /><button type="button" class="seg__btn is-on" data-value="Ponctuel">Ponctuel</button><button type="button" class="seg__btn" data-value="Régulier">Régulier</button><button type="button" class="seg__btn" data-value="Arrêt technique">Arrêt technique</button></div></div>
+          <div class="field field--full"><span class="field__label">Échéance</span><div class="seg" data-seg><input type="hidden" name="Échéance" value="Dès que possible" /><button type="button" class="seg__btn is-on" data-value="Dès que possible">Dès que possible</button><button type="button" class="seg__btn" data-value="Date précise">Date précise</button><button type="button" class="seg__btn" data-value="Pas d'échéance">Pas d'échéance</button></div></div>
+          <label class="field field--full"><span class="field__label">Travaux à réaliser<span class="field__req">*</span></span><textarea class="field__input field__area" name="Description" rows="4" data-required placeholder="Nature des travaux, surfaces ou volumes, accès, contraintes"></textarea><span class="field__msg">Champ requis</span></label>
+          <label class="field field--full filefield"><span class="field__label">Photos (facultatif)</span><span class="filefield__drop"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V5" /><path d="M8 9l4-4 4 4" /><path d="M5 19h14" /></svg><span class="filefield__txt">Ajouter un fichier (PDF, JPG, PNG)</span><input type="file" name="attachment" class="filefield__input" accept=".pdf,.jpg,.jpeg,.png" /></span></label>
         </div>
         <p class="form-note">* Champ requis. Indiquez au moins un téléphone ou un e-mail.</p>
-        <button class="btn btn--primary" type="submit"><span data-label>Envoyer ma demande</span><span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></button>
-        <div class="form-error" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg><span>L'envoi a échoué. Vérifiez votre connexion et réessayez, ou appelez-nous au <a href="tel:+32499312523">+32 499 31 25 23</a>.</span></div>
+        <button class="btn btn--primary" type="submit" data-sending="Envoi en cours…"><span data-label>Envoyer ma demande</span></button>
+        <p class="form-error" role="alert" hidden>L'envoi a échoué. Vérifiez votre connexion et réessayez, ou appelez-nous au <a href="tel:+32499312523">+32 499 31 25 23</a>.</p>
       </form>
-      <div class="form-success" id="quote-modal-success" hidden>
-        <span class="form-success__ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
-        <h4 class="form-success__t">Demande envoyée</h4>
-        <p class="form-success__m">Merci. Nous revenons vers vous pour préciser votre demande.</p>
-        <button class="link-arrow" type="button" data-reset><span>Nouvelle demande</span> <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></button>
+      <div class="form-success" id="quote-modal-success" role="status" hidden>
+        <h3 class="form-success__t">Demande envoyée</h3>
+        <p>Merci. Nous revenons vers vous pour préciser votre demande.</p>
+        <button class="link-btn" type="button" data-reset>Nouvelle demande</button>
       </div>
     </div>
   </div>
