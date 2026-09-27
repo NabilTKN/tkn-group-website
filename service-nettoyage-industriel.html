@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nettoyage industriel | TKN Technics</title>
-  <meta name="description" content="Nettoyage industriel de sites de production en Belgique : installations, cuves, fosses, sols, toitures et façades. Équipes sur site, arrêts techniques, matériel propre. Entreprise certifiée VCA*." />
+  <meta name="description" content="Nettoyage de sites de production : machines à l&#x27;arrêt, fosses, cuves, toitures, façades, sols, vestiaires. Équipes permanentes et arrêts techniques. VCA*." />
   <link rel="canonical" href="https://tkn-technics.be/service-nettoyage-industriel.html" />
   <link rel="alternate" hreflang="fr" href="https://tkn-technics.be/service-nettoyage-industriel.html" />
   <link rel="alternate" hreflang="nl" href="https://tkn-technics.be/service-nettoyage-industriel-nl.html" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TKN Technics" />
   <meta property="og:title" content="Nettoyage industriel | TKN Technics" />
-  <meta property="og:description" content="Nettoyage industriel de sites de production en Belgique : installations, cuves, fosses, sols, toitures et façades. Équipes sur site, arrêts techniques, matériel propre. Entreprise certifiée VCA*." />
+  <meta property="og:description" content="Nettoyage de sites de production : machines à l&#x27;arrêt, fosses, cuves, toitures, façades, sols, vestiaires. Équipes permanentes et arrêts techniques. VCA*." />
   <meta property="og:url" content="https://tkn-technics.be/service-nettoyage-industriel.html" />
   <meta property="og:image" content="https://tkn-technics.be/assets/hero-nettoyage.webp" />
   <meta property="og:locale" content="fr_BE" />
@@ -33,12 +33,12 @@
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/blocks.css" />
   <link rel="stylesheet" href="css/detail.css" />
+  <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <!-- ============================ HEADER ============================ -->
   <header class="hdr" id="hdr">
     <div class="hdr__bar wrap">
       <a class="logo-btn" href="index.html" aria-label="TKN Technics, accueil">
@@ -79,7 +79,7 @@
           </div>
         </div>
 
-        <a class="navlink" href="index.html#references">Projets</a>
+        <a class="navlink" href="index.html#references">Chantiers</a>
         <a class="navlink" href="equipes.html">Équipes</a>
         <a class="navlink" href="index.html#contact">Contact</a>
       </nav>
@@ -97,7 +97,6 @@
       </div>
     </div>
 
-    <!-- Tiroir mobile -->
     <div class="drawer" id="drawer">
       <div class="drawer__inner">
         <a class="drawer__link" href="index.html" data-drawer-close>Accueil</a>
@@ -108,7 +107,7 @@
           <a class="drawer__sub" href="service-interventions-specialisees.html" data-drawer-close>Interventions spécialisées</a>
           <a class="drawer__sub" href="service-espaces-verts.html" data-drawer-close>Espaces verts</a>
         </div>
-        <a class="drawer__link" href="index.html#references" data-drawer-close>Projets</a>
+        <a class="drawer__link" href="index.html#references" data-drawer-close>Chantiers</a>
         <a class="drawer__link" href="equipes.html" data-drawer-close>Équipes</a>
         <a class="drawer__link" href="index.html#contact" data-drawer-close>Contact</a>
         <div class="drawer__foot">
@@ -124,8 +123,6 @@
   </header>
 
   <main class="page-detail" id="main">
-
-    <!-- ============================ HERO ============================ -->
     <section class="svc-hero">
       <div class="hero-media">
         <img class="hero-media__img" src="assets/hero-nettoyage.webp" alt="Hall de production industriel avec pont roulant" onerror="this.remove()" />
@@ -135,136 +132,100 @@
         <nav class="crumbs" aria-label="Fil d'Ariane">
           <a class="crumbs__link" href="index.html">Accueil</a>
           <span class="crumbs__sep">›</span>
-          <a class="crumbs__link" href="index.html#services">Services</a>
-          <span class="crumbs__sep">›</span>
           <span class="crumbs__cur" aria-current="page">Nettoyage industriel</span>
         </nav>
         <h1 class="display svc-hero__title">Nettoyage industriel</h1>
-        <p class="lead svc-hero__lead">Des installations propres, entretenues au rythme de votre production.</p>
+        <p class="lead svc-hero__lead">Installations, bâtiments et abords de sites de production. En équipe permanente sur votre site ou pendant vos arrêts techniques.</p>
         <div class="svc-hero__cta">
-          <a class="btn btn--primary btn--lg" href="index.html#contact"><span>Demander un devis</span><span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></a>
-          <a class="btn btn--ghost btn--lg" href="tel:+32499312523"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg><span>+32 499 31 25 23</span></a>
+          <a class="btn btn--primary btn--lg" href="index.html#contact" data-modal-open="quote-modal">Demander un devis</a>
+          <a class="btn btn--ghost btn--lg" href="tel:+32499312523">+32 499 31 25 23</a>
         </div>
       </div>
     </section>
-
     <section class="section bg-black editorial">
       <div class="wrap">
-        <div class="ed-row reveal" id="perimetre">
+        <div class="ed-row">
           <h2 class="ed-row__title">Du sol au toit</h2>
-          <div class="ed-row__body">
-            <p>Sur un site de production, l'encrassement ne se limite jamais aux machines. La graisse s'accumule sur les lignes, les fosses et les caniveaux se remplissent, les toitures et les façades se chargent de poussières. Nous prenons en charge l'ensemble : installations de production, cuves et trémies, gaines de ventilation, sols, toitures, façades, mais aussi vestiaires, sanitaires et abords du site.</p>
-            <p>Les machines et les lignes sont toujours nettoyées à l'arrêt, dans le respect des consignes de votre site.</p>
-          </div>
-        </div>
-        <div class="ed-row reveal" id="equipe-site">
-          <h2 class="ed-row__title">Une équipe qui connaît votre site</h2>
-          <div class="ed-row__body">
-            <p>Sur plusieurs de nos sites clients, une équipe TKN travaille chaque jour, intégrée à l'organisation en place. Elle suit vos horaires, connaît vos installations, vos accès et vos règles de sécurité. Selon l'activité, cette présence peut être assurée 24 heures sur 24, comme c'est le cas sur un site sidérurgique où une quinzaine de nos collaborateurs se relaient.</p>
-          </div>
-        </div>
-        <div class="ed-row reveal" id="arrets">
-          <h2 class="ed-row__title">Pendant vos arrêts de production</h2>
-          <div class="ed-row__body">
-            <p>Un arrêt technique laisse peu de temps pour intervenir. Nous mobilisons de 10 à 20 personnes, de jour, de nuit ou le week-end, pour réaliser en parallèle le nettoyage très haute pression des installations, l'aspiration des fosses et des cuves, le dégraissage des machines et les interventions en hauteur ou en espace confiné. Tout est planifié avec vos équipes avant le démarrage de l'arrêt.</p>
-          </div>
+          <div class="ed-row__body"><p>Sur un site de production, la saleté ne reste pas sur les machines. La graisse s'accumule sur les lignes, les fosses et les caniveaux se remplissent, les poussières se déposent sur les toitures, les bardages et les vitrages. Nous traitons l'ensemble du site, des installations de production jusqu'aux vestiaires et aux parkings.</p><p>Les machines et les lignes sont toujours nettoyées à l'arrêt, selon les consignes de votre site.</p></div>
         </div>
       </div>
     </section>
-
+    <section class="section bg-anthracite" id="zones">
+      <div class="wrap">
+        <div class="sh"><h2 class="h-section">Ce que nous nettoyons</h2></div>
+        <div class="catalogue">
+          <div><h3>Machines et lignes de production</h3><p>Dégraissage et décrassage des installations, toujours à l'arrêt.</p><p class="means">Haute pression eau chaude, vapeur, très haute pression.</p></div>
+          <div><h3>Cuves, trémies et silos</h3><p>Retrait des dépôts et nettoyage des parois, par des équipes habilitées au travail en espace confiné.</p><p class="means">Aspiration industrielle, très haute pression.</p></div>
+          <div><h3>Fosses, bacs de rétention et caniveaux</h3><p>Aspiration des boues et des eaux, curage et nettoyage.</p><p class="means">Camion aspirateur hydrocureur, aspirateurs ATEX.</p></div>
+          <div><h3>Conduits, gaines de ventilation et hottes</h3><p>Dégraissage et dépoussiérage des réseaux d'air et des hottes d'extraction.</p></div>
+          <div><h3>Toitures, gouttières et chéneaux</h3><p>Nettoyage des couvertures et des évacuations pour que l'eau s'écoule.</p><p class="means">Nacelles, harnais et lignes de vie.</p></div>
+          <div><h3>Façades, bardages et vitrages en hauteur</h3><p>Nettoyage des parties hautes des bâtiments.</p><p class="means">Nacelles ciseaux, articulées et télescopiques, échafaudage roulant.</p></div>
+          <div><h3>Sols industriels</h3><p>Entretien courant et décapage des ateliers, entrepôts et zones de circulation.</p><p class="means">Autolaveuses, monobrosses.</p></div>
+          <div><h3>Vestiaires, douches et sanitaires</h3><p>Entretien des locaux du personnel, y compris en continu sur les sites qui travaillent en pauses.</p></div>
+          <div><h3>Parkings, quais et abords</h3><p>Balayage et nettoyage des zones extérieures et des quais.</p><p class="means">Balayeuse industrielle, haute pression.</p></div>
+          <div><h3>Après travaux et zones encombrées</h3><p>Remise en propreté après un chantier, débarras de zones de stockage encombrées.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section bg-black editorial" id="organisation">
+      <div class="wrap">
+        <div class="ed-row">
+          <h2 class="ed-row__title">Une équipe permanente sur votre site</h2>
+          <div class="ed-row__body"><p>Sur plusieurs sites clients, une équipe TKN travaille chaque jour, intégrée à l'organisation en place. Elle suit vos horaires et vos pauses, connaît vos installations, vos accès et vos règles de sécurité. Sur un site sidérurgique, une quinzaine de nos collaborateurs assurent ainsi une présence 24 heures sur 24.</p></div>
+        </div>
+        <div class="ed-row">
+          <h2 class="ed-row__title">Pendant vos arrêts techniques</h2>
+          <div class="ed-row__body"><p>Un arrêt technique laisse peu de temps. Nous mobilisons de 10 à 20 personnes, de jour, de nuit ou le week-end, et menons les travaux en parallèle : très haute pression sur les installations, aspiration des fosses et des cuves, dégraissage des machines, interventions en hauteur et en espace confiné.</p><p>Le planning, les accès et les règles de sécurité sont validés avec vos équipes avant le démarrage.</p></div>
+        </div>
+        <div class="ed-row">
+          <h2 class="ed-row__title">Interventions ponctuelles</h2>
+          <div class="ed-row__body"><p>Un nettoyage de toiture, le curage d'une fosse, une remise en propreté après travaux : nous intervenons aussi une seule fois, sur devis.</p></div>
+        </div>
+      </div>
+    </section>
     <section class="section bg-anthracite" id="materiel">
-      <div class="wrap">
-        <div class="section-head reveal">
+      <div class="wrap split">
+        <div class="split__head">
           <h2 class="h-section">Notre matériel</h2>
-          <p class="lead">Nous travaillons avec notre propre matériel, disponible sans délai de location.</p>
+          <p>Le matériel nous appartient : pas de délai de location, pas de dépendance à un loueur.</p>
         </div>
-        <div class="aud-grid eq-grid">
-          <article class="aud-card reveal">
-            <span class="aud-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h8l2-2h3" /><path d="M5 14v4h3v-4" /><path d="M16 12l5-3" /><path d="M16 12l5 0" /><path d="M16 12l5 3" /></svg></span>
-            <h3 class="aud-card__t">Haute et très haute pression</h3>
-            <p class="aud-card__d">Pour décrasser et dégraisser installations, structures et sols.</p>
-            <p class="aud-card__meta">Eau froide, eau chaude, vapeur. Jusqu'à 2 500 bars.</p>
-          </article>
-          <article class="aud-card reveal d1">
-            <span class="aud-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="10" height="11" rx="2" /><path d="M13 11h3a3 3 0 013 3v5" /><path d="M17 19h4" /><path d="M6 8V5h4v3" /></svg></span>
-            <h3 class="aud-card__t">Aspiration et curage</h3>
-            <p class="aud-card__d">Pour vider et nettoyer fosses, cuves, trémies et caniveaux.</p>
-            <p class="aud-card__meta">Camion aspirateur, aspirateurs industriels, modèles ATEX.</p>
-          </article>
-          <article class="aud-card reveal d2">
-            <span class="aud-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l-4 10" /><rect x="5" y="14" width="12" height="4" rx="1" /><path d="M3 21h18" /></svg></span>
-            <h3 class="aud-card__t">Sols industriels</h3>
-            <p class="aud-card__d">Pour l'entretien courant comme pour le décapage.</p>
-            <p class="aud-card__meta">Autolaveuses, monobrosses, balayeuse.</p>
-          </article>
-          <article class="aud-card reveal d3">
-            <span class="aud-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="3" width="8" height="4" /><path d="M6 17l9-10" /><path d="M9 17l6-10" /><rect x="3" y="17" width="12" height="3" rx="1" /></svg></span>
-            <h3 class="aud-card__t">Travail en hauteur</h3>
-            <p class="aud-card__d">Pour les toitures, façades, bardages et parties hautes.</p>
-            <p class="aud-card__meta">Nacelles ciseaux et articulées, échafaudages, harnais.</p>
-          </article>
-        </div>
+        <dl class="points">
+          <div><dt>Haute et très haute pression</dt><dd>Eau froide, eau chaude et vapeur, très haute pression jusqu'à 2 500 bars. Pour décrasser et dégraisser installations, structures et sols.</dd></div>
+          <div><dt>Aspiration et curage</dt><dd>Camion aspirateur hydrocureur, aspirateurs industriels, modèles ATEX. Pour vider et nettoyer fosses, cuves, trémies et caniveaux.</dd></div>
+          <div><dt>Sols</dt><dd>Autolaveuses, monobrosses, balayeuse industrielle. Pour l'entretien courant comme pour le décapage.</dd></div>
+          <div><dt>Travail en hauteur</dt><dd>Nacelles ciseaux, articulées et télescopiques, échafaudage roulant, harnais et lignes de vie.</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="bg-black safety" id="securite">
-      <div class="wrap safety__inner">
-        <div class="reveal">
-          <h2 class="safety__title">La sécurité, préparée avant l'intervention</h2>
-          <p class="lead safety__txt">TKN Technics est certifiée VCA*. Avant chaque chantier, nos équipes prennent connaissance des consignes du site, et nous affectons des collaborateurs disposant des habilitations nécessaires : travail en hauteur, espaces confinés, conduite de nacelle et de chariot élévateur, risques électriques (BA4 / BA5).</p>
+    <section class="section bg-black" id="securite">
+      <div class="wrap split">
+        <div class="split__head">
+          <h2 class="h-section">Sécurité et secteurs</h2>
+          <p>Avant chaque intervention, nos équipes prennent connaissance des consignes du site. Nous affectons des collaborateurs habilités selon les risques du chantier.</p>
         </div>
-        <div class="vca-mark reveal d1"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9 11.5l2 2 4-4" /></svg><span>Certifiée VCA*</span></div>
+        <dl class="fiche">
+          <div><dt>Certification</dt><dd>VCA*</dd></div>
+          <div><dt>Habilitations</dt><dd>Travail en hauteur et harnais, espaces confinés, nacelle et chariot élévateur, risques électriques (BA4 / BA5)</dd></div>
+          <div><dt>Secteurs</dt><dd>Sidérurgie, nucléaire, zones portuaires, agroalimentaire, béton, papier et emballage, carbochimie</dd></div>
+          <div><dt>Chantiers</dt><dd><a href="index.html#references">Voir quelques chantiers</a></dd></div>
+        </dl>
       </div>
     </section>
-
-    <section class="section bg-anthracite" id="references">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="h-section">Où nous intervenons</h2>
-        </div>
-        <div class="sector-row reveal" aria-label="Secteurs d'intervention"><span class="svc-chip">Sidérurgie</span><span class="svc-chip">Nucléaire</span><span class="svc-chip">Zones portuaires</span><span class="svc-chip">Agroalimentaire</span><span class="svc-chip">Béton</span><span class="svc-chip">Papier et emballage</span><span class="svc-chip">Carbochimie</span></div>
-        <div class="proj-grid">
-          <article class="proj-card reveal">
-            <div class="proj-card__body">
-              <span class="spec-label">Sidérurgie</span>
-              <h3 class="proj-card__name">Site sidérurgique</h3>
-              <p class="proj-card__desc">Une quinzaine de personnes sur site. Vestiaires et sanitaires entretenus 24 h/24, machines, toitures et installations en journée, interventions pendant les arrêts techniques.</p>
-            </div>
-          </article>
-          <article class="proj-card reveal d1">
-            <div class="proj-card__body">
-              <span class="spec-label">Nucléaire</span>
-              <h3 class="proj-card__name">Site nucléaire</h3>
-              <p class="proj-card__desc">Équipe de 6 personnes affectée en permanence au nettoyage de zones à accès contrôlé, du lundi au vendredi de 7 h à 15 h.</p>
-            </div>
-          </article>
-          <article class="proj-card reveal d2">
-            <div class="proj-card__body">
-              <span class="spec-label">Béton</span>
-              <h3 class="proj-card__name">Producteur de béton</h3>
-              <p class="proj-card__desc">Nettoyage quotidien des machines de production sur plusieurs centrales.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ CTA FINAL ============================ -->
     <section class="sp-cta" id="contact">
       <div class="wrap sp-cta__inner">
-        <h2 class="sp-cta__title reveal">Parlons de votre site</h2>
-        <div class="sp-cta__right reveal d1">
-          <p class="muted">Décrivez-nous le type de site, les zones à traiter et vos contraintes d'accès ou d'horaires. Nous revenons vers vous pour préciser la demande et, pour les chantiers importants, organiser une visite sur place.</p>
+        <h2 class="sp-cta__title">Parlons de votre site</h2>
+        <div class="sp-cta__right">
+          <p class="muted">Décrivez le type de site, les zones à traiter et vos contraintes d'accès ou d'horaires. Nous répondons sous 48 heures et, pour les chantiers importants, nous organisons une visite avant de chiffrer.</p>
           <div class="sp-cta__btns">
-            <a class="btn btn--primary btn--lg" href="index.html#contact"><span>Demander un devis</span><span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></a>
-            <a class="btn btn--ghost btn--lg" href="tel:+32499312523"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a11 11 0 005 5l1.5-2 5 1.5v3a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z" /></svg><span>+32 499 31 25 23</span></a>
+            <a class="btn btn--primary btn--lg" href="index.html#contact" data-modal-open="quote-modal">Demander un devis</a>
+            <a class="btn btn--ghost btn--lg" href="tel:+32499312523">+32 499 31 25 23</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============================ FOOTER ============================ -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer__top">
@@ -282,7 +243,7 @@
         </nav>
         <nav class="footer__col" aria-label="Entreprise">
           <span class="footer__h">Entreprise</span>
-          <a class="footer__link" href="index.html#references">Projets</a>
+          <a class="footer__link" href="index.html#references">Chantiers</a>
           <a class="footer__link" href="equipes.html">Nos équipes</a>
           <a class="footer__link" href="equipes.html#recrutement">Recrutement</a>
         </nav>
@@ -305,12 +266,10 @@
     </div>
   </footer>
 
-  <!-- Bouton WhatsApp flottant -->
   <a class="wa-float" href="https://wa.me/32499312523" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
   </a>
 
-  <!-- ============================ MODALE : DEMANDE DE DEVIS ============================ -->
   <div class="modal" id="quote-modal" aria-hidden="true">
     <div class="modal__backdrop" data-modal-close></div>
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
@@ -319,7 +278,7 @@
       </button>
       <div class="modal__head">
         <h2 class="modal__title" id="quote-modal-title">Demande de devis</h2>
-        <p class="modal__sub">Indiquez le site, le besoin et l'échéance. Un responsable commercial vous recontacte.</p>
+        <p class="modal__sub">Indiquez le site, le travail à réaliser et l'échéance. Nous répondons sous 48 heures.</p>
       </div>
       <form class="js-form" data-success="#quote-modal-success" data-subject="Demande de devis, site TKN Technics" novalidate>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
@@ -331,7 +290,7 @@
           <label class="field field--half"><span class="field__label"><span>Type de prestation</span><span class="field__req">*</span></span><div class="field__selwrap"><select class="field__input field__select" name="Type de prestation" data-required><option value="" disabled>Choisir une prestation</option><option value="Nettoyage industriel" selected>Nettoyage industriel</option><option value="Maintenance générale">Maintenance générale</option><option value="Interventions spécialisées">Interventions spécialisées</option><option value="Espaces verts">Espaces verts</option><option value="Plusieurs besoins / à préciser">Plusieurs besoins / à préciser</option></select><span class="field__chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></span></div><span class="field__line"></span><span class="field__msg">Champ requis</span></label>
           <label class="field field--half"><span class="field__label"><span>Ville / site</span></span><input class="field__input" type="text" name="Ville ou site" /><span class="field__line"></span></label>
           <div class="field field--full"><span class="field__label"><span>Type de besoin</span></span><div class="seg seg--full" data-seg><input type="hidden" name="Type de besoin" value="Ponctuel" /><button type="button" class="seg__btn is-on" data-value="Ponctuel">Ponctuel</button><button type="button" class="seg__btn" data-value="Contrat régulier">Contrat régulier</button><button type="button" class="seg__btn" data-value="Arrêt technique">Arrêt technique</button></div></div>
-          <div class="field field--full"><span class="field__label"><span>Délai</span></span><div class="seg seg--full" data-seg><input type="hidden" name="Délai" value="Standard" /><button type="button" class="seg__btn is-on" data-value="Standard">Standard</button><button type="button" class="seg__btn" data-value="Urgent">Urgent</button></div></div>
+          <div class="field field--full"><span class="field__label"><span>Délai</span></span><div class="seg seg--full" data-seg><input type="hidden" name="Délai" value="Dès que possible" /><button type="button" class="seg__btn is-on" data-value="Dès que possible">Dès que possible</button><button type="button" class="seg__btn" data-value="Date précise">Date précise</button><button type="button" class="seg__btn" data-value="Pas d'échéance">Pas d'échéance</button></div></div>
           <label class="field field--full filefield"><span class="field__label"><span>Photos du site (optionnel)</span></span><div class="filefield__drop"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V5" /><path d="M8 9l4-4 4 4" /><path d="M5 19h14" /></svg><span class="filefield__txt">Ajouter un fichier (PDF, JPG, PNG)</span><input type="file" name="attachment" class="filefield__input" accept=".pdf,.jpg,.jpeg,.png" /></div></label>
           <label class="field field--full"><span class="field__label"><span>Message</span></span><textarea class="field__input field__area" name="Message" rows="3"></textarea><span class="field__line"></span></label>
         </div>
@@ -341,7 +300,7 @@
       <div class="form-success" id="quote-modal-success" hidden>
         <span class="form-success__ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
         <h4 class="form-success__t">Demande de devis envoyée</h4>
-        <p class="form-success__m">Bien reçu. Un responsable commercial vous recontacte.</p>
+        <p class="form-success__m">Demande bien reçue. Nous vous répondons sous 48 heures.</p>
         <button class="link-arrow" type="button" data-reset><span>Nouvelle demande</span> <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg></span></button>
       </div>
     </div>

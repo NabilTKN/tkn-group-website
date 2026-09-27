@@ -1,8 +1,3 @@
-/* ============================================================
-   TKN — Formulaires, Contact, Équipes, Recrutement, Footer
-   ============================================================ */
-
-/* ---------- Champs de formulaire ---------- */
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; margin-bottom: 30px; }
 .field { display: flex; flex-direction: column; position: relative; grid-column: span 2; }
 .field--half { grid-column: span 1; }
@@ -16,7 +11,7 @@
 .field__line { position: absolute; left: 0; bottom: 0; height: 1.5px; width: 100%; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
 .field:focus-within .field__line { transform: scaleX(1); }
 .field.is-err .field__input { border-bottom-color: #C9534D; }
-/* Le message de validation n'apparaît que si le champ est en erreur. */
+
 .field__msg { display: none; font-size: 11.5px; color: #B3453F; margin-top: 6px; letter-spacing: 0.02em; }
 .field.is-err .field__msg { display: block; }
 
@@ -40,13 +35,11 @@
 .filefield__txt { font-size: 14px; }
 .filefield__input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 
-/* Succès — affiché uniquement après réponse positive du serveur */
 .form-success { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 30px 0; }
 .form-success__ico { width: 58px; height: 58px; border-radius: 50%; background: var(--yellow-glow); color: var(--yellow); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(240, 168, 0, 0.4); }
 .form-success__t { font-family: var(--title); font-size: 24px; color: var(--white); letter-spacing: -0.02em; }
 .form-success__m { color: var(--gray); max-width: 44ch; }
 
-/* Erreur d'envoi — inline, claire, sans alert() */
 .form-error {
   display: flex; align-items: flex-start; gap: 12px;
   margin-top: 18px; padding: 14px 16px;
@@ -59,7 +52,6 @@
 
 @media (max-width: 540px) { .field--half { grid-column: span 2; } .seg__btn { padding: 10px 16px; } }
 
-/* ---------- Contact ---------- */
 .contact { position: relative; }
 .contact__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
 .contact__lead { margin-top: 24px; }
@@ -80,7 +72,6 @@ a.coord__v:hover { color: var(--yellow); }
 
 @media (max-width: 860px) { .contact__grid { grid-template-columns: 1fr; } }
 
-/* ---------- Nos équipes ---------- */
 .team__grid { margin-top: clamp(30px, 3.5vw, 46px); display: grid; grid-template-columns: 1.12fr 0.88fr; gap: clamp(34px, 4.5vw, 64px); align-items: start; }
 .team__p { font-size: 15.5px; line-height: 1.68; color: var(--gray); text-wrap: pretty; }
 .team__p strong { color: var(--offwhite); font-weight: 600; }
@@ -97,7 +88,6 @@ a.coord__v:hover { color: var(--yellow); }
   .team__grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
-/* ---------- Recrutement ---------- */
 .recruit { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(36px, 5vw, 72px); padding: clamp(36px, 5vw, 60px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-md); }
 .recruit__title { color: var(--white); margin: 16px 0 14px; }
 .recruit__txt { max-width: 40ch; }
@@ -111,7 +101,6 @@ a.coord__v:hover { color: var(--yellow); }
 
 @media (max-width: 860px) { .recruit { grid-template-columns: 1fr; } }
 
-/* ---------- Footer — même noir que le header (var(--black)) ---------- */
 .footer {
   background: var(--black);
   border-top: 1px solid var(--line);
