@@ -247,15 +247,5 @@
     document.addEventListener("keydown", function(e) {
       if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
     });
-    document.querySelectorAll(".faq__item").forEach(function(item) {
-      var q = item.querySelector(".faq__q");
-      var a = item.querySelector(".faq__a");
-      if (!q || !a) return;
-      q.addEventListener("click", function() {
-        var open = item.classList.toggle("is-open");
-        q.setAttribute("aria-expanded", open ? "true" : "false");
-        a.style.maxHeight = open ? a.scrollHeight + "px" : "0px";
-      });
-    });
   });
 })();
