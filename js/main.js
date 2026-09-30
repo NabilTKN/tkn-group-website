@@ -49,17 +49,6 @@
         });
       });
     }
-    document.querySelectorAll("[data-seg]").forEach(function(seg) {
-      var hidden = seg.querySelector('input[type="hidden"]');
-      seg.querySelectorAll(".seg__btn").forEach(function(btn) {
-        btn.addEventListener("click", function() {
-          seg.querySelectorAll(".seg__btn").forEach(function(b) {
-            b.classList.toggle("is-on", b === btn);
-          });
-          if (hidden) hidden.value = btn.getAttribute("data-value") || btn.textContent.trim();
-        });
-      });
-    });
     document.querySelectorAll(".field__select").forEach(function(sel) {
       var sync = function() {
         sel.closest(".field").classList.toggle("has-value", !!sel.value);
@@ -99,33 +88,20 @@
           spinner.remove();
         }
       }
-      // Un champ data-required forme un groupe à lui seul. Les champs qui partagent
-      // le même data-require-one (téléphone ou e-mail) forment un groupe : un seul suffit.
-      var requiredGroups = [];
-      var namedGroups = {};
-      form.querySelectorAll("[data-required], [data-require-one]").forEach(function(input) {
-        var name = input.getAttribute("data-require-one");
-        if (!name) return requiredGroups.push([ input ]);
-        if (!namedGroups[name]) requiredGroups.push(namedGroups[name] = []);
-        namedGroups[name].push(input);
-      });
-      function setError(group, on) {
-        group.forEach(function(input) {
-          var field = input.closest(".field");
-          if (field) field.classList.toggle("is-err", on);
-          if (on) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
-        });
+      var required = Array.prototype.slice.call(form.querySelectorAll("[data-required]"));
+      function setError(input, on) {
+        var field = input.closest(".field");
+        if (field) field.classList.toggle("is-err", on);
+        if (on) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
       }
       form.addEventListener("submit", function(e) {
         e.preventDefault();
         if (sending) return;
         var firstInvalid = null;
-        requiredGroups.forEach(function(group) {
-          var filled = group.some(function(input) {
-            return !!String(input.value || "").trim();
-          });
-          setError(group, !filled);
-          if (!filled && !firstInvalid) firstInvalid = group[0];
+        required.forEach(function(input) {
+          var filled = !!String(input.value || "").trim();
+          setError(input, !filled);
+          if (!filled && !firstInvalid) firstInvalid = input;
         });
         if (firstInvalid) {
           firstInvalid.focus();
@@ -169,14 +145,12 @@
           setLoading(false);
         });
       });
-      requiredGroups.forEach(function(group) {
-        group.forEach(function(input) {
-          var clear = function() {
-            setError(group, false);
-          };
-          input.addEventListener("input", clear);
-          input.addEventListener("change", clear);
-        });
+      required.forEach(function(input) {
+        var clear = function() {
+          setError(input, false);
+        };
+        input.addEventListener("input", clear);
+        input.addEventListener("change", clear);
       });
       if (success) {
         var reset = success.querySelector("[data-reset]");
@@ -196,71 +170,6 @@
           form.hidden = false;
         });
       }
-    });
-    var openModalEl = null;
-    var modalTrigger = null;
-    var FOCUSABLE = 'a[href], button:not([disabled]), input:not([type="hidden"]):not([tabindex="-1"]), select, textarea, [tabindex]:not([tabindex="-1"])';
-    function openModal(id, trigger) {
-      var m = document.getElementById(id);
-      if (!m) return;
-      if (openModalEl && openModalEl !== m) hideModal(openModalEl);
-      closeDrawer(false);
-      modalTrigger = trigger || document.activeElement;
-      m.classList.add("is-open");
-      m.setAttribute("aria-hidden", "false");
-      document.body.classList.add("no-scroll");
-      openModalEl = m;
-      var c = m.querySelector(".modal__close");
-      // la fenêtre devient visible au cours de sa transition : on attend avant de déplacer le focus
-      if (c) setTimeout(function() {
-        try {
-          c.focus();
-        } catch (e) {}
-      }, 60);
-    }
-    function hideModal(m) {
-      m = m || openModalEl;
-      if (!m) return;
-      m.classList.remove("is-open");
-      m.setAttribute("aria-hidden", "true");
-      if (openModalEl === m) openModalEl = null;
-      if (!document.querySelector(".modal.is-open")) document.body.classList.remove("no-scroll");
-      if (modalTrigger && document.contains(modalTrigger)) {
-        try {
-          modalTrigger.focus();
-        } catch (e) {}
-      }
-      modalTrigger = null;
-    }
-    // Garde le focus clavier dans la fenêtre ouverte
-    document.addEventListener("keydown", function(e) {
-      if (e.key !== "Tab" || !openModalEl) return;
-      var items = Array.prototype.filter.call(openModalEl.querySelectorAll(FOCUSABLE), function(el) {
-        return el.offsetParent !== null;
-      });
-      if (!items.length) return;
-      var first = items[0], last = items[items.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    });
-    document.querySelectorAll("[data-modal-open]").forEach(function(btn) {
-      btn.addEventListener("click", function(e) {
-        e.preventDefault();
-        openModal(btn.getAttribute("data-modal-open"), btn);
-      });
-    });
-    document.querySelectorAll("[data-modal-close]").forEach(function(el) {
-      el.addEventListener("click", function() {
-        hideModal();
-      });
-    });
-    document.addEventListener("keydown", function(e) {
-      if ((e.key === "Escape" || e.key === "Esc") && openModalEl) hideModal();
     });
   });
 })();

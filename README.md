@@ -6,4 +6,4 @@ Site web TKN Technics (TKN Group SRL) : pages HTML statiques en français, néer
 - Image de partage `assets/og-tkn.jpg` : recadrage de la photo d'accueil, assombrie, avec le logo.
 - Logo TKN Technics (`assets/tkn-logo*.png`, `assets/tkn-badge.png`) : fourni par l'entreprise. `tkn-logo-128.png` en est une copie réduite, dessin inchangé ; les autres variantes sont conservées comme fichiers source.
 - Polices Archivo et Instrument Sans : Google Fonts, licence SIL Open Font License 1.1.
-- Icônes (téléphone, flèches, fermeture, envoi de fichier) : tracés SVG simples intégrés aux pages ; logo WhatsApp utilisé pour le lien de contact WhatsApp.
+- Icônes (téléphone, flèches, envoi de fichier) : tracés SVG simples intégrés aux pages.
